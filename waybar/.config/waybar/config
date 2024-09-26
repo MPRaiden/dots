@@ -1,0 +1,41 @@
+{
+    // General Settings
+    "layer": "top",
+    "margin-bottom": 0,
+    "layer": "top",
+    "margin-left": 0,
+    "margin-right": 0,    
+    "spacing": 0,
+    "reload_style_on_change": true,
+
+    // Load Modules
+    "include": [
+	"~/dotfiles/.config/waybar/modules.json"
+    ],
+
+    // Modules Left
+    "modules-left": [
+        "custom/appmenuicon",
+	"hyprland/window",
+    ],
+
+    // Modules Center
+    "modules-center": [
+        "hyprland/workspaces",
+    ],
+
+    // Modules Right    
+    "modules-right": [
+    	"custom/updates",
+	"custom/wallpaper",
+	"bluetooth",
+        "pulseaudio",
+        "battery", 
+        "network",
+        "group/hardware",
+        "clock",
+	"temperature",
+	"custom/exit",
+    ]
+}
+
