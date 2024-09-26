@@ -10,7 +10,7 @@
 
     // Load Modules
     "include": [
-	"~/dotfiles/.config/waybar/modules.json"
+	"~/dots/waybar/.config/waybar/modules.json"
     ],
 
     // Modules Left
