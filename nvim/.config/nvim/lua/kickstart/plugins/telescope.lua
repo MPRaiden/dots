@@ -29,7 +29,7 @@ return {
           -- Show hidden files by default when using the find_files picker
           -- find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*' }, -- Option 1: Use ripgrep to show hidden files except .git
           -- Alternatively, you can use this command if you don't have ripgrep installed:
-          -- find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' }, -- Option 2: Use fd to show hidden files except .git
+          find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' }, -- Option 2: Use fd to show hidden files except .git
           -- or simply
           -- hidden = true, -- Option 3: Directly set hidden to true
         },

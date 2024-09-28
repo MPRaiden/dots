@@ -6,7 +6,7 @@
 	},
 	"custom/quicklink2": {
 		"format": "",
-		"on-click": "~/dotfiles/.settings/filemanager.sh",
+		"on-click": "~/scripts/filemanager.sh",
 		"tooltip-format": "Open filemanager"
 	},
 	"group/quicklinks": {

@@ -19,9 +19,9 @@
 		"format": "   {}",
 		"escape": true,
 		"return-type": "json",
-		"exec": "~/dotfiles/scripts/updates.sh",
+		"exec": "~/scripts/updates.sh",
 		"restart-interval": 60,
-		"on-click": "kitty --class dotfiles-floating -e ~/dotfiles/scripts/installupdates.sh"
+		"on-click": "wezterm -e ~/scripts/installupdates.sh"
 	},
 	"custom/wallpaper": {
 		"format": "",
@@ -87,7 +87,7 @@
 		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
 		"tooltip-format-disconnected": "Disconnected",
 		"max-length": 50,
-		"on-click": "kitty --class dotfiles-floating -e nmtui"
+		"on-click": "wezterm -e nmtui"
 	},
 	"battery": {
 		"states": {
