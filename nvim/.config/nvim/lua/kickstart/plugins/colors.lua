@@ -52,6 +52,11 @@ return {
       setup_theme 'kanagawa-paper'
     end,
   },
+  {
+    -- Catppuccin
+    'catppuccin/nvim',
+    config = function() end,
+  },
 
   -- Rose-pine theme
   {
