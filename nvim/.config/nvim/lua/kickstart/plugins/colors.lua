@@ -45,19 +45,6 @@ return {
     end,
   },
 
-  -- Kanagawa-paper theme
-  {
-    'sho-87/kanagawa-paper.nvim',
-    config = function()
-      setup_theme 'kanagawa-paper'
-    end,
-  },
-  {
-    -- Catppuccin
-    'catppuccin/nvim',
-    config = function() end,
-  },
-
   -- Rose-pine theme
   {
     'rose-pine/neovim',
