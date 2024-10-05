@@ -74,3 +74,4 @@ export PATH=$PATH:/home/mpr/.cargo/bin
 # Add go path
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH="$HOME/scripts:$PATH"
