@@ -30,7 +30,7 @@
 	},
 	"custom/appmenuicon": {
 		"format": "",
-		"on-click": "rofi -show drun -replace"
+		"on-click": "tofi-drun --drun-launch=true"
 	},
 	"custom/exit": {
 		"format": "",
@@ -51,17 +51,14 @@
 	},
 	"cpu": {
 		"format": "/ C {usage}% ",
-		"on-click": "alacritty -e htop"
 	},
 	"memory": {
 		"format": "/ M {}% ",
-		"on-click": "alacritty -e htop"
 	},
 	"disk": {
 		"interval": 30,
 		"format": "D {percentage_used}% ",
 		"path": "/",
-		"on-click": "alacritty -e htop"
 	},
 	"group/hardware": {
 		"orientation": "inherit",
