@@ -32,6 +32,7 @@ return {
           find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' }, -- Option 2: Use fd to show hidden files except .git
           -- or simply
           -- hidden = true, -- Option 3: Directly set hidden to true
+          layout_strategy = 'vertical', -- adjust depending on display
         },
         pickers = {
           find_files = {
