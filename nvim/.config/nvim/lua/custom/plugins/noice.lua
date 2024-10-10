@@ -55,8 +55,6 @@ return {
     },
     dependencies = {
       'MunifTanjim/nui.nvim',
-      -- Optional dependency for notification view
-      'rcarriga/nvim-notify', -- comment out to remove nvim system messages from the top/right corner
     },
   },
 }
