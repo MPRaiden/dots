@@ -8,6 +8,7 @@ config = {
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock", -- doesn't work in nvim sessions :/
 	color_scheme = "Tokyo Night",
+	-- color_scheme = "rose-pine",
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
 	check_for_updates = false,
@@ -70,7 +71,7 @@ config = {
 		{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 		{ key = "[", mods = "CTRL", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
-		{ key = "n", mods = "LEADER", action = act.ShowTabNavigator },
+		{ key = "s", mods = "LEADER", action = act.ShowTabNavigator },
 		{
 			-- rename tab
 			key = "e",
