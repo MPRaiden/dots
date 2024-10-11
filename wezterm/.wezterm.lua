@@ -43,8 +43,22 @@ config = {
 		{ key = "phys:Space", mods = "LEADER", action = act.ActivateCommandPalette },
 
 		-- 	-- Pane keybindings
-		{ key = "v", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-		{ key = "h", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{
+			key = "v",
+			mods = "LEADER",
+			action = wezterm.action.SplitPane({
+				direction = "Right",
+				size = { Percent = 30 },
+			}),
+		},
+		{
+			key = "h",
+			mods = "LEADER",
+			action = wezterm.action.SplitPane({
+				direction = "Down",
+				size = { Percent = 30 },
+			}),
+		},
 		{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
 		{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
 		{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
