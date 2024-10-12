@@ -49,7 +49,7 @@ config = {
 			mods = "LEADER",
 			action = wezterm.action.SplitPane({
 				direction = "Right",
-				size = { Percent = 30 },
+				size = { Percent = 50 },
 			}),
 		},
 		{
@@ -57,7 +57,7 @@ config = {
 			mods = "LEADER",
 			action = wezterm.action.SplitPane({
 				direction = "Down",
-				size = { Percent = 30 },
+				size = { Percent = 50 },
 			}),
 		},
 		{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
