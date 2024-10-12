@@ -1,3 +1,4 @@
+-- Rose Pine
 -- return {
 --   {
 --     'rose-pine/neovim',
@@ -17,9 +18,8 @@
 --   },
 -- }
 
--- trying out tokyonight
+--  Tokyo Night
 return {
-  -- Tokyo Night theme
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
