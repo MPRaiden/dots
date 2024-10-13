@@ -38,7 +38,7 @@ return {
   {
     'folke/tokyonight.nvim',
     config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } })
+      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } }) -- stype options are moon, storm and night
     end,
   },
 
@@ -47,7 +47,7 @@ return {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function()
-      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } })
+      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } }) -- style options are main, moon, moon and dawn
       -- Apply custom color scheme
       ColorMyPencils 'tokyonight' -- switch to the desired colorscheme
     end,
