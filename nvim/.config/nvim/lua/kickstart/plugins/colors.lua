@@ -1,38 +1,55 @@
--- Rose Pine
--- return {
---   {
---     'rose-pine/neovim',
---     name = 'rose-pine',
---     lazy = false, -- Enable lazy loading
---     config = function()
---       -- Set up the colorscheme
---       require('rose-pine').setup {
---         variant = 'main', -- Options 'main', 'moon', or 'dawn'
---         dark_variant = 'main',
---         disable_background = true,
---         disable_italics = true,
---       }
---       -- Apply the colorscheme
---       vim.cmd 'colorscheme rose-pine'
---     end,
---   },
--- }
+-- Centralized function to set highlights and colors
+local function ColorMyPencils(color)
+  color = color or 'rose-pine'
+  vim.cmd.colorscheme(color)
+  local highlight_groups = {
+    'Normal',
+    'NormalFloat',
+    'TelescopeNormal',
+    'TelescopeBorder',
+    'TelescopePromptNormal',
+    'TelescopePromptBorder',
+    'TelescopeResultsNormal',
+    'TelescopeResultsBorder',
+    'TelescopePreviewNormal',
+    'TelescopePreviewBorder',
+  }
+  for _, group in ipairs(highlight_groups) do
+    vim.api.nvim_set_hl(0, group, { bg = 'none' })
+  end
+end
+-- Shared config function for common theme options
+local function setup_theme(theme_name, options)
+  require(theme_name).setup(vim.tbl_extend('force', {
+    transparent = true,
+    terminal_colors = true,
+    styles = {
+      comments = { italic = false },
+      keywords = { italic = false },
+      sidebars = 'dark',
+      floats = 'dark',
+    },
+  }, options or {}))
+end
 
---  Tokyo Night
+-- Plugin setup
 return {
+  -- TokyoNight theme
   {
     'folke/tokyonight.nvim',
-    name = 'tokyonight',
-    lazy = false, -- Disable lazy loading for immediate use
     config = function()
-      -- Tokyo Night setup
-      require('tokyonight').setup {
-        -- style = 'night', -- Options 'storm', 'night', 'day', 'moon'
-        transparent = true, -- Match with disable_background from rose-pine
-        terminal_colors = true,
-      }
-      -- Apply the colorscheme
-      vim.cmd 'colorscheme tokyonight'
+      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } })
+    end,
+  },
+
+  -- Rose-pine theme
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } })
+      -- Apply custom color scheme
+      ColorMyPencils 'tokyonight' -- switch to the desired colorscheme
     end,
   },
 }
