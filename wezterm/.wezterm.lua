@@ -80,11 +80,14 @@ config = {
 					{ Foreground = { AnsiColor = "Fuchsia" } },
 					{ Text = "Renaming Tab Title...:" },
 				}),
-				action = wezterm.action_callback(function(window, pane, line)
-					if line then
-						window:active_tab():set_title(line)
+				action = wezterm.action_callback(
+					-- NOTE: unsure why but removing this 'unsured' pane argument leads to breaking the renaming functionality (no error but the tabs do don get renamed) so leave it
+					function(window, pane, line)
+						if line then
+							window:active_tab():set_title(line)
+						end
 					end
-				end),
+				),
 			}),
 		},
 
