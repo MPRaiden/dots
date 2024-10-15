@@ -1,3 +1,4 @@
+-- NOTE: In case you forget (and you will since you're writting this note), this plugin is used for code folding (try "za" to fold/unfold)
 local M = {
   'kevinhwang91/nvim-ufo',
   dependencies = { 'kevinhwang91/promise-async' },
