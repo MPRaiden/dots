@@ -18,6 +18,7 @@ config = {
 	window_background_opacity = 1, -- transparency (from 0 to 1)
 	scrollback_lines = 3000,
 	default_workspace = "main",
+	harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, -- disables ligatures
 	window_padding = {
 		left = 10,
 		right = 10,
