@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local act = wezterm.action
+-- local act = wezterm.action
 local config = {}
 
 config = {
@@ -7,7 +7,7 @@ config = {
 	automatically_reload_config = true,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock", -- doesn't work in nvim sessions :/
-	color_scheme = "Tokyo Night", -- good options: "Rosé Pine (Gogh)", "Tokyo Night",
+	color_scheme = "Rosé Pine (Gogh)", -- good options: "Rosé Pine (Gogh)", "Tokyo Night", "rose-pine-moon"
 	adjust_window_size_when_changing_font_size = false,
 	window_decorations = "RESIZE",
 	check_for_updates = false,
