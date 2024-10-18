@@ -64,8 +64,6 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 alias ls='ls -a --color'
 alias v='nvim'
 alias c='clear'
-alias ts='tmux-sessionizer'
-alias td='tmux detach'
 
 # Shell integrations
 eval "$(fzf --zsh)"
