@@ -49,7 +49,7 @@ return {
     config = function()
       setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } }) -- style options are main, moon, moon and dawn
       -- Apply custom color scheme
-      ColorMyPencils 'tokyonight' -- switch to the desired colorscheme
+      ColorMyPencils 'rose-pine' -- switch to the desired colorscheme
     end,
   },
 }
