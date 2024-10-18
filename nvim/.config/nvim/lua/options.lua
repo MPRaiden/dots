@@ -51,7 +51,7 @@ vim.opt.splitbelow = true
 vim.opt.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- Preview substitutions live, as you type!
+-- Preview substitutions live, as you type! (try it, open cmdline, type %/vim/nvim) -> this replaces all instances of "vim" string with "nvim" and you get to see the preview of it for the file
 vim.opt.inccommand = 'split'
 
 -- Show which line your cursor is on
