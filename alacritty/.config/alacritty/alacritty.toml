@@ -1,32 +1,31 @@
 import = [
-    "~/.config/alacritty/themes/themes/tokyo-night.toml"
+  "~/dots/alacritty/.config/alacritty/themes/themes/rose-pine.toml"
 ]
-
 live_config_reload = true
 
 [font]
 size = 10
 
 [font.normal]
-family = "JetBrains Mono Nerd Font" 
+family = "JetBrains Mono Nerd Font"
 
 [window]
-opacity = 0.9
+opacity = 1
 blur = true
 decorations = "None"
 
-[window.padding]
-x = 10
-y = 10
-
-[cursor.style]
-blinking = "Always"
+  [window.padding]
+  x = 10
+  y = 10
 
 [cursor]
-blink_interval = 1000
+blink_interval = 1_000
+
+  [cursor.style]
+  blinking = "Always"
 
 [mouse]
 hide_when_typing = true
 
 [scrolling]
-history = 3000
+history = 3_000
