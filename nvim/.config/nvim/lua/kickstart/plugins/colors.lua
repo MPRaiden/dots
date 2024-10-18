@@ -42,6 +42,15 @@ return {
     end,
   },
 
+  -- Catppuccin theme
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    config = function()
+      setup_theme('catppuccin', { flavor = 'mocha', disable_background = true, styles = { italic = false } }) -- flavor options are latte, frappe, macchiato, and mocha
+    end,
+  },
+
   -- Rose-pine theme
   {
     'rose-pine/neovim',
