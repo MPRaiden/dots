@@ -1,64 +1,22 @@
--- Centralized function to set highlights and colors
-local function ColorMyPencils(color)
-  color = color or 'rose-pine'
-  vim.cmd.colorscheme(color)
-  local highlight_groups = {
-    'Normal',
-    'NormalFloat',
-    'TelescopeNormal',
-    'TelescopeBorder',
-    'TelescopePromptNormal',
-    'TelescopePromptBorder',
-    'TelescopeResultsNormal',
-    'TelescopeResultsBorder',
-    'TelescopePreviewNormal',
-    'TelescopePreviewBorder',
-  }
-  for _, group in ipairs(highlight_groups) do
-    vim.api.nvim_set_hl(0, group, { bg = 'none' })
-  end
-end
--- Shared config function for common theme options
-local function setup_theme(theme_name, options)
-  require(theme_name).setup(vim.tbl_extend('force', {
-    transparent = true,
-    terminal_colors = true,
-    styles = {
-      comments = { italic = false },
-      keywords = { italic = false },
-      sidebars = 'dark',
-      floats = 'dark',
-    },
-  }, options or {}))
-end
-
--- Plugin setup
 return {
-  -- TokyoNight theme
-  {
-    'folke/tokyonight.nvim',
-    config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } }) -- stype options are moon, storm and night
-    end,
-  },
-
-  -- Catppuccin theme
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    config = function()
-      setup_theme('catppuccin', { flavor = 'mocha', disable_background = true, styles = { italic = false } }) -- flavor options are latte, frappe, macchiato, and mocha
-    end,
-  },
-
-  -- Rose-pine theme
-  {
+  { -- You can easily change to a different colorscheme.
+    -- Change the name of the colorscheme plugin below, and then
+    -- change the command in the config to whatever the name of that colorscheme is.
+    --
+    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+    -- 'folke/tokyonight.nvim',
     'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } }) -- style options are main, moon, moon and dawn
-      -- Apply custom color scheme
-      ColorMyPencils 'rose-pine' -- switch to the desired colorscheme
+    priority = 1000, -- Make sure to load this before all the other start plugins.
+    init = function()
+      -- Load the colorscheme here.
+      -- Like many other themes, this one has different styles, and you could load
+      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      -- vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'rose-pine'
+
+      -- You can configure highlights by doing something like:
+      vim.cmd.hi 'Comment gui=none'
     end,
   },
 }
+-- vim: ts=2 sts=2 sw=2 et

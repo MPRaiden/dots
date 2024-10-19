@@ -2,13 +2,11 @@ local wezterm = require("wezterm")
 local config = {}
 
 config = {
-	enable_wayland = false, -- wezterm doesnt start without this line, see more at https://github.com/wez/wezterm/issues/3121
 	automatically_reload_config = true,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock", -- doesn't work in nvim sessions :/
-	color_scheme = "Rosé Pine (Gogh)", -- good options: "Rosé Pine (Gogh)", "Tokyo Night", "rose-pine-moon"
+	color_scheme = "Rosé Pine (Gogh)", -- good options: "Rosé Pine (Gogh)", "Tokyo Night", "Rosé Pine Moon (Gogh)"
 	adjust_window_size_when_changing_font_size = false,
-	window_decorations = "RESIZE",
 	check_for_updates = false,
 	font_size = 10,
 	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "DemiBold" }),
