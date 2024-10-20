@@ -66,7 +66,7 @@ return {
   {
     'folke/tokyonight.nvim',
     config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'night', styles = { italic = false } })
+      setup_theme('tokyonight', { disable_background = true, style = 'night' })
       ColorMyPencils(current_theme) -- Use current_theme variable
     end,
   },
@@ -76,7 +76,7 @@ return {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function()
-      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } })
+      setup_theme('rose-pine', { disable_background = true, style = 'main' })
       ColorMyPencils(current_theme) -- Use current_theme variable
     end,
   },
