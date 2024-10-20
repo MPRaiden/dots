@@ -1,3 +1,6 @@
+-- This file is pure pain
+--
+--
 -- Centralized function to set highlights and colors
 local function ColorMyPencils(color)
   color = color or 'gruvbox' -- Default to Gruvbox
@@ -48,7 +51,7 @@ local function setup_theme(theme_name, options)
 end
 
 -- Choose your theme here
-local current_theme = 'tokyonight' -- Change this to "rose-pine" or "tokyonight" as needed
+local current_theme = 'tokyonight' -- Change this to "rose-pine" or "tokyonight" as needed (all colors look great with 'rose-pine' set as wezterm color, same with no color set there as well, only problem is when you have no color for wezterm and select rose-pine as a color for nvim, in that case the main editor looks fine but all the plugins, things like telescope, undotree, which key etc do not match the color of the main editor and that annoys me as hell)
 
 -- Color schemes
 return {
