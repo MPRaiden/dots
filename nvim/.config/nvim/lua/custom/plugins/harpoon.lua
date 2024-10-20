@@ -20,5 +20,8 @@ return {
         harpoon:list():select(idx)
       end)
     end
+    -- Set the Harpoon menu background and foreground colors
+    vim.api.nvim_set_hl(0, 'HarpoonWindow', { fg = '#ebdbb2', bg = '#282828' }) -- Window appearance
+    vim.api.nvim_set_hl(0, 'HarpoonBorder', { fg = '#928374', bg = '#282828' }) -- Border around menu
   end,
 }
