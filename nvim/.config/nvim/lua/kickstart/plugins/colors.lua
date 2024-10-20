@@ -1,58 +1,38 @@
--- Centralized function to set highlights and colors
-local function ColorMyPencils(color)
-  color = color or 'rose-pine-moon' -- Use rose-pine-moon explicitly
-  vim.cmd.colorscheme(color)
-  local highlight_groups = {
-    'Normal',
-    'NormalFloat',
-    'TelescopeNormal',
-    'TelescopeBorder',
-    'TelescopePromptNormal',
-    'TelescopePromptBorder',
-    'TelescopeResultsNormal',
-    'TelescopeResultsBorder',
-    'TelescopePreviewNormal',
-    'TelescopePreviewBorder',
-  }
-  for _, group in ipairs(highlight_groups) do
-    vim.api.nvim_set_hl(0, group, { bg = 'none' })
-  end
-end
-
--- Shared config function for common theme options
-local function setup_theme(theme_name, options)
-  require(theme_name).setup(vim.tbl_extend('force', {
-    transparent = true,
-    terminal_colors = true,
-    styles = {
-      comments = { italic = false },
-      keywords = { italic = false },
-      sidebars = 'dark',
-      floats = 'dark',
-    },
-  }, options or {}))
-end
-
--- Plugin setup
 return {
-  -- TokyoNight theme
   {
-    'folke/tokyonight.nvim',
-    config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } }) -- style options are moon, storm and night
-    end,
-  },
-
-  -- Rose-pine theme
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    config = function()
-      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } }) -- style options are main, moon, and dawn
-      -- Apply custom color scheme with moon variant
-      ColorMyPencils 'rose-pine'
+    'ellisonleao/gruvbox.nvim',
+    priority = 1000, -- Ensures Gruvbox is loaded before other plugins
+    opts = {
+      terminal_colors = true, -- Use Gruvbox colors in the terminal
+      undercurl = true,
+      underline = true,
+      bold = true,
+      italic = {
+        strings = true,
+        emphasis = true,
+        comments = true,
+        operators = false,
+        folds = true,
+      },
+      strikethrough = true,
+      invert_selection = false,
+      invert_signs = false,
+      invert_tabline = false,
+      invert_intend_guides = false,
+      inverse = true, -- Invert for search, diffs, errors, etc.
+      contrast = 'hard', -- You can also set "soft" or leave it empty
+      palette_overrides = {}, -- Custom palette overrides
+      dim_inactive = false,
+      transparent_mode = false, -- Set true if you want a transparent background
+      overrides = {
+        SignColumn = { bg = '#1d2021' }, -- Match this to your 'Normal' background
+      },
+    },
+    config = function(_, opts)
+      require('gruvbox').setup(opts)
+      vim.o.background = 'dark' -- Set Gruvbox to dark mode
+      vim.cmd [[colorscheme gruvbox]] -- Apply the Gruvbox colorscheme
     end,
   },
 }
-
 -- vim: ts=2 sts=2 sw=2 et
