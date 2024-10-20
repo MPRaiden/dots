@@ -49,7 +49,7 @@ return {
     priority = 1000, -- Ensures Gruvbox is loaded first
     opts = {
       terminal_colors = true,
-      contrast = 'hard',
+      contrast = 'soft',
       palette_overrides = {},
       dim_inactive = false,
       transparent_mode = true, -- Enable transparency
