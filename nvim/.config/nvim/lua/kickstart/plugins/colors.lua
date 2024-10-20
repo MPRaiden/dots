@@ -19,11 +19,17 @@ local function ColorMyPencils(color)
     'HarpoonWindow', -- Harpoon window background
     'HarpoonBorder', -- Harpoon border
     'SignColumn', -- Line numbers/sign column
+    'NotifyBackground', -- To handle Notify background warning
   }
 
   -- Apply transparency to all groups
   for _, group in ipairs(highlight_groups) do
-    vim.api.nvim_set_hl(0, group, { bg = 'none' })
+    if group == 'NotifyBackground' then
+      -- Set a default background for NotifyBackground to avoid warnings
+      vim.api.nvim_set_hl(0, group, { bg = '#000000' }) -- Example color
+    else
+      vim.api.nvim_set_hl(0, group, { bg = 'none' })
+    end
   end
 end
 
@@ -41,50 +47,39 @@ local function setup_theme(theme_name, options)
   }, options or {}))
 end
 
+-- Choose your theme here
+local current_theme = 'gruvbox' -- Change this to "rose-pine" or "tokyonight" as needed
+
 -- Color schemes
 return {
-  -- Gruvbox theme
+  -- Gruvbox theme from Morhetz
   {
-    'ellisonleao/gruvbox.nvim',
-    priority = 1000, -- Ensures Gruvbox is loaded first
-    opts = {
-      terminal_colors = true,
-      contrast = 'soft',
-      palette_overrides = {},
-      dim_inactive = false,
-      transparent_mode = true, -- Enable transparency
-      background_colour = '#000000', -- Fix NotifyBackground warning
-      overrides = {
-        SignColumn = { bg = 'none' }, -- Match SignColumn to background
-      },
-    },
-    config = function(_, opts)
-      -- Setup Gruvbox and apply transparency
-      require('gruvbox').setup(opts)
-      vim.o.background = 'dark'
-      vim.cmd [[colorscheme gruvbox]]
-      ColorMyPencils 'gruvbox'
+    'morhetz/gruvbox',
+    config = function()
+      vim.o.background = 'dark' -- Set background to dark
+      vim.cmd [[colorscheme gruvbox]] -- Apply Gruvbox color scheme
+      ColorMyPencils(current_theme) -- Set highlight transparency
     end,
   },
 
   -- TokyoNight theme
-  -- {
-  --   'folke/tokyonight.nvim',
-  --   config = function()
-  --     setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } })
-  --     ColorMyPencils 'tokyonight' -- Switch to TokyoNight
-  --   end,
-  -- },
+  {
+    'folke/tokyonight.nvim',
+    config = function()
+      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } })
+      ColorMyPencils(current_theme) -- Use current_theme variable
+    end,
+  },
 
   -- Rose-Pine theme
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   config = function()
-  --     setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } })
-  --     ColorMyPencils 'rose-pine' -- Switch to Rose-Pine
-  --   end,
-  -- },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      setup_theme('rose-pine', { disable_background = true, style = 'moon', styles = { italic = false } })
+      ColorMyPencils(current_theme) -- Use current_theme variable
+    end,
+  },
 }
 
 -- vim: ts=2 sts=2 sw=2 et
