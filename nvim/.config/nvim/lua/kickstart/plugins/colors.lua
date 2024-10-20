@@ -48,7 +48,7 @@ local function setup_theme(theme_name, options)
 end
 
 -- Choose your theme here
-local current_theme = 'gruvbox' -- Change this to "rose-pine" or "tokyonight" as needed
+local current_theme = 'tokyonight' -- Change this to "rose-pine" or "tokyonight" as needed
 
 -- Color schemes
 return {
@@ -66,7 +66,7 @@ return {
   {
     'folke/tokyonight.nvim',
     config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'moon', styles = { italic = false } })
+      setup_theme('tokyonight', { disable_background = true, style = 'night', styles = { italic = false } })
       ColorMyPencils(current_theme) -- Use current_theme variable
     end,
   },
