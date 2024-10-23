@@ -3,7 +3,7 @@
 --
 -- Centralized function to set highlights and colors
 local function ColorMyPencils(color)
-  color = color or 'gruvbox' -- Default to Gruvbox
+  color = color or 'tokyonight' -- Default to tokyonight
   vim.cmd.colorscheme(color)
 
   -- Define highlight groups to make transparent
@@ -42,8 +42,6 @@ local function setup_theme(theme_name, options)
     transparent = true,
     terminal_colors = true,
     styles = {
-      comments = { italic = false },
-      keywords = { italic = false },
       sidebars = 'dark',
       floats = 'dark',
     },
@@ -51,7 +49,7 @@ local function setup_theme(theme_name, options)
 end
 
 -- Choose your theme here
-local current_theme = 'tokyonight' -- Change this to "rose-pine" or "tokyonight" as needed (all colors look great with 'rose-pine' set as wezterm color, same with no color set there as well, only problem is when you have no color for wezterm and select rose-pine as a color for nvim, in that case the main editor looks fine but all the plugins, things like telescope, undotree, which key etc do not match the color of the main editor and that annoys me as hell)
+local current_theme = 'rose-pine' -- Change this to "rose-pine", "tokyonight" or gruvbox as needed (all colors look great with 'rose-pine' set as wezterm color, same with no color set there as well, only problem is when you have no color for wezterm and select rose-pine as a color for nvim, in that case the main editor looks fine but all the plugins, things like telescope, undotree, which key etc do not match the color of the main editor and that annoys me as hell)
 
 -- Color schemes
 return {
@@ -59,9 +57,10 @@ return {
   {
     'morhetz/gruvbox',
     config = function()
-      vim.o.background = 'dark' -- Set background to dark
-      vim.cmd [[colorscheme gruvbox]] -- Apply Gruvbox color scheme
-      ColorMyPencils(current_theme) -- Set highlight transparency
+      -- vim.o.background = 'dark' -- Set background to dark
+      -- vim.cmd [[colorscheme gruvbox]] -- Apply Gruvbox color scheme
+      setup_theme('gruvbox', { disable_background = true, style = 'dark', styles = { italic = false } })
+      ColorMyPencils(current_theme)
     end,
   },
 
@@ -69,8 +68,8 @@ return {
   {
     'folke/tokyonight.nvim',
     config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'night' })
-      ColorMyPencils(current_theme) -- Use current_theme variable
+      setup_theme('tokyonight', { disable_background = true, style = 'night', styles = { italic = false } })
+      ColorMyPencils(current_theme)
     end,
   },
 
@@ -79,8 +78,8 @@ return {
     'rose-pine/neovim',
     name = 'rose-pine',
     config = function()
-      setup_theme('rose-pine', { disable_background = true, style = 'main' })
-      ColorMyPencils(current_theme) -- Use current_theme variable
+      setup_theme('rose-pine', { disable_background = true, style = 'main', styles = { italic = false } })
+      ColorMyPencils(current_theme)
     end,
   },
 }
