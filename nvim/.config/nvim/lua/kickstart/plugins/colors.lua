@@ -49,7 +49,7 @@ local function setup_theme(theme_name, options)
 end
 
 -- Choose your theme here
-local current_theme = 'rose-pine' -- Change this to "rose-pine", "tokyonight" or gruvbox as needed (all colors look great with 'rose-pine' set as wezterm color, same with no color set there as well, only problem is when you have no color for wezterm and select rose-pine as a color for nvim, in that case the main editor looks fine but all the plugins, things like telescope, undotree, which key etc do not match the color of the main editor and that annoys me as hell)
+local current_theme = 'tokyonight' -- wezterm 3024 goes with nvim tokyonight / wezterm rose-pine goes with nvim rose-pine
 
 -- Color schemes
 return {
