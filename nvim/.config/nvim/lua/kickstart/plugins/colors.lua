@@ -53,18 +53,6 @@ local current_theme = 'rose-pine' -- Change this to "rose-pine", "tokyonight" or
 
 -- Color schemes
 return {
-  -- Gruvbox theme from Morhetz
-  {
-    'morhetz/gruvbox',
-    config = function()
-      -- vim.o.background = 'dark' -- Set background to dark
-      -- vim.cmd [[colorscheme gruvbox]] -- Apply Gruvbox color scheme
-      setup_theme('gruvbox', { disable_background = true, style = 'dark', styles = { italic = false } })
-      ColorMyPencils(current_theme)
-    end,
-  },
-
-  -- TokyoNight theme
   {
     'folke/tokyonight.nvim',
     config = function()
@@ -72,8 +60,6 @@ return {
       ColorMyPencils(current_theme)
     end,
   },
-
-  -- Rose-Pine theme
   {
     'rose-pine/neovim',
     name = 'rose-pine',
