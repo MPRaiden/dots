@@ -24,7 +24,7 @@ return {
     opts = {},
     config = function()
       require('tokyonight').setup {
-        style = 'night', -- Choose style: "storm", "moon", "night", "day"
+        style = 'storm', -- Choose style: "storm", "moon", "night", "day"
         transparent = true, -- Disable setting the background color
         terminal_colors = true, -- Enable terminal colors in Neovim
         styles = {
