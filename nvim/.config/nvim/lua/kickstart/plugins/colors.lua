@@ -1,5 +1,4 @@
 function ColorMyPencils(color)
-  color = color or 'rose-pine-moon' -- Default to "rose-pine-moon"
   vim.cmd.colorscheme(color)
 
   -- Set background to transparent for main editor sections
@@ -24,7 +23,7 @@ return {
     opts = {},
     config = function()
       require('tokyonight').setup {
-        style = 'storm', -- Choose style: "storm", "moon", "night", "day"
+        style = 'night', -- Choose style: "storm", "moon", "night", "day"
         transparent = true, -- Disable setting the background color
         terminal_colors = true, -- Enable terminal colors in Neovim
         styles = {
@@ -34,22 +33,27 @@ return {
           floats = 'dark',
         },
       }
-      -- Uncomment the line below to use "tokyonight" theme by default
-      ColorMyPencils 'tokyonight'
+      ColorMyPencils 'tokyonight' -- Set default tokyonight theme
     end,
   },
 
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'ellisonleao/gruvbox.nvim',
+    lazy = false,
+    opts = {},
     config = function()
-      require('rose-pine').setup {
-        disable_background = true,
+      require('gruvbox').setup {
+        contrast = 'soft', -- Darkest variant of gruvbox
+        transparent_mode = true, -- Enable transparent background
+        terminal_colors = true, -- Enable terminal colors
         styles = {
-          italic = false,
+          comments = { italic = false },
+          keywords = { italic = false },
+          sidebars = 'dark',
+          floats = 'dark',
         },
       }
-      ColorMyPencils() -- Default to "rose-pine-moon"
+      ColorMyPencils 'gruvbox' -- Set default gruvbox theme
     end,
   },
 }
