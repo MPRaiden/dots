@@ -1,70 +1,55 @@
--- This file is pure pain
---
--- Centralized function to set highlights and colors
-local function ColorMyPencils(color)
+function ColorMyPencils(color)
+  color = color or 'rose-pine-moon' -- Default to "rose-pine-moon"
   vim.cmd.colorscheme(color)
 
-  -- Define highlight groups to make transparent
-  local highlight_groups = {
-    'Normal', -- Main editor background
-    'NormalFloat', -- Floating windows
-    'TelescopeNormal', -- Telescope background
-    'TelescopeBorder', -- Telescope borders
-    'TelescopePromptNormal',
-    'TelescopePromptBorder',
-    'TelescopeResultsNormal',
-    'TelescopeResultsBorder',
-    'TelescopePreviewNormal',
-    'TelescopePreviewBorder',
-    'TelescopePromptTitle',
-    'WhichKeyFloat', -- Which-Key background
-    'WhichKeyNormal',
-    'HarpoonWindow', -- Harpoon window background
-    'HarpoonBorder', -- Harpoon border
-    'HarpoonCurrentFile',
-    'SignColumn', -- Line numbers/sign column
-    'NotifyBackground', -- To handle Notify background warning
-  }
+  -- Set background to transparent for main editor sections
+  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 
-  -- Apply transparency to all groups
-  for _, group in ipairs(highlight_groups) do
-    if group == 'NotifyBackground' then
-      vim.api.nvim_set_hl(0, group, { bg = '#000000' }) -- NOTE: This if else is needed to avoid NotifyBackground warning
-    else
-      vim.api.nvim_set_hl(0, group, { bg = 'none' })
-    end
-  end
+  -- Match Telescope and WhichKey background to Normal background
+  vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'WhichKeyFloat', { link = 'Normal' })
 end
 
--- Theme setup helper function
-local function setup_theme(theme_name, options)
-  require(theme_name).setup(vim.tbl_extend('force', {
-    transparent = true,
-    terminal_colors = false,
-    styles = {
-      sidebars = 'dark',
-      floats = 'dark',
-    },
-  }, options or {}))
-end
-
--- Color schemes
 return {
+
   {
     'folke/tokyonight.nvim',
+    lazy = false,
+    opts = {},
     config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'night', styles = { italic = false } })
+      require('tokyonight').setup {
+        style = 'night', -- Choose style: "storm", "moon", "night", "day"
+        transparent = true, -- Disable setting the background color
+        terminal_colors = true, -- Enable terminal colors in Neovim
+        styles = {
+          comments = { italic = false },
+          keywords = { italic = false },
+          sidebars = 'dark',
+          floats = 'dark',
+        },
+      }
+      -- Uncomment the line below to use "tokyonight" theme by default
       ColorMyPencils 'tokyonight'
     end,
   },
-  -- {
-  --   'rose-pine/neovim',
-  --   name = 'rose-pine',
-  --   config = function()
-  --     setup_theme('rose-pine', { disable_background = true, style = 'main', styles = { italic = false } })
-  --     ColorMyPencils 'rose-pine'
-  --   end,
-  -- },
-}
 
--- vim: ts=2 sts=2 sw=2 et
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    config = function()
+      require('rose-pine').setup {
+        disable_background = true,
+        styles = {
+          italic = false,
+        },
+      }
+      ColorMyPencils() -- Default to "rose-pine-moon"
+    end,
+  },
+}
