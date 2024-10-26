@@ -49,14 +49,14 @@ local function setup_theme(theme_name, options)
 end
 
 -- Choose your theme here
-local current_theme = 'tokyonight' -- wezterm 3024 goes with nvim tokyonight / wezterm rose-pine goes with nvim rose-pine
+local current_theme = 'everforest' -- Default theme; change to 'everforest' or others as needed
 
 -- Color schemes
 return {
   {
     'folke/tokyonight.nvim',
     config = function()
-      setup_theme('tokyonight', { disable_background = true, style = 'night', styles = { italic = false } })
+      setup_theme('tokyonight', { disable_background = true, style = 'storm', styles = { italic = false } })
       ColorMyPencils(current_theme)
     end,
   },
@@ -66,6 +66,19 @@ return {
     config = function()
       setup_theme('rose-pine', { disable_background = true, style = 'main', styles = { italic = false } })
       ColorMyPencils(current_theme)
+    end,
+  },
+  {
+    'neanias/everforest-nvim',
+    name = 'everforest',
+    config = function()
+      require('everforest').setup {
+        background = 'hard', -- Choose 'hard' for darker tones
+        contrast = 'dark', -- Set contrast to dark
+        transparent_background_level = 2, -- Customize transparency level
+      }
+      vim.cmd.colorscheme 'everforest'
+      ColorMyPencils 'everforest'
     end,
   },
 }
