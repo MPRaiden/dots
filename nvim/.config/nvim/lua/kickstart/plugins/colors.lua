@@ -49,7 +49,7 @@ local function setup_theme(theme_name, options)
 end
 
 -- Choose your theme here
-local current_theme = 'tokyonight' -- Default theme; change to 'everforest' or others as needed
+local current_theme = 'tokyonight' -- wezterm 3024 - nvim: tokyonight / wezterm: rose-pine - nvim: rose-pine
 
 -- Color schemes
 return {
@@ -66,19 +66,6 @@ return {
     config = function()
       setup_theme('rose-pine', { disable_background = true, style = 'main', styles = { italic = false } })
       ColorMyPencils(current_theme)
-    end,
-  },
-  {
-    'neanias/everforest-nvim',
-    name = 'everforest',
-    config = function()
-      require('everforest').setup {
-        background = 'hard', -- Choose 'hard' for darker tones
-        contrast = 'soft', -- Set contrast to dark
-        transparent_background_level = 2, -- Customize transparency level
-      }
-      vim.cmd.colorscheme 'everforest'
-      ColorMyPencils 'everforest'
     end,
   },
 }
