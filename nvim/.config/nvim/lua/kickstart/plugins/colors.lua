@@ -13,7 +13,6 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'WhichKeyFloat', { link = 'Normal' })
-  vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' })
 end
 
 return {
@@ -35,26 +34,6 @@ return {
         },
       }
       ColorMyPencils 'tokyonight' -- Set default tokyonight theme
-    end,
-  },
-
-  {
-    'ellisonleao/gruvbox.nvim',
-    lazy = false,
-    opts = {},
-    config = function()
-      require('gruvbox').setup {
-        contrast = 'soft', -- Darkest variant of gruvbox
-        transparent_mode = true, -- Enable transparent background
-        terminal_colors = true, -- Enable terminal colors
-        styles = {
-          comments = { italic = false },
-          keywords = { italic = false },
-          sidebars = 'dark',
-          floats = 'dark',
-        },
-      }
-      ColorMyPencils 'gruvbox' -- Set default gruvbox theme
     end,
   },
 }
