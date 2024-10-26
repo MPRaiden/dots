@@ -13,6 +13,7 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'WhichKeyFloat', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' })
 end
 
 return {
