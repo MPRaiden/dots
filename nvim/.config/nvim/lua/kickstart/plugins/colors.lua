@@ -4,8 +4,9 @@ function ColorMyPencils(color)
   -- Set background to transparent for main editor sections
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
+  vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' }) -- fixes NotifyBackground warning
 
-  -- Match Telescope and WhichKey background to Normal background
+  -- Match plugin background to Normal background
   vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { link = 'Normal' })
@@ -13,6 +14,8 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'WhichKeyNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' }) -- left of line rows column
+  vim.api.nvim_set_hl(0, 'Pmenu', { link = 'Normal' }) -- lsp completion
 end
 
 return {
@@ -24,9 +27,9 @@ return {
     opts = {},
     config = function()
       require('tokyonight').setup {
-        style = 'night', -- Choose style: "storm", "moon", "night", "day"
-        transparent = true, -- Disable setting the background color
-        terminal_colors = true, -- Enable terminal colors in Neovim
+        style = 'night', -- night, moon, storm
+        transparent = true,
+        terminal_colors = true,
         styles = {
           comments = { italic = false },
           keywords = { italic = false },
@@ -34,7 +37,38 @@ return {
           floats = 'dark',
         },
       }
-      ColorMyPencils 'tokyonight' -- Set default tokyonight theme
+      ColorMyPencils 'tokyonight'
+    end,
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require('gruvbox').setup {
+        background = 'dark', -- dark, light
+        transparent_mode = true,
+        contrast = 'soft',
+        terminal_colors = true,
+        undercurl = true,
+        underline = true,
+        bold = true,
+        italic = {
+          strings = false,
+          emphasis = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
+        styles = {
+          comments = { italic = false },
+          keywords = { italic = false },
+          sidebars = 'dark',
+          floats = 'dark',
+        },
+      }
+      --ColorMyPencils 'gruvbox'
     end,
   },
 }
