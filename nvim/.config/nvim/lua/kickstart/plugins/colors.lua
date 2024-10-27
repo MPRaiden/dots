@@ -40,35 +40,4 @@ return {
       ColorMyPencils 'tokyonight'
     end,
   },
-  {
-    'ellisonleao/gruvbox.nvim',
-    lazy = false,
-    priority = 1000,
-    opts = {},
-    config = function()
-      require('gruvbox').setup {
-        background = 'dark', -- dark, light
-        transparent_mode = true,
-        contrast = 'soft',
-        terminal_colors = true,
-        undercurl = true,
-        underline = true,
-        bold = true,
-        italic = {
-          strings = false,
-          emphasis = false,
-          comments = false,
-          operators = false,
-          folds = false,
-        },
-        styles = {
-          comments = { italic = false },
-          keywords = { italic = false },
-          sidebars = 'dark',
-          floats = 'dark',
-        },
-      }
-      --ColorMyPencils 'gruvbox'
-    end,
-  },
 }
