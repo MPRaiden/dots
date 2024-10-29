@@ -8,6 +8,7 @@ return {
         rust = { 'rustfmt', lsp_format = 'fallback' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         sql = { 'sqlfmt' },
+        -- yaml = { 'yamlfmt' }, -- TODO: Investigate how to customize this (current formatting doesn't leave spaces between stages)
       },
       format_on_save = {
         timeout_ms = 500,
