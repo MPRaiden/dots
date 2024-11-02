@@ -23,7 +23,32 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
 end
 
--- Plugin setup with the new color scheme
+-- tokyonight
+-- return {
+--
+--   {
+--     'folke/tokyonight.nvim',
+--     lazy = false,
+--     priority = 1000,
+--     opts = {},
+--     config = function()
+--       require('tokyonight').setup {
+--         style = 'night', -- night, moon, storm
+--         transparent = true,
+--         terminal_colors = true,
+--         styles = {
+--           comments = { italic = false },
+--           keywords = { italic = false },
+--           sidebars = 'dark',
+--           floats = 'dark',
+--         },
+--       }
+--       ColorMyPencils 'tokyonight'
+--     end,
+--   },
+-- }
+
+-- gruvbuddy
 return {
   {
     'tjdevries/colorbuddy.nvim',
