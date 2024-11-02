@@ -48,7 +48,7 @@ vim.opt.splitbelow = true
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.opt.list = false
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live, as you type! (try it, open cmdline, type %/vim/nvim) -> this replaces all instances of "vim" string with "nvim" and you get to see the preview of it for the file
