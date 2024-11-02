@@ -4,7 +4,7 @@
 --  For more options, you can see `:help option-list`
 
 -- Make cursor default from terminal setting (makes cursor always a block even in Insert mode)
-vim.opt.guicursor = '' -- also enables blinking block in nvim
+-- vim.opt.guicursor = '' -- also enables blinking block in nvim
 
 -- Make line numbers default
 vim.opt.number = true
