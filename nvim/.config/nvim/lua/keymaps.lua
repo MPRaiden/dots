@@ -16,10 +16,6 @@ vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }
 vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
--- execute file/line
-vim.keymap.set('n', '<leader><leader>x', '<cmd>source %<CR>', { desc = 'Execute the current file' })
-vim.keymap.set('n', '<leader>x', '<cmd>.lua<CR>', { desc = 'Execute the current line' })
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
