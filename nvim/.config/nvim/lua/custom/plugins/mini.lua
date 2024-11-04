@@ -4,6 +4,7 @@ return {
     config = function()
       require('mini.ai').setup()
       require('mini.surround').setup()
+      require('mini.pairs').setup()
 
       local statusline = require 'mini.statusline'
       -- set use_icons to true if you have a Nerd Font
