@@ -55,7 +55,6 @@ return {
       -- Custom color definitions and background
       Color.new('background', '#111111')
       Color.new('gray0', '#111111')
-      --Color.new('brightComment', '#c678dd') -- Custom color for brighter comments
 
       -- Group settings for various syntax elements
       Group.new('Normal', c.white, c.gray0)
