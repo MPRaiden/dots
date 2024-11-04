@@ -1,33 +1,20 @@
 -- Define the ColorMyPencils function to apply highlights and transparency
 function ColorMyPencils(color)
-  local success, _ = pcall(vim.cmd.colorscheme, color)
-  if not success then
-    vim.notify('Colorscheme ' .. color .. ' not found!', vim.log.levels.WARN)
-    return
-  end
+  vim.cmd.colorscheme(color)
 
+  -- sets transparency (terminal color) for gruvbuddy (tokyonight can do without)
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' })
 
   -- Additional highlights for Telescope and other UI components
   vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = 'Normal' })
-  vim.api.nvim_set_hl(0, 'TelescopePromptNormal', { link = 'Normal' })
-  vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = 'Normal' })
-  vim.api.nvim_set_hl(0, 'TelescopeResultsNormal', { link = 'Normal' })
-  vim.api.nvim_set_hl(0, 'TelescopeResultsBorder', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'WhichKeyNormal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'Pmenu', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = '#000000', fg = '#4c4c4c' })
-  vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
-
-  -- Highlight settings specifically for SQL comments
-  vim.api.nvim_set_hl(0, 'sqlComment', { fg = '#c678dd', italic = true }) -- Custom color for SQL comments
 end
 
--- tokyonight setup with comment style for SQL
+-- tokyonight
 return {
   -- {
   --   'folke/tokyonight.nvim',
@@ -40,7 +27,7 @@ return {
   --       transparent = true,
   --       terminal_colors = true,
   --       styles = {
-  --         comments = { fg = '#c678dd', italic = true }, -- Make comments more visible
+  --         --comments = { fg = '#c678dd', italic = true }, -- Make comments more visible
   --         keywords = { italic = false },
   --         sidebars = 'dark',
   --         floats = 'dark',
@@ -50,7 +37,7 @@ return {
   --   end,
   -- },
 
-  -- gruvbuddy setup with a distinct SQL comment color
+  -- gruvbuddy
   {
     'tjdevries/colorbuddy.nvim',
     lazy = false,
@@ -68,7 +55,7 @@ return {
       -- Custom color definitions and background
       Color.new('background', '#111111')
       Color.new('gray0', '#111111')
-      Color.new('brightComment', '#c678dd') -- Custom color for brighter comments
+      --Color.new('brightComment', '#c678dd') -- Custom color for brighter comments
 
       -- Group settings for various syntax elements
       Group.new('Normal', c.white, c.gray0)
@@ -80,10 +67,7 @@ return {
       Group.new('@variable', c.white, nil)
       Group.new('@variable.builtin', c.purple:light():light(), g.Normal)
 
-      -- SQL-specific comment style
-      Group.new('sqlComment', c.brightComment, nil, s.italic)
-
-      -- Apply transparency and highlights
+      -- Apply theme
       ColorMyPencils 'gruvbuddy'
     end,
   },
