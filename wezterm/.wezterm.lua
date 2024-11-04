@@ -1,6 +1,6 @@
 local wezterm = require("wezterm")
 local config = {}
-local act = wezterm.action
+-- local act = wezterm.action
 
 config = {
 	automatically_reload_config = true,
@@ -12,8 +12,8 @@ config = {
 	font_size = 10,
 	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "DemiBold" }),
 	enable_tab_bar = false,
-	use_fancy_tab_bar = false, -- no effect if enable_tab_bar is set to false
-	window_background_opacity = 1, -- transparency (from 0 to 1)
+	use_fancy_tab_bar = false,
+	window_background_opacity = 1,
 	scrollback_lines = 3000,
 	default_workspace = "main",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, -- disables ligatures
