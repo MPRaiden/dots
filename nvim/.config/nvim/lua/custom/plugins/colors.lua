@@ -1,10 +1,8 @@
--- Define the ColorMyPencils function to apply highlights and transparency
 function ColorMyPencils(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
   vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-  --vim.api.nvim_set_hl(0, 'NotifyBackground', { bg = '#000000' })
 
   -- Additional highlights for Telescope and other UI components
   vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })
@@ -19,10 +17,23 @@ function ColorMyPencils(color)
 end
 
 return {
+  -- gruvbuddy
+  {
+    'tjdevries/colorbuddy.nvim',
+
+    lazy = false,
+    priority = 1000,
+    enabled = true,
+    config = function()
+      -- Apply theme
+      ColorMyPencils 'gruvbuddy'
+    end,
+  },
   {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000,
+    enabled = false,
     opts = {},
     config = function()
       require('tokyonight').setup {

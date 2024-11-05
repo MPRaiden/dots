@@ -4,6 +4,7 @@ local config = {}
 
 config = {
 	automatically_reload_config = true,
+	italic = false,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock",
 	color_scheme = "3024 (base16)", -- nice options: "3024 (base16)", "rose-pine", "tokyonight_night"
