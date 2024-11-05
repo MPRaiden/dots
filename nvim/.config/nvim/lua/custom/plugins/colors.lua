@@ -14,6 +14,11 @@ function ColorMyPencils(color)
   vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = '#000000', fg = '#4c4c4c' })
+
+  -- Reduce brightness for yellow-toned highlights
+  if color == 'gruvbuddy' then
+    vim.api.nvim_set_hl(0, 'Function', { fg = '#d8a657' }) -- Slightly muted yellow
+  end
 end
 
 return {
