@@ -53,7 +53,7 @@ config = {
 			mods = "LEADER",
 			action = wezterm.action.SplitPane({
 				direction = "Right",
-				size = { Percent = 50 },
+				size = { Percent = 30 },
 			}),
 		},
 		{
