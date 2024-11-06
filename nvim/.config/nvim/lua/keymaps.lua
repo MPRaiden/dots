@@ -1,5 +1,6 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+local set = vim.keymap.set
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -15,6 +16,12 @@ vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
 vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
 vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
+
+-- These mappings control the size of splits (height/width)
+set('n', '<M-,>', '<c-w>5<')
+set('n', '<M-.>', '<c-w>5>')
+set('n', '<M-t>', '<C-W>+')
+set('n', '<M-s>', '<C-W>-')
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

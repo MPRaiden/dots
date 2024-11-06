@@ -13,6 +13,7 @@ require 'options'
 -- [[ Basic Keymaps ]]
 require 'keymaps'
 
+-- [[ Terminal split ]] -- still unsure how usefull this one is
 require 'terminal'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
