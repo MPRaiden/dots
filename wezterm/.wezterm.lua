@@ -77,16 +77,17 @@ config = {
 		{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
 		{ key = "s", mods = "LEADER", action = act.ShowTabNavigator },
 
-		{ mods = "CTRL", key = "0", action = act.ResetFontSize },
-		{ mods = "CTRL", key = "1", action = act.ActivateTab(0) },
-		{ mods = "CTRL", key = "2", action = act.ActivateTab(1) },
-		{ mods = "CTRL", key = "3", action = act.ActivateTab(2) },
-		{ mods = "CTRL", key = "4", action = act.ActivateTab(3) },
-		{ mods = "CTRL", key = "5", action = act.ActivateTab(4) },
-		{ mods = "CTRL", key = "6", action = act.ActivateTab(5) },
-		{ mods = "CTRL", key = "7", action = act.ActivateTab(6) },
-		{ mods = "CTRL", key = "8", action = act.ActivateTab(7) },
-		{ mods = "CTRL", key = "9", action = act.ActivateTab(8) },
+		-- not sure if this is necessary since I have above option, leaving commented out for now
+		-- { mods = "CTRL", key = "0", action = act.ResetFontSize },
+		-- { mods = "CTRL", key = "1", action = act.ActivateTab(0) },
+		-- { mods = "CTRL", key = "2", action = act.ActivateTab(1) },
+		-- { mods = "CTRL", key = "3", action = act.ActivateTab(2) },
+		-- { mods = "CTRL", key = "4", action = act.ActivateTab(3) },
+		-- { mods = "CTRL", key = "5", action = act.ActivateTab(4) },
+		-- { mods = "CTRL", key = "6", action = act.ActivateTab(5) },
+		-- { mods = "CTRL", key = "7", action = act.ActivateTab(6) },
+		-- { mods = "CTRL", key = "8", action = act.ActivateTab(7) },
+		-- { mods = "CTRL", key = "9", action = act.ActivateTab(8) },
 
 		{
 			-- rename tab
@@ -106,8 +107,8 @@ config = {
 			}),
 		},
 
-		-- Lastly, workspace
-		{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
+		-- workspace -- don't think I need this so leaving commented out for now
+		--{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) },
 	},
 }
 
