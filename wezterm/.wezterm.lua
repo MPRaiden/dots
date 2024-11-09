@@ -25,92 +25,13 @@ config = {
 		bottom = 0,
 	},
 
-	-- Define font rules here
+	-- Define font rules here (but mainly disable italics as they annoy me)
 	font_rules = {
 		{
 			italic = true,
 			font = wezterm.font("JetBrains Mono Nerd Font", { italic = false }),
 		},
 	},
-
-	-- Dim inactive panes
-	-- inactive_pane_hsb = {
-	-- 	saturation = 0.24,
-	-- 	brightness = 0.5,
-	-- },
-
-	-- Keys
-	-- leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 },
-	--
-	-- keys = {
-	-- 	-- Send C-a when pressing C-a twice
-	-- 	{ key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
-	-- 	{ key = "c", mods = "LEADER", action = act.ActivateCopyMode },
-	-- 	{ key = "phys:Space", mods = "LEADER", action = act.ActivateCommandPalette },
-	--
-	-- 	-- 	-- Pane keybindings
-	-- 	{
-	-- 		key = "v",
-	-- 		mods = "LEADER",
-	-- 		action = wezterm.action.SplitPane({
-	-- 			direction = "Right",
-	-- 			size = { Percent = 30 },
-	-- 		}),
-	-- 	},
-	-- 	{
-	-- 		key = "-",
-	-- 		mods = "LEADER",
-	-- 		action = wezterm.action.SplitPane({
-	-- 			direction = "Down",
-	-- 			size = { Percent = 25 },
-	-- 		}),
-	-- 	},
-	-- 	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-	-- 	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
-	-- 	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-	-- 	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-	-- 	{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
-	-- 	{ key = "o", mods = "LEADER", action = act.RotatePanes("Clockwise") },
-	--
-	-- 	-- 	-- Tab keybindings (navigate tabs)
-	-- 	{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
-	-- 	{ key = "[", mods = "CTRL", action = act.ActivateTabRelative(-1) },
-	-- 	{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
-	-- 	{ key = "s", mods = "LEADER", action = act.ShowTabNavigator },
-
-	-- not sure if this is necessary since I have above option, leaving commented out for now
-	-- { mods = "CTRL", key = "0", action = act.ResetFontSize },
-	-- { mods = "CTRL", key = "1", action = act.ActivateTab(0) },
-	-- { mods = "CTRL", key = "2", action = act.ActivateTab(1) },
-	-- { mods = "CTRL", key = "3", action = act.ActivateTab(2) },
-	-- { mods = "CTRL", key = "4", action = act.ActivateTab(3) },
-	-- { mods = "CTRL", key = "5", action = act.ActivateTab(4) },
-	-- { mods = "CTRL", key = "6", action = act.ActivateTab(5) },
-	-- { mods = "CTRL", key = "7", action = act.ActivateTab(6) },
-	-- { mods = "CTRL", key = "8", action = act.ActivateTab(7) },
-	-- { mods = "CTRL", key = "9", action = act.ActivateTab(8) },
-
-	-- {
-	-- 	-- rename tab
-	-- 	key = "e",
-	-- 	mods = "LEADER",
-	-- 	action = act.PromptInputLine({
-	-- 		description = wezterm.format({
-	-- 			{ Attribute = { Intensity = "Bold" } },
-	-- 			{ Foreground = { AnsiColor = "Fuchsia" } },
-	-- 			{ Text = "Renaming Tab Title...:" },
-	-- 		}),
-	-- 		action = wezterm.action_callback(function(window, pane, line)
-	-- 			if line then
-	-- 				window:active_tab():set_title(line)
-	-- 			end
-	-- 		end),
-	-- 	}),
-	-- },
-	--
-	-- workspace -- don't think I need this so leaving commented out for now
-	--{ key = "w", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" })-- },
-	--},
 }
 
 return config

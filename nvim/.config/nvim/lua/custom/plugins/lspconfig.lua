@@ -49,12 +49,6 @@ return {
             },
           },
         },
-        rust_analyzer = {},
-        lua_ls = {
-          server_capabilities = {
-            semanticTokensProvider = vim.NIL,
-          },
-        },
       }
 
       require('mason').setup()
