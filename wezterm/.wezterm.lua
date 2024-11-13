@@ -1,6 +1,5 @@
 local wezterm = require("wezterm")
 local config = {}
-local act = wezterm.action
 
 config = {
 	automatically_reload_config = true,
