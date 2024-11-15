@@ -8,7 +8,7 @@ config = {
 	color_scheme = "3024 (base16)", -- nice options: "3024 (base16)", "rose-pine", "tokyonight_night"
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
-	font_size = 10,
+	font_size = 11,
 	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "DemiBold" }),
 	enable_tab_bar = false,
 	use_fancy_tab_bar = false,
