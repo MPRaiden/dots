@@ -7,6 +7,7 @@ return {
         python = { 'black' },
         rust = { 'rustfmt' },
         javascript = { 'prettierd' },
+        golang = { 'gofumpt' },
         sql = { 'sqlfmt' },
         -- yaml = { 'yamlfmt' }, -- TODO: Investigate how to customize this (current formatting doesn't leave spaces between stages)
       },
