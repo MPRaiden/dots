@@ -1,4 +1,4 @@
-function ColorMyPencils(color)
+function Color(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
@@ -29,7 +29,7 @@ return {
     priority = 1000,
     enabled = true,
     config = function()
-      ColorMyPencils 'gruvbuddy'
+      Color 'gruvbuddy'
     end,
   },
   {
@@ -44,7 +44,7 @@ return {
         transparent = true,
         terminal_colors = true,
       }
-      ColorMyPencils 'tokyonight'
+      Color 'tokyonight'
     end,
   },
 }
