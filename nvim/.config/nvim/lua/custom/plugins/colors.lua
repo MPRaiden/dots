@@ -22,25 +22,6 @@ function ColorMyPencils(color)
   end
 end
 
-function ColorMyRose()
-  vim.cmd.colorscheme 'rose-pine'
-
-  -- Apply highlights with a slight delay
-  vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })
-  vim.api.nvim_set_hl(0, 'NormalNC', { bg = 'none' }) -- Inactive windows
-  vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
-
-  vim.api.nvim_set_hl(0, 'TelescopeNormal', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'WhichKeyNormal', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'SignColumn', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'Pmenu', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'TroubleNormal', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'CmpItemMenu', { bg = '#000000' })
-  vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
-  vim.api.nvim_set_hl(0, 'LineNr', { bg = '#000000', fg = '#4c4c4c' })
-end
-
 return {
   {
     'tjdevries/colorbuddy.nvim',
@@ -62,23 +43,8 @@ return {
         style = 'night',
         transparent = true,
         terminal_colors = true,
-        styles = {
-          italic = false,
-          sidebars = 'dark',
-          floats = 'dark',
-        },
       }
       ColorMyPencils 'tokyonight'
-    end,
-  },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    lazy = false,
-    priority = 1000,
-    enabled = false,
-    config = function()
-      ColorMyRose()
     end,
   },
 }
