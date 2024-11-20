@@ -18,12 +18,20 @@ return {
           ['<C-k>'] = false,
           ['<C-j>'] = false,
           ['<M-h>'] = 'actions.select_split',
+          ['q'] = 'actions.close',
         },
         win_options = {
           winbar = '%{v:lua.CustomOilBar()}',
+          wrap = true,
         },
         view_options = {
+          natural_order = true,
           show_hidden = true,
+        },
+        float = {
+          padding = 2,
+          max_width = 90,
+          max_height = 20,
         },
       }
 
