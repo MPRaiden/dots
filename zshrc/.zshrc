@@ -76,3 +76,6 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 # Add tmux sessionized path
 export PATH="$HOME/scripts:$PATH"
+
+export EDITOR="nvim"
+export VISUAL="nvim"
