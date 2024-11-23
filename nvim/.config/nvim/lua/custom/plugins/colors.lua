@@ -2,6 +2,7 @@ function Color(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })

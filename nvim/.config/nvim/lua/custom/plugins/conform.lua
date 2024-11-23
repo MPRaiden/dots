@@ -9,7 +9,7 @@ return {
         javascript = { 'prettierd' },
         golang = { 'gofumpt' },
         sql = { 'sqlfmt' },
-        -- yaml = { 'yamlfmt' }, -- TODO: Investigate how to customize this (current formatting doesn't leave spaces between stages)
+        yaml = { 'yamlfmt' }, -- TODO: Investigate how to customize this (current formatting doesn't leave spaces between stages)
       },
       format_on_save = {
         timeout_ms = 500,
