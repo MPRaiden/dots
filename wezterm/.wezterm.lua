@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config = {
-	color_scheme = "rose-pine",
+	color_scheme = "3024 (base64)",
 	automatically_reload_config = true,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock",
@@ -31,8 +31,6 @@ config = {
 		},
 	},
 	colors = {
-		-- foreground = "#FFFFFF", -- White text
-		-- background = "#000000", -- Black background
 		cursor_bg = "#FFFFFF", -- White cursor background
 		cursor_fg = "#000000", -- Black cursor foreground (inverse)
 		cursor_border = "#FFFFFF", -- White cursor border
