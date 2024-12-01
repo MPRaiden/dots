@@ -26,4 +26,26 @@ return {
       Color 'gruvbuddy'
     end,
   },
+  {
+    'rose-pine/neovim',
+    as = 'rose-pine',
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('rose-pine').setup {
+        variant = 'main', -- auto, main, moon, or dawn
+        dark_variant = 'main', -- main, moon, or dawn
+        dim_inactive_windows = true,
+        enable = {
+          terminal = true,
+        },
+        styles = {
+          bold = false,
+          transparency = true,
+        },
+      }
+      Color 'rose-pine'
+    end,
+  },
 }
