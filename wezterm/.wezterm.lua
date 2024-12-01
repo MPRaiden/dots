@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config = {
-	color_scheme = "rose-pine", -- 3024 (base64), rose-pine,
+	color_scheme = "3024 (base64)",
 	automatically_reload_config = true,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock",
