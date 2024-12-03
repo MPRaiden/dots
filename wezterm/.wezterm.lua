@@ -17,7 +17,7 @@ config = {
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, -- disables ligatures
 	max_fps = 120,
 	window_padding = {
-		left = 10,
+		left = 20,
 		right = 10,
 		top = 20,
 		bottom = 0,
