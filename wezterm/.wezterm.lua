@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config = {
-	color_scheme = "3024 (base64)",
+	color_scheme = "Apathy (base16)",
 	automatically_reload_config = true,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock",
@@ -17,9 +17,9 @@ config = {
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" }, -- disables ligatures
 	max_fps = 120,
 	window_padding = {
-		left = 10,
-		right = 10,
-		top = 10,
+		left = 15,
+		right = 15,
+		top = 15,
 		bottom = 0,
 	},
 
@@ -31,6 +31,7 @@ config = {
 		},
 	},
 	colors = {
+		background = "black",
 		cursor_bg = "#FFFFFF", -- White cursor background
 		cursor_fg = "#000000", -- Black cursor foreground (inverse)
 		cursor_border = "#FFFFFF", -- White cursor border
