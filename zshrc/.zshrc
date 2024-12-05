@@ -76,6 +76,8 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 # Add tmux sessionized path
 export PATH="$HOME/scripts:$PATH"
+# Add tmux plugin manager path
+export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 
 export EDITOR="nvim"
 export VISUAL="nvim"
