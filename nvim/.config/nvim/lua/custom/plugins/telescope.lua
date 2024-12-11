@@ -31,7 +31,7 @@ return {
         },
         pickers = {
           find_files = {
-            hidden = true, -- Show hidden files
+            hidden = false, -- Show hidden files
             -- no_ignore = true, -- Uncomment if you also want to include ignored files
           },
         },
