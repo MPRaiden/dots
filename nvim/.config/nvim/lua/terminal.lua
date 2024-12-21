@@ -1,32 +1,58 @@
--- Set local settings for terminal buffers
-local set = vim.opt_local
+vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>')
+vim.keymap.set('n', '<leader>t', ':Floaterminal<CR>', { noremap = true, silent = true })
 
--- Create an autocommand group for terminal settings
-local term_group = vim.api.nvim_create_augroup('custom_term_open', { clear = true })
+local state = {
+  floating = {
+    buf = -1,
+    win = -1,
+  },
+}
 
--- Set terminal buffer options when a terminal is opened
-vim.api.nvim_create_autocmd('TermOpen', {
-  group = term_group,
-  callback = function()
-    set.number = false
-    set.relativenumber = false
-    set.scrolloff = 0
+local function create_floating_window(opts)
+  opts = opts or {}
+  local width = opts.width or math.floor(vim.o.columns * 0.8)
+  local height = opts.height or math.floor(vim.o.lines * 0.8)
 
-    -- Set the buffer file type to terminal
-    vim.bo.filetype = 'terminal'
-  end,
-})
+  -- Calculate the position to center the window
+  local col = math.floor((vim.o.columns - width) / 2)
+  local row = math.floor((vim.o.lines - height) / 2)
 
--- Easily hit escape in terminal mode.
-vim.keymap.set('t', '<esc><esc>', '<c-\\><c-n>', { noremap = true, silent = true }) --NOTE: to future self, pressing "tt" creates an ordinary split based on config, only after pressin "a" do you enter into TERMINAL mode in that split, after you do your commands, to exit, press "Esc" twice, you will notice you're out of TERMINAL mode and in NORMAL mode again, now standard vim rules apply againt
+  -- Create a buffer
+  local buf = nil
+  if vim.api.nvim_buf_is_valid(opts.buf) then
+    buf = opts.buf
+  else
+    buf = vim.api.nvim_create_buf(false, true) -- No file, scratch buffer
+  end
 
--- Open a terminal at the bottom of the screen with a fixed height.
-vim.keymap.set('n', 'tt', function()
-  print 'Terminal mapping triggered' -- Debug message
+  -- Define window configuration
+  local win_config = {
+    relative = 'editor',
+    width = width,
+    height = height,
+    col = col,
+    row = row,
+    style = 'minimal', -- No borders or extra UI elements
+    border = 'rounded',
+  }
 
-  vim.cmd 'new'
-  vim.cmd 'wincmd J'
-  vim.api.nvim_win_set_height(0, 12)
-  vim.wo.winfixheight = true
-  vim.cmd 'term'
-end, { noremap = true, silent = true })
+  -- Create the floating window
+  local win = vim.api.nvim_open_win(buf, true, win_config)
+
+  return { buf = buf, win = win }
+end
+
+local toggle_terminal = function()
+  if not vim.api.nvim_win_is_valid(state.floating.win) then
+    state.floating = create_floating_window { buf = state.floating.buf }
+    if vim.bo[state.floating.buf].buftype ~= 'terminal' then
+      vim.cmd.terminal()
+    end
+  else
+    vim.api.nvim_win_hide(state.floating.win)
+  end
+end
+
+-- Example usage:
+-- Create a floating window with default dimensions
+vim.api.nvim_create_user_command('Floaterminal', toggle_terminal, {})
