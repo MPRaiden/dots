@@ -13,6 +13,7 @@ function Color(color)
   vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
   vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none', fg = '#4c4c4c' })
   vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#161a2e' })
+  vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#1790eb', bg = 'none' })
 end
 
 return {
