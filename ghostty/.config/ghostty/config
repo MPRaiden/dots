@@ -1,17 +1,20 @@
 background = black
-# font-family = MesloLGS Nerd Font Mono Bold
-font-family = Cascadia Code
+font-family = MesloLGS Nerd Font Mono Bold
 font-style-italic = false
 font-style-bold-italic = false
 font-style-bold = true
 font-size = 11
+
 # theme options: Monokai Pro Machine, rose-pine-moon
 theme = Monokai Pro Machine
+
 cursor-color = white
 cursor-style-blink = true
 mouse-hide-while-typing = true
+
 background-opacity = 1
 background-blur-radius = 20
+
 shell-integration-features = no-cursor,no-sudo,title
 
 copy-on-select = true
@@ -21,11 +24,11 @@ window-save-state = always
 window-padding-x = 10
 window-padding-y = 5
 window-decoration = false
-copy-on-select = true
-window-save-state = always
+# window-save-state = always # only supported on mac
+
 quick-terminal-position = bottom
 
 keybind = ctrl+a>t=new_tab
 keybind = ctrl+]=next_tab
 keybind = ctrl+[=previous_tab
-keybind = global:ctrl+t=toggle_quick_terminal
+keybind = global:ctrl+n=toggle_quick_terminal
