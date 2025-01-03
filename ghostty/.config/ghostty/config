@@ -23,7 +23,8 @@ window-padding-balance = true
 window-save-state = always
 window-padding-x = 10
 window-padding-y = 5
-window-decoration = false
+# window-decoration = false
+window-theme = ghostty
 # window-save-state = always # only supported on mac
 
 quick-terminal-position = bottom
