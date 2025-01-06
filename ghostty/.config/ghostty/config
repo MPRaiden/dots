@@ -19,15 +19,15 @@ shell-integration-features = no-cursor,no-sudo,title
 copy-on-select = true
 
 window-padding-balance = true 
-window-save-state = always
 window-padding-x = 10
 window-padding-y = 5
 window-theme = ghostty
 # window-save-state = always # only supported on mac
 
-quick-terminal-position = bottom
 
 keybind = ctrl+a>t=new_tab
 keybind = ctrl+]=next_tab
 keybind = ctrl+[=previous_tab
-keybind = global:ctrl+n=toggle_quick_terminal
+
+# keybind = global:ctrl+n=toggle_quick_terminal # does not work
+quick-terminal-position = bottom
