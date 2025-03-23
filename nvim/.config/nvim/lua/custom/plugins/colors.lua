@@ -19,11 +19,20 @@ end
 return {
   {
     'tjdevries/colorbuddy.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       Color 'gruvbuddy'
+    end,
+  },
+  {
+    'folke/tokyonight.nvim',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 }
