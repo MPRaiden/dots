@@ -1,13 +1,13 @@
- background = black
+background = black
 font-family = MesloLGS Nerd Font Mono Bold
 font-style-italic = false
 font-style-bold-italic = false
 font-style-bold = true
 font-size = 11
 
-theme = Monokai Pro Machine
+# theme = Monokai Pro Machine
 # theme = tokyonight_night
-# theme = rose-pine
+theme = rose-pine
 
 cursor-color = white
 cursor-style-blink = true
