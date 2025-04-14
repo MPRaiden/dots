@@ -19,7 +19,7 @@ end
 return {
   {
     'tjdevries/colorbuddy.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
@@ -37,7 +37,7 @@ return {
   },
   {
     'rose-pine/neovim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     name = 'rose-pine',
