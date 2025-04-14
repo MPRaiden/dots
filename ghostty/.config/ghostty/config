@@ -1,4 +1,4 @@
-background = black
+# background = black
 font-family = MesloLGS Nerd Font Mono Bold
 font-style-italic = false
 font-style-bold-italic = false
