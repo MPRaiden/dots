@@ -13,8 +13,10 @@ cursor-color = white
 cursor-style-blink = true
 mouse-hide-while-typing = true
 
-background-opacity = 1
-background-blur-radius = 20
+gtk-tabs-location = hidden
+
+background-opacity = 0.9
+#  background-blur-radius = 20
 
 shell-integration-features = no-cursor,no-sudo,title
 
@@ -25,7 +27,6 @@ window-padding-x = 10
 window-padding-y = 5
 window-theme = ghostty
 # window-save-state = always # only supported on mac
-
 
 keybind = ctrl+a>t=new_tab
 keybind = ctrl+]=next_tab
