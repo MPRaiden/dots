@@ -1,4 +1,4 @@
-# background = black
+background = black
 font-family = MesloLGS Nerd Font Mono Bold
 font-style-italic = false
 font-style-bold-italic = false
@@ -16,7 +16,7 @@ mouse-hide-while-typing = true
 gtk-tabs-location = hidden
 
 background-opacity = 0.9
-#  background-blur-radius = 20
+background-blur-radius = 20
 
 shell-integration-features = no-cursor,no-sudo,title
 
