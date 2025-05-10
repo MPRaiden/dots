@@ -22,7 +22,6 @@ config = {
 	enable_wayland = false,
 	color_scheme = "rose-pine",
 	automatically_reload_config = true,
-	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock",
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
@@ -62,24 +61,7 @@ config = {
 		{ key = "x", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
 		{ key = "[", mods = "CTRL", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
-		{ key = "s", mods = "LEADER", action = act.ShowTabNavigator },
-		{ key = "w", mods = "LEADER", action = act.SwitchToWorkspace },
-		{
-			key = "e",
-			mods = "LEADER",
-			action = act.PromptInputLine({
-				description = wezterm.format({
-					{ Attribute = { Intensity = "Bold" } },
-					{ Foreground = { AnsiColor = "Fuchsia" } },
-					{ Text = "Renaming Tab Title...:" },
-				}),
-				action = wezterm.action_callback(function(window, pane, line)
-					if line then
-						window:active_tab():set_title(line)
-					end
-				end),
-			}),
-		},
+		{ key = "s", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Workspace switcher
 		{
 			key = "f",
 			mods = "LEADER",
