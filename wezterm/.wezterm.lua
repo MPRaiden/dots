@@ -28,7 +28,7 @@ config = {
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
 	font_size = 12,
-	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "DemiBold" }),
+	font = wezterm.font("JetBrains Mono Nerd Font"),
 	enable_tab_bar = false,
 	use_fancy_tab_bar = false,
 	window_background_opacity = 0.9,
