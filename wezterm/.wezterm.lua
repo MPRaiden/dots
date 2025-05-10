@@ -3,7 +3,8 @@ local config = {}
 local act = wezterm.action
 
 config = {
-	color_scheme = "Apathy (base16)",
+	enable_wayland = false,
+	color_scheme = "rose-pine",
 	automatically_reload_config = true,
 	window_close_confirmation = "AlwaysPrompt",
 	default_cursor_style = "BlinkingBlock",
