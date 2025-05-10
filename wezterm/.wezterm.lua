@@ -22,6 +22,8 @@ config = {
 	enable_wayland = false,
 	color_scheme = "rose-pine",
 	automatically_reload_config = true,
+	window_close_confirmation = "NeverPrompt", -- No prompts for closing windows/tabs
+	clean_exit_codes = { 0, 1, 130 }, -- Treat shell exits as closable
 	default_cursor_style = "BlinkingBlock",
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
@@ -62,6 +64,7 @@ config = {
 		{ key = "[", mods = "CTRL", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
 		{ key = "s", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Workspace switcher
+		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) }, -- Close all panes
 		{
 			key = "f",
 			mods = "LEADER",
