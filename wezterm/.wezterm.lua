@@ -2,23 +2,22 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 
--- Adjust Lua module path (if still needed for symlinks)
-package.path = package.path .. ";" .. wezterm.config_dir .. "/?.lua"
+-- Adjust Lua module path to include home directory for sessionizer.lua
+package.path = package.path .. ";/home/mpr/?.lua"
 
 -- Load the sessionizer module
 local sessionizer = require("sessionizer")
 
 -- Configure the sessionizer
 sessionizer.setup({
-	fd = "/usr/bin/fd", -- Use `/usr/bin/fdfind` if necessary
 	paths = {
-		"~/playground",
-		"~/dots",
-		-- Add valid paths containing directories
+		"/home/mpr/playground",
+		"/home/mpr",
+		"/home/mpr/dots",
+		-- Add more paths as needed
 	},
 })
 
--- Your existing config (unchanged)
 config = {
 	enable_wayland = false,
 	color_scheme = "rose-pine",
@@ -63,18 +62,36 @@ config = {
 		{ key = "x", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
 		{ key = "[", mods = "CTRL", action = act.ActivateTabRelative(-1) },
 		{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
+		{ key = "s", mods = "LEADER", action = act.ShowTabNavigator },
+		{ key = "w", mods = "LEADER", action = act.SwitchToWorkspace },
 		{
-			key = "s",
+			key = "e",
+			mods = "LEADER",
+			action = act.PromptInputLine({
+				description = wezterm.format({
+					{ Attribute = { Intensity = "Bold" } },
+					{ Foreground = { AnsiColor = "Fuchsia" } },
+					{ Text = "Renaming Tab Title...:" },
+				}),
+				action = wezterm.action_callback(function(window, pane, line)
+					if line then
+						window:active_tab():set_title(line)
+					end
+				end),
+			}),
+		},
+		{
+			key = "f",
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				sessionizer.toggle(window, pane)
 			end),
 		},
 		{
-			key = "S",
+			key = "F",
 			mods = "LEADER|SHIFT",
 			action = wezterm.action_callback(function(window, pane)
-				sessionizer.resetCacheAndToggle(window, pane)
+				sessionizer.reset_cache_and_toggle(window, pane)
 			end),
 		},
 	},

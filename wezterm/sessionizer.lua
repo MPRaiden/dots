@@ -3,65 +3,78 @@ local act = wezterm.action
 
 local M = {}
 
-local fd = ""
-local rootPaths = {}
-
+local root_paths = { "~/playground", "~", "~/dots" } -- Default paths
 local cached = {}
 
-M.resetCacheAndToggle = function(window, pane)
-	wezterm.log_info("toggle sessionizer cache clear")
+M.reset_cache_and_toggle = function(window, pane)
+	wezterm.log_info("Resetting cache and toggling sessionizer")
 	cached = {}
 	M.toggle(window, pane)
 end
 
 M.toggle = function(window, pane)
-	wezterm.log_info("toggle sessionizer")
+	wezterm.log_info("Toggling sessionizer")
 	if next(cached) == nil then
-		table.insert(cached, { label = "~", id = "default" })
-		for _, path in pairs(rootPaths) do
-			wezterm.log_info("Searching path: " .. path)
-			-- Search for all directories
+		wezterm.log_info("Cache is empty, populating...")
+		local home = os.getenv("HOME") or "/home/mpr" -- Fallback to hardcoded home
+		table.insert(cached, { label = home, id = "home" }) -- Default home entry
+		for _, path in ipairs(root_paths) do
+			-- Expand ~ to HOME manually
+			local expanded_path = path:gsub("^~", home)
+			wezterm.log_info("Searching path: " .. expanded_path)
 			local success, stdout, stderr = wezterm.run_child_process({
-				fd,
-				"-H", -- Include hidden files
-				"-t",
-				"d", -- Search for directories only
-				"--max-depth",
-				"2", -- Limit depth to avoid deep recursion
-				path,
+				"find",
+				expanded_path,
+				"-mindepth",
+				"1", -- Match Bash script
+				"-maxdepth",
+				"3", -- Match Bash script
+				"-type",
+				"d",
 			})
 
 			if not success then
-				wezterm.log_error("Failed to run fd: " .. stderr)
+				wezterm.log_error("find failed: " .. stderr)
 				return
 			end
 
-			wezterm.log_info("fd stdout: " .. stdout)
-			wezterm.log_info("fd stderr: " .. stderr)
+			wezterm.log_info("find stdout: " .. stdout)
+			wezterm.log_info("find stderr: " .. stderr)
 
-			for line in stdout:gmatch("([^\n]*)\n?") do
-				if line == "" then
-					goto continue
+			local count = 0
+			for line in stdout:gmatch("[^\n]+") do
+				if line ~= expanded_path then -- Skip the root path
+					-- Replace dots with underscores, like the Bash script
+					local id = line:gsub(".*/", ""):gsub("%.", "_")
+					local label = line
+					wezterm.log_info("Adding entry: label=" .. label .. ", id=" .. id)
+					table.insert(cached, { label = tostring(label), id = tostring(id) })
+					count = count + 1
 				end
-				local label = line
-				local id = line:gsub(".*/", "") -- Extract directory name as ID
-				wezterm.log_info("Adding entry: label=" .. label .. ", id=" .. id)
-				table.insert(cached, { label = tostring(label), id = tostring(id) })
-				::continue::
 			end
+			wezterm.log_info("Found " .. count .. " directories in " .. expanded_path)
 		end
-		-- Debug: Log the cached entries
-		wezterm.log_info("Cached entries: " .. wezterm.json_encode(cached))
+		wezterm.log_info("Final cached entries: " .. wezterm.json_encode(cached))
+	else
+		wezterm.log_info("Using cached entries: " .. wezterm.json_encode(cached))
 	end
+	wezterm.log_info("Opening InputSelector with " .. #cached .. " choices")
 	window:perform_action(
 		act.InputSelector({
 			action = wezterm.action_callback(function(win, _, id, label)
 				if not id and not label then
-					wezterm.log_info("Cancelled")
-				else
-					wezterm.log_info("Selected " .. label)
-					win:perform_action(act.SwitchToWorkspace({ name = id, spawn = { cwd = label } }), pane)
+					wezterm.log_info("Selection cancelled")
+					return
 				end
+				wezterm.log_info("Selected: label=" .. label .. ", id=" .. id)
+				-- Switch to a workspace with the selected directory as cwd
+				win:perform_action(
+					act.SwitchToWorkspace({
+						name = id,
+						spawn = { cwd = label },
+					}),
+					pane
+				)
 			end),
 			fuzzy = true,
 			title = "Select project",
@@ -71,11 +84,11 @@ M.toggle = function(window, pane)
 	)
 end
 
----@param sessionizer SessionizerConfig
-M.setup = function(sessionizer)
-	fd = sessionizer.fd
-	rootPaths = sessionizer.paths
-	wezterm.log_info("Sessionizer setup: fd=" .. fd .. ", paths=" .. wezterm.json_encode(rootPaths))
+M.setup = function(config)
+	if config.paths then
+		root_paths = config.paths
+	end
+	wezterm.log_info("Sessionizer setup: paths=" .. wezterm.json_encode(root_paths))
 end
 
 return M
