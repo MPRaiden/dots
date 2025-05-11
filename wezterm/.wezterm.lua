@@ -59,24 +59,15 @@ config = {
 		{ key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
 		{ key = "c", mods = "LEADER", action = act.ActivateCopyMode },
 		{ key = "phys:Space", mods = "LEADER", action = act.ActivateCommandPalette },
-		{ key = "t", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
-		{ key = "x", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
-		{ key = "[", mods = "CTRL", action = act.ActivateTabRelative(-1) },
-		{ key = "]", mods = "CTRL", action = act.ActivateTabRelative(1) },
+		{ key = "[", mods = "CTRL", action = act.SwitchWorkspaceRelative(-1) },
+		{ key = "]", mods = "CTRL", action = act.SwitchWorkspaceRelative(1) },
 		{ key = "s", mods = "LEADER", action = act.ShowLauncherArgs({ flags = "FUZZY|WORKSPACES" }) }, -- Workspace switcher
-		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) }, -- Close all panes
+		{ key = "q", mods = "LEADER", action = act.CloseCurrentPane({ confirm = false }) },
 		{
 			key = "f",
 			mods = "LEADER",
 			action = wezterm.action_callback(function(window, pane)
 				sessionizer.toggle(window, pane)
-			end),
-		},
-		{
-			key = "F",
-			mods = "LEADER|SHIFT",
-			action = wezterm.action_callback(function(window, pane)
-				sessionizer.reset_cache_and_toggle(window, pane)
 			end),
 		},
 	},
