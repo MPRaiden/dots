@@ -32,6 +32,7 @@ config = {
 	enable_tab_bar = false,
 	use_fancy_tab_bar = false,
 	window_background_opacity = 0.9,
+	kde_window_background_blur = true,
 	scrollback_lines = 10000,
 	default_workspace = "main",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
