@@ -20,15 +20,15 @@ sessionizer.setup({
 
 config = {
 	enable_wayland = false,
-	color_scheme = "rose-pine",
+	color_scheme = "tokyonight",
 	automatically_reload_config = true,
 	window_close_confirmation = "NeverPrompt", -- No prompts for closing windows/tabs
 	clean_exit_codes = { 0, 1, 130 }, -- Treat shell exits as closable
 	default_cursor_style = "BlinkingBlock",
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
-	font_size = 12,
-	font = wezterm.font("JetBrains Mono Nerd Font"),
+	font_size = 11,
+	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Light" }),
 	enable_tab_bar = false,
 	use_fancy_tab_bar = false,
 	window_background_opacity = 1,
