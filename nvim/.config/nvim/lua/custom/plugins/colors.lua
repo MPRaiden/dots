@@ -19,11 +19,41 @@ end
 return {
   {
     'tjdevries/colorbuddy.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       Color 'gruvbuddy'
+    end,
+  },
+  {
+    'folke/tokyonight.nvim',
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
+
+  {
+    'rose-pine/neovim',
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+    name = 'rose-pine',
+    config = function()
+      vim.cmd.colorscheme 'rose-pine'
+    end,
+  },
+  {
+    'ellisonleao/gruvbox.nvim',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      Color 'gruvbox'
+      vim.o.background = 'dark'
     end,
   },
 }
