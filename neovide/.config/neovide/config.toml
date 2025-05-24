@@ -1,0 +1,16 @@
+fork = false
+frame = "full"
+idle = true
+maximized = false
+mouse-cursor-icon = "arrow"
+no-multigrid = false
+srgb = true
+tabs = true
+theme = "auto"
+title-hidden = true
+vsync = true
+wsl = false
+
+[font]
+normal = ["FiraCode Nerd Font"]
+size = 13.0
