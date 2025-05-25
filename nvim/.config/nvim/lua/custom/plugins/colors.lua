@@ -36,10 +36,13 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      if vim.g.neovide then
+        vim.o.termguicolors = true
+        vim.g.neovide_padding_top = 20
+      end
       vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
-
   {
     'rose-pine/neovim',
     enabled = false,
@@ -47,6 +50,10 @@ return {
     priority = 1000,
     name = 'rose-pine',
     config = function()
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 20
+      end
+      vim.o.termguicolors = true
       vim.cmd.colorscheme 'rose-pine'
     end,
   },
