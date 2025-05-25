@@ -24,8 +24,8 @@ shell-integration-features = no-cursor,no-sudo,title
 copy-on-select = true
 
 window-padding-balance = true 
-window-padding-x = 5 
-window-padding-y = 5
+window-padding-x = 10 
+#window-padding-y = 10
 window-theme = ghostty
 # window-save-state = always # only supported on mac
 
