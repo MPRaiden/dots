@@ -7,8 +7,8 @@ font-size = 11
 
 #theme = Monokai Pro Machine
 #theme = tokyonight_night
-#theme = rose-pine
-theme = GruvboxDarkHard
+theme = rose-pine
+#theme = GruvboxDarkHard
 
 cursor-color = white
 cursor-style-blink = true
