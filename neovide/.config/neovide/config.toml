@@ -13,4 +13,4 @@ wsl = false
 
 [font]
 normal = ["FiraCode Nerd Font"]
-size = 13.0
+size = 12.0
