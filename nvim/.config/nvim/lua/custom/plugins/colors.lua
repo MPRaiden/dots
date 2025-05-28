@@ -68,12 +68,37 @@ return {
   },
   {
     'ellisonleao/gruvbox.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       Color 'gruvbox'
       vim.o.background = 'dark'
+    end,
+  },
+  {
+    'navarasu/onedark.nvim',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('onedark').setup {
+        style = 'darker',
+        code_style = {
+          comments = 'none',
+          keywords = 'none',
+          functions = 'none',
+          strings = 'none',
+          variables = 'none',
+        },
+      }
+      -- Enable theme
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 20
+        vim.o.termguicolors = true -- Ensure true color support
+      end
+
+      require('onedark').load()
     end,
   },
 }
