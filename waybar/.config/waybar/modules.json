@@ -34,7 +34,7 @@
 		"spacing": 10
 	},
 	"clock": {
-		"format": "{:%H:%M %a}",
+		"format": "{:%H:%M %a %d %b}",
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"custom/system": {
