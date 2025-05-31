@@ -95,9 +95,9 @@ return {
       -- Enable theme
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
-        vim.o.termguicolors = true -- Ensure true color support
       end
 
+      vim.o.termguicolors = true -- Ensure true color support
       require('onedark').load()
     end,
   },
