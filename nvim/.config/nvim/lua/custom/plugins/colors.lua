@@ -83,20 +83,15 @@ return {
     priority = 1000,
     config = function()
       require('onedark').setup {
-        style = 'darker',
+        style = 'deep',
         code_style = {
           comments = 'none',
-          keywords = 'none',
-          functions = 'none',
-          strings = 'none',
-          variables = 'none',
         },
       }
       -- Enable theme
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
       end
-      vim.o.termguicolors = true -- Ensure true color support
       require('onedark').load()
     end,
   },
