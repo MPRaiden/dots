@@ -81,7 +81,7 @@ return {
     priority = 1000,
     name = 'rose-pine',
     config = function()
-      vim.cmd.colorscheme 'rose-pine-moon'
+      vim.cmd.colorscheme 'rose-pine'
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
         vim.g.neovide_hide_mouse_when_typing = true
