@@ -76,12 +76,12 @@ return {
   },
   {
     'rose-pine/neovim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     name = 'rose-pine',
     config = function()
-      vim.cmd.colorscheme 'rose-pine'
+      vim.cmd.colorscheme 'rose-pine-moon'
       if vim.g.neovide then
         vim.g.neovide_padding_top = 20
         vim.g.neovide_hide_mouse_when_typing = true
@@ -90,12 +90,12 @@ return {
   },
   {
     'navarasu/onedark.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       require('onedark').setup {
-        style = 'deep',
+        --style = 'dark',
         code_style = {
           comments = 'none',
         },
