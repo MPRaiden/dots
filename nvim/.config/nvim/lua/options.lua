@@ -1,7 +1,7 @@
 -- For more options, you can see `:help option-list`
 
 -- Make cursor default from terminal setting (makes cursor always a block even in Insert mode)
-vim.opt.guicursor = ''
+--vim.opt.guicursor = ''
 
 -- Tab and shift width set to 4 characters
 vim.opt.tabstop = 4

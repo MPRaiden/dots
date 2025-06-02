@@ -4,24 +4,18 @@ local set = vim.keymap.set
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- TIP: Disable arrow keys in normal mode
-vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- window management
-vim.keymap.set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
-vim.keymap.set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
-vim.keymap.set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
-
--- These mappings control the size of splits (height/width)
-set('n', '<M-,>', '<c-w>5<')
-set('n', '<M-.>', '<c-w>5>')
-set('n', '<M-t>', '<C-W>+')
-set('n', '<M-s>', '<C-W>-')
+set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
+set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
+set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
