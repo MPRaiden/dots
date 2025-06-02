@@ -2,6 +2,7 @@ function Color(color)
   if vim.g.neovide then
     vim.g.neovide_padding_top = 20
     vim.o.termguicolors = true -- Ensure true color support
+    vim.g.neovide_hide_mouse_when_typing = true
   end
 
   -- Disable italics for gruvbox (only works before loading the colorscheme)
@@ -20,9 +21,12 @@ function Color(color)
 
   vim.cmd.colorscheme(color)
 
+  if color == 'gruvbox' then
+    vim.api.nvim_set_hl(0, 'Normal', { bg = '#1d2021', fg = '#ebdbb2' })
+  else
+    vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
+  end
   -- Your custom highlights
-  vim.api.nvim_set_hl(0, 'Normal', { bg = '#1d2021', fg = '#ebdbb2' })
-  --vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
@@ -48,12 +52,26 @@ return {
     end,
   },
   {
+    'ellisonleao/gruvbox.nvim',
+    enabled = false,
+    lazy = false,
+    priority = 1000,
+    config = function()
+      Color 'gruvbox'
+      vim.o.background = 'dark'
+    end,
+  },
+  {
     'folke/tokyonight.nvim',
     enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'tokyonight-night'
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 20
+        vim.g.neovide_hide_mouse_when_typing = true
+      end
     end,
   },
   {
@@ -64,16 +82,10 @@ return {
     name = 'rose-pine',
     config = function()
       vim.cmd.colorscheme 'rose-pine'
-    end,
-  },
-  {
-    'ellisonleao/gruvbox.nvim',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      Color 'gruvbox'
-      vim.o.background = 'dark'
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 20
+        vim.g.neovide_hide_mouse_when_typing = true
+      end
     end,
   },
   {
