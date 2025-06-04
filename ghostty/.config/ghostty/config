@@ -1,5 +1,8 @@
 font-family = Agave Nerd Font 
-font-size = 16
+font-size = 15
+
+theme = rose-pine-moon
+background = black
 
 gtk-titlebar = false
 
