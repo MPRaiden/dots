@@ -1,4 +1,7 @@
-require "nvchad.options"
+-- For more options, you can see `:help option-list`
+
+-- Make cursor default from terminal setting (makes cursor always a block even in Insert mode)
+--vim.opt.guicursor = ''
 
 -- Tab and shift width set to 4 characters
 vim.opt.tabstop = 4
@@ -56,3 +59,4 @@ vim.opt.inccommand = 'split'
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+-- vim: ts=2 sts=2 sw=2 et
