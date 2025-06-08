@@ -12,6 +12,24 @@ return {
       require "configs.lspconfig"
     end,
   },
+  {
+    -- Detect tabstop and shiftwidth automatically (places cursor where you'd expect it after pressing "o" to enter insert mode on next line so DO NOT remove this)
+    "tpope/vim-sleuth",
+    lazy = false,
+  },
+  {
+    "folke/trouble.nvim",
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
+    keys = {
+      {
+        "<leader>xx",
+        "<cmd>Trouble diagnostics toggle<cr>",
+        desc = "Diagnostics (Trouble)",
+      },
+    },
+  },
+
   -- { import = "nvchad.blink.lazyspec" },
 
   -- {
