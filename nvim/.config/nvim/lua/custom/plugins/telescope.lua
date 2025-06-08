@@ -28,7 +28,7 @@ return {
       require('telescope').setup {
         defaults = {
           find_command = { 'fd', '--type', 'f', '--hidden', '--exclude', '.git' }, -- Use fd to show hidden files except .git
-          layout_strategy = 'vertical', -- adjust depending on display
+          layout_strategy = 'horizontal', -- adjust depending on display
         },
         pickers = {
           find_files = {
@@ -49,10 +49,9 @@ return {
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-      vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-      vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-      vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
+      vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = '[S]earch [F]iles' })
+      vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
+      vim.keymap.set('n', '<leader>fo', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 
       -- Slightly advanced example of overriding default behavior and theme
