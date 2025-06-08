@@ -17,11 +17,11 @@ M.base46 = {
 
 M.ui = {telescope = { style = "bordered" }}
 
-M.ui = {
-  tabufline = {
-    enabled = false,  -- disables buffer/tabline UI
-  },
-}
+-- M.ui = {
+--   tabufline = {
+--     enabled = false,  -- disables buffer/tabline UI
+--   },
+-- }
 
 
 M.nvdash = { load_on_startup = true }
