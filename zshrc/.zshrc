@@ -1,39 +1,36 @@
-# Starship
-eval "$(starship init zsh)"
+# Remove Starship (you had this before)
+# eval "$(starship init zsh)"
 
-# Check if Homebrew exists and source it if it does
+# Load Oh My Zsh
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+
+# Plugins via Oh My Zsh (instead of zinit)
+plugins=(
+  git
+  sudo
+  command-not-found
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+  zsh-completions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# Set Homebrew if it exists
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Set the directory we want to store zinit and plugins
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-
-# Download Zinit, if it's not there yet
-if [ ! -d "$ZINIT_HOME" ]; then
-   mkdir -p "$(dirname $ZINIT_HOME)"
-   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# Manually source fzf-tab if needed (not in Oh My Zsh by default)
+# Clone fzf-tab if not present
+FZF_TAB_DIR="${HOME}/.oh-my-zsh/custom/plugins/fzf-tab"
+if [ ! -d "$FZF_TAB_DIR" ]; then
+  git clone https://github.com/Aloxaf/fzf-tab "$FZF_TAB_DIR"
 fi
 
-# Source/Load zinit
-source "${ZINIT_HOME}/zinit.zsh"
-
-# Add in zsh plugins
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-
-# Add in snippets
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::archlinux
-zinit snippet OMZP::command-not-found
-
-# Load completions
-autoload -Uz compinit && compinit
-
-zinit cdreplay -q
+# Source fzf-tab manually
+source "${FZF_TAB_DIR}/fzf-tab.plugin.zsh"
 
 # Keybindings
 bindkey -e
@@ -68,20 +65,21 @@ alias c='clear'
 # Shell integrations
 eval "$(fzf --zsh)"
 
-# Add xremap path
+# PATH additions
 export PATH=$PATH:/home/mpr/.cargo/bin
-
-# Add go path
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
-# Add tmux sessionized path
 export PATH="$HOME/scripts:$PATH"
-# Add tmux plugin manager path
+
+# Tmux plugin manager path
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 
+# Editor preferences
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+# Node version manager
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
