@@ -28,3 +28,9 @@
 
 [core]
     editor = nvim
+[page]
+	log = false
+[pager]
+	diff = false
+	branch = false
+	log = false
