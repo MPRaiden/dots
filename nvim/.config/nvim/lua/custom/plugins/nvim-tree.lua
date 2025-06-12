@@ -5,6 +5,11 @@ return {
       -- example customization
       view = { side = 'left', width = 40 },
       update_focused_file = { enable = true, update_root = true },
+
+      filters = {
+        dotfiles = false,
+        git_ignored = false,
+      },
       -- ...other nvim-tree options
 
       -- In normal mode, toggle nvim-tree with Ctrl+n
