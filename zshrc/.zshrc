@@ -76,6 +76,7 @@ export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins
 
 # Editor preferences
 export EDITOR="nvim"
+export GIT_EDITOR="nvim"
 export VISUAL="nvim"
 
 # Node version manager
