@@ -24,7 +24,7 @@ end
 return {
   {
     'navarasu/onedark.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
@@ -69,11 +69,11 @@ return {
   },
   {
     'folke/tokyonight.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
-      style = 'night', -- this doesnt work
+      --style = 'night', -- this doesnt work
       transparent = true,
       terminal_colors = true,
       styles = {
@@ -86,7 +86,7 @@ return {
     },
     config = function()
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 20
+        vim.g.neovide_padding_top = 30
         vim.g.neovide_hide_mouse_when_typing = true
       end
 
@@ -99,7 +99,25 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 20
+        vim.g.neovide_hide_mouse_when_typing = true
+      end
+
       Color 'gruvbuddy'
+    end,
+  },
+  {
+    'Tsuzat/NeoSolarized.nvim',
+    enabled = false,
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 20
+        vim.g.neovide_hide_mouse_when_typing = true
+      end
+      vim.cmd [[ colorscheme NeoSolarized ]]
     end,
   },
 }
