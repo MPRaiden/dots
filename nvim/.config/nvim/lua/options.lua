@@ -4,8 +4,10 @@
 --vim.opt.guicursor = ''
 
 -- Tab and shift width set to 4 characters
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
 
 -- Make line numbers default
 vim.opt.number = true

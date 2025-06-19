@@ -1,26 +1,38 @@
 return {
-  { -- LSP Configuration & Plugins
+  {
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+      { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
+      { 'folke/snacks.nvim', opts = { picker = { enabled = true } } }, -- ensure snacks is loaded
     },
-
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
+          local buf = event.buf
+          local pick = require('snacks').picker
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = buf, desc = 'LSP: ' .. desc })
           end
 
-          map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition') --  To jump back, press <C-t>.
-          map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
-          map('<leader>D', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
-          map('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
-          map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('gd', function()
+            pick.lsp_definitions { auto_confirm = true }
+          end, '[G]oto [D]efinition')
+          map('gr', function()
+            pick.lsp_references { auto_confirm = false }
+          end, '[G]oto [R]eferences')
+          map('<leader>D', function()
+            pick.lsp_type_definitions { auto_confirm = false }
+          end, 'Type [D]efinition')
+          map('<leader>ds', function()
+            pick.lsp_document_symbols { auto_confirm = false }
+          end, '[D]ocument [S]ymbols')
+          map('<leader>ws', function()
+            pick.lsp_dynamic_workspace_symbols { auto_confirm = false }
+          end, '[W]orkspace [S]ymbols')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -50,13 +62,11 @@ return {
       }
 
       require('mason').setup()
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = vim.tbl_keys(servers) }
 
       require('mason-lspconfig').setup {
-        ensure_installed = ensure_installed, -- List of servers to install
-        automatic_enable = true, -- Automatically enable installed servers
+        ensure_installed = vim.tbl_keys(servers),
+        automatic_enable = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
@@ -68,4 +78,3 @@ return {
     end,
   },
 }
--- vim: ts=2 sts=2 sw=2 et

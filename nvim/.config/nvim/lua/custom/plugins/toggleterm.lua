@@ -7,7 +7,7 @@ return {
 
       -- Create a dedicated horizontal terminal
       local horiz_term = Terminal:new {
-        direction = 'horizontal',
+        direction = 'float',
         size = function()
           return math.floor(vim.o.lines * 0.33)
         end,
