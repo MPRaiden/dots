@@ -6,8 +6,6 @@ background = black
 
 gtk-titlebar = false
 
-cursor-color = white
-cursor-style-blink = true
 mouse-hide-while-typing = true
 
 shell-integration-features = no-cursor,no-sudo,title
