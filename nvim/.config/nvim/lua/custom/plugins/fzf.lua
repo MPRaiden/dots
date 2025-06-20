@@ -40,13 +40,6 @@ return {
       desc = '[F]ind current [W]ord',
     },
     {
-      '<leader>sd',
-      function()
-        require('fzf-lua').diagnostics_document()
-      end,
-      desc = '[F]ind [D]iagnostics',
-    },
-    {
       '<leader>so',
       function()
         require('fzf-lua').oldfiles()

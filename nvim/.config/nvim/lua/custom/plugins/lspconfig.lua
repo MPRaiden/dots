@@ -9,39 +9,31 @@ return {
     },
 
     config = function()
-      vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
-        callback = function(event)
-          local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
-          end
+      local on_attach = function(event)
+        local group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true })
+        vim.api.nvim_create_autocmd('LspAttach', {
+          group = group,
+          callback = function(ev)
+            local map = function(keys, func, desc)
+              vim.keymap.set('n', keys, func, { buffer = ev.buf, desc = 'LSP: ' .. desc })
+            end
 
-          -- Replace Telescope with fzf-lua for LSP-related actions
-          local fzf = require 'fzf-lua'
-          map('gd', function()
-            fzf.lsp_definitions()
-          end, '[G]oto [D]efinition')
-          map('gr', function()
-            fzf.lsp_references()
-          end, '[G]oto [R]eferences')
-          map('<leader>D', function()
-            fzf.lsp_type_definitions()
-          end, 'Type [D]efinition')
-          map('<leader>ds', function()
-            fzf.lsp_document_symbols()
-          end, '[D]ocument [S]ymbols')
-          map('<leader>ws', function()
-            fzf.lsp_workspace_symbols()
-          end, '[W]orkspace [S]ymbols')
-          map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-          map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-          map('K', vim.lsp.buf.hover, 'Hover Documentation')
-          map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-        end,
-      })
+            local fzf = require 'fzf-lua'
+            map('gd', fzf.lsp_definitions, '[G]oto [D]efinition')
+            map('gr', fzf.lsp_references, '[G]oto [R]eferences')
+            map('<leader>D', fzf.lsp_type_definitions, 'Type [D]efinition')
+            map('<leader>ds', fzf.lsp_document_symbols, '[D]ocument [S]ymbols')
+            map('<leader>ws', fzf.lsp_workspace_symbols, '[W]orkspace [S]ymbols')
+            map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+            map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+            map('K', vim.lsp.buf.hover, 'Hover Documentation')
+            map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+          end,
+        })
+      end
 
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+      -- Use blink.cmp’s built‑in LSP capabilities instead of cmp_nvim_lsp
+      local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       local servers = {
         gopls = {
@@ -62,18 +54,17 @@ return {
       }
 
       require('mason').setup()
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = vim.tbl_keys(servers) }
 
       require('mason-lspconfig').setup {
-        ensure_installed = ensure_installed,
+        ensure_installed = vim.tbl_keys(servers),
         automatic_enable = true,
         handlers = {
           function(server_name)
-            local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(server)
+            local server_opts = servers[server_name] or {}
+            server_opts.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server_opts.capabilities or {})
+            server_opts.on_attach = on_attach
+            require('lspconfig')[server_name].setup(server_opts)
           end,
         },
       }
