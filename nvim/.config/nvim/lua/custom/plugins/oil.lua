@@ -14,14 +14,24 @@ return {
           winblend = 0,
         },
       },
+      view_options = {
+        show_hidden = true,
+      },
     },
     keys = {
       {
-        '-',
+        '<leader>-',
         function()
           require('oil').open_float(vim.fn.getcwd())
         end,
         desc = 'Open Oil at project root in float',
+      },
+      {
+        '-',
+        function()
+          require('oil').open_float()
+        end,
+        desc = 'Open Oil at current buffer dir in float',
       },
     },
     -- automatically open float when launching nvim in a directory

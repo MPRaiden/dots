@@ -33,25 +33,11 @@ return {
       desc = '[F]ind [H]elp',
     },
     {
-      '<leader>sw',
-      function()
-        require('fzf-lua').grep_cword()
-      end,
-      desc = '[F]ind current [W]ord',
-    },
-    {
       '<leader>so',
       function()
         require('fzf-lua').oldfiles()
       end,
       desc = '[F]ind [O]ld Files',
-    },
-    {
-      '<leader><leader>',
-      function()
-        require('fzf-lua').buffers()
-      end,
-      desc = '[,] Find existing buffers',
     },
     {
       '<leader>/',
