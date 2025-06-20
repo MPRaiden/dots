@@ -1,37 +1,37 @@
 return {
-  {
+  { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
-      { 'folke/snacks.nvim', opts = { picker = { enabled = true } } }, -- ensure snacks is loaded
     },
+
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          local buf = event.buf
-          local pick = require('snacks').picker
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
+          -- Replace Telescope with fzf-lua for LSP-related actions
+          local fzf = require 'fzf-lua'
           map('gd', function()
-            pick.lsp_definitions { auto_confirm = true }
+            fzf.lsp_definitions()
           end, '[G]oto [D]efinition')
           map('gr', function()
-            pick.lsp_references { auto_confirm = false }
+            fzf.lsp_references()
           end, '[G]oto [R]eferences')
           map('<leader>D', function()
-            pick.lsp_type_definitions { auto_confirm = false }
+            fzf.lsp_type_definitions()
           end, 'Type [D]efinition')
           map('<leader>ds', function()
-            pick.lsp_document_symbols { auto_confirm = false }
+            fzf.lsp_document_symbols()
           end, '[D]ocument [S]ymbols')
           map('<leader>ws', function()
-            pick.lsp_dynamic_workspace_symbols { auto_confirm = false }
+            fzf.lsp_workspace_symbols()
           end, '[W]orkspace [S]ymbols')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
@@ -62,10 +62,12 @@ return {
       }
 
       require('mason').setup()
-      require('mason-tool-installer').setup { ensure_installed = vim.tbl_keys(servers) }
+
+      local ensure_installed = vim.tbl_keys(servers or {})
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = vim.tbl_keys(servers),
+        ensure_installed = ensure_installed,
         automatic_enable = true,
         handlers = {
           function(server_name)

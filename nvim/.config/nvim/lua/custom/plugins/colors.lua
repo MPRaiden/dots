@@ -45,7 +45,7 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = false,
+    enabled = true,
     priority = 1000,
     lazy = false, -- fixed typo: was "layy"
     config = function()
@@ -58,7 +58,7 @@ return {
       }
 
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 20
+        vim.g.neovide_padding_top = 30
         vim.g.neovide_hide_mouse_when_typing = true
       end
 
@@ -67,7 +67,7 @@ return {
   },
   {
     'folke/tokyonight.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
@@ -103,19 +103,6 @@ return {
       end
 
       Color 'gruvbuddy'
-    end,
-  },
-  {
-    'Tsuzat/NeoSolarized.nvim',
-    enabled = false,
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
-    config = function()
-      if vim.g.neovide then
-        vim.g.neovide_padding_top = 20
-        vim.g.neovide_hide_mouse_when_typing = true
-      end
-      vim.cmd [[ colorscheme NeoSolarized ]]
     end,
   },
 }
