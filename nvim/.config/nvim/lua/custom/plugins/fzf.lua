@@ -53,5 +53,12 @@ return {
       end,
       desc = '[C]olorschemes',
     },
+    {
+      '<leader>gf',
+      function()
+        require('fzf-lua').git_files()
+      end,
+      desc = '[G]it [F]iles',
+    },
   },
 }
