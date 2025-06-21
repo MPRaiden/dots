@@ -2,7 +2,14 @@ font-family = Agave Nerd Font
 font-size = 14
 
 theme = rose-pine-moon
-background = black
+#background = black
+
+background-opacity = 0.9
+background-blur-radius = 20
+background = #031219
+
+cursor-style = block
+cursor-style-blink = true
 
 gtk-titlebar = false
 

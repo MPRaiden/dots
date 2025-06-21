@@ -1,5 +1,30 @@
 return {
   {
+    'folke/tokyonight.nvim',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    opts = {
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        functions = {},
+        variables = {},
+      },
+      sidebars = { 'qf', 'help' },
+    },
+    config = function()
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 30
+        vim.g.neovide_hide_mouse_when_typing = true
+      end
+
+      vim.cmd.colorscheme 'tokyonight-night'
+    end,
+  },
+  {
     'navarasu/onedark.nvim',
     enabled = true,
     lazy = false,
@@ -40,31 +65,6 @@ return {
       end
 
       vim.cmd.colorscheme 'rose-pine'
-    end,
-  },
-  {
-    'folke/tokyonight.nvim',
-    enabled = true,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      terminal_colors = true,
-      styles = {
-        comments = { italic = false },
-        keywords = { italic = false },
-        functions = {},
-        variables = {},
-      },
-      sidebars = { 'qf', 'help' },
-    },
-    config = function()
-      if vim.g.neovide then
-        vim.g.neovide_padding_top = 30
-        vim.g.neovide_hide_mouse_when_typing = true
-      end
-
-      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 }
