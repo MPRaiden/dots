@@ -1,7 +1,7 @@
 return {
   {
     'navarasu/onedark.nvim',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     config = function()
@@ -22,7 +22,7 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = false,
+    enabled = true,
     priority = 1000,
     lazy = false,
     config = function()

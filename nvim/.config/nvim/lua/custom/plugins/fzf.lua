@@ -46,5 +46,12 @@ return {
       end,
       desc = '[/] Live grep the current buffer',
     },
+    {
+      '<leader>sc',
+      function()
+        require('fzf-lua').colorschemes()
+      end,
+      desc = '[C]olorschemes',
+    },
   },
 }
