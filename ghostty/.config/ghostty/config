@@ -2,10 +2,10 @@ font-family = Agave Nerd Font
 font-size = 14
 
 theme = rose-pine-moon
-#background = black
+background = black
 
-background-opacity = 0.8
-background = #031219
+#background-opacity = 0.8
+#background = #031219
 
 cursor-style = block
 cursor-style-blink = true

@@ -1,7 +1,7 @@
 return {
   {
     'folke/tokyonight.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
@@ -21,17 +21,17 @@ return {
         vim.g.neovide_hide_mouse_when_typing = true
       end
 
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day
     end,
   },
   {
     'navarasu/onedark.nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     config = function()
       require('onedark').setup {
-        style = 'deep',
+        style = 'darker', -- dark, darker, cool, deep, warm, warmer
         code_style = {
           comments = 'none',
         },
@@ -52,7 +52,7 @@ return {
     lazy = false,
     config = function()
       require('rose-pine').setup {
-        variant = 'main',
+        variant = 'main', -- main, moon, dawn
         styles = {
           bold = false,
           italic = false,
@@ -62,6 +62,7 @@ return {
       if vim.g.neovide then
         vim.g.neovide_padding_top = 30
         vim.g.neovide_hide_mouse_when_typing = true
+        --vim.g.neovide_opacity = 0.9
       end
 
       vim.cmd.colorscheme 'rose-pine'
