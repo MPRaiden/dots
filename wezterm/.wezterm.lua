@@ -20,18 +20,19 @@ sessionizer.setup({
 
 config = {
 	enable_wayland = false,
-	color_scheme = "tokyonight",
+	color_scheme = "rose-pine-moon",
 	automatically_reload_config = true,
 	window_close_confirmation = "NeverPrompt", -- No prompts for closing windows/tabs
 	clean_exit_codes = { 0, 1, 130 }, -- Treat shell exits as closable
 	default_cursor_style = "BlinkingBlock",
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
-	font_size = 11,
-	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Light" }),
+	font_size = 15,
+	font = wezterm.font("Agave Nerd Font", { weight = "Bold", italic = false }),
 	enable_tab_bar = false,
 	use_fancy_tab_bar = false,
-	window_background_opacity = 1,
+	window_background_opacity = 0.8,
+	kde_window_background_blur = true,
 	scrollback_lines = 10000,
 	default_workspace = "main",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
@@ -45,7 +46,7 @@ config = {
 	font_rules = {
 		{
 			italic = true,
-			font = wezterm.font("JetBrains Mono Nerd Font", { italic = false }),
+			font = wezterm.font("Agave Ner Font", { italic = false }),
 		},
 	},
 	colors = {
