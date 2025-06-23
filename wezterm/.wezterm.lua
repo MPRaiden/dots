@@ -43,17 +43,11 @@ config = {
 		top = 15,
 		bottom = 0,
 	},
-	font_rules = {
-		{
-			italic = true,
-			font = wezterm.font("Agave Ner Font", { italic = false }),
-		},
-	},
 	colors = {
 		background = "black",
-		cursor_bg = "#FFFFFF",
-		cursor_fg = "#000000",
-		cursor_border = "#FFFFFF",
+		-- 	cursor_bg = "#FFFFFF",
+		-- 	cursor_fg = "#000000",
+		-- 	cursor_border = "#FFFFFF",
 	},
 	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 },
 	keys = {

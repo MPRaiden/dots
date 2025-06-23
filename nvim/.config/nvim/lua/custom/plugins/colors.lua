@@ -31,16 +31,17 @@ return {
     priority = 1000,
     config = function()
       require('onedark').setup {
-        style = 'darker', -- dark, darker, cool, deep, warm, warmer
+        --style = 'cool', -- dark, darker, cool, deep, warm, warmer
         code_style = {
           comments = 'none',
         },
       }
 
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 20
+        vim.g.neovide_padding_top = 30
         vim.g.neovide_hide_mouse_when_typing = true
       end
+
       vim.cmd.colorscheme 'onedark'
     end,
   },
