@@ -1,72 +1,34 @@
+function Color(color)
+  vim.cmd.colorscheme(color)
+
+  -- custom highlights
+  vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopeNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'Pmenu', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TroubleNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'WhichKeyNormal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'Whitespace', { fg = '#4c4c4c' })
+  vim.api.nvim_set_hl(0, 'LineNr', { bg = 'none', fg = '#4c4c4c' })
+  vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#161a2e' })
+  vim.api.nvim_set_hl(0, 'FloatBorder', { fg = '#1790eb', bg = 'none' })
+end
+
 return {
   {
-    'folke/tokyonight.nvim',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = true,
-      terminal_colors = true,
-      styles = {
-        comments = { italic = false },
-        keywords = { italic = false },
-        functions = {},
-        variables = {},
-      },
-      sidebars = { 'qf', 'help' },
-    },
-    config = function()
-      if vim.g.neovide then
-        vim.g.neovide_padding_top = 30
-        vim.g.neovide_hide_mouse_when_typing = true
-      end
-
-      vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day
-    end,
-  },
-  {
-    'navarasu/onedark.nvim',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('onedark').setup {
-        --style = 'cool', -- dark, darker, cool, deep, warm, warmer
-        code_style = {
-          comments = 'none',
-        },
-      }
-
-      if vim.g.neovide then
-        vim.g.neovide_padding_top = 30
-        vim.g.neovide_hide_mouse_when_typing = true
-      end
-
-      vim.cmd.colorscheme 'onedark'
-    end,
-  },
-  {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'tjdevries/colorbuddy.nvim',
     enabled = true,
-    priority = 1000,
     lazy = false,
+    priority = 1000,
     config = function()
-      require('rose-pine').setup {
-        variant = 'main', -- main, moon, dawn
-        styles = {
-          bold = false,
-          italic = false,
-        },
-      }
-
+      Color 'gruvbuddy'
       if vim.g.neovide then
         vim.g.neovide_padding_top = 30
         vim.g.neovide_hide_mouse_when_typing = true
-        --vim.g.neovide_opacity = 0.9
       end
-
-      vim.cmd.colorscheme 'rose-pine'
     end,
   },
 }
