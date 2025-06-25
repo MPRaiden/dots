@@ -2,7 +2,7 @@ function Color(color)
   vim.cmd.colorscheme(color)
 
   -- custom highlights
-  vim.api.nvim_set_hl(0, 'Normal', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'Normal', { bg = '#181f2b' })
   vim.api.nvim_set_hl(0, 'NormalFloat', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'SignColumn', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'CmpItemMenu', { link = 'Normal' })
@@ -28,6 +28,26 @@ return {
       if vim.g.neovide then
         vim.g.neovide_padding_top = 30
         vim.g.neovide_hide_mouse_when_typing = true
+      end
+    end,
+  },
+  {
+    'rose-pine/neovim',
+    name = 'rose-pine',
+    enabled = false,
+    priority = 1000,
+    lazy = false,
+    config = function()
+      require('rose-pine').setup {
+        variant = 'main', -- main, moon, dawn
+        styles = {
+          bold = false,
+          italic = false,
+        },
+      }
+      vim.cmd.colorscheme 'rose-pine'
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 30
       end
     end,
   },
