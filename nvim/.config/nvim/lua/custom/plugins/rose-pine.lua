@@ -1,8 +1,8 @@
 return {
   'rose-pine/neovim',
   name = 'rose-pine',
-  enabled = false,
-  priority = 1000,
+  enabled = true,
+  priority = 10000,
   lazy = false,
   config = function()
     require('rose-pine').setup {

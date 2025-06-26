@@ -6,23 +6,34 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
       { 'j-hui/fidget.nvim', opts = {} },
+      { 'folke/snacks.nvim', opts = { picker = { enabled = true } } }, -- ensure snacks is loaded
     },
 
     config = function()
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
+          local buf = event.buf
+          local pick = require('snacks').picker
           local map = function(keys, func, desc)
-            vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+            vim.keymap.set('n', keys, func, { buffer = buf, desc = 'LSP: ' .. desc })
           end
 
-          local fzf = require 'fzf-lua'
-
-          map('gd', fzf.lsp_definitions, '[G]oto [D]efinition')
-          map('gr', fzf.lsp_references, '[G]oto [R]eferences')
-          map('<leader>D', fzf.lsp_typedefs, 'Type [D]efinition')
-          map('<leader>ds', fzf.lsp_document_symbols, '[D]ocument [S]ymbols')
-          map('<leader>ws', fzf.lsp_workspace_symbols, '[W]orkspace [S]ymbols')
+          map('gd', function()
+            pick.lsp_definitions { auto_confirm = true }
+          end, '[G]oto [D]efinition')
+          map('gr', function()
+            pick.lsp_references { auto_confirm = false }
+          end, '[G]oto [R]eferences')
+          map('<leader>D', function()
+            pick.lsp_type_definitions { auto_confirm = false }
+          end, 'Type [D]efinition')
+          map('<leader>ds', function()
+            pick.lsp_document_symbols { auto_confirm = false }
+          end, '[D]ocument [S]ymbols')
+          map('<leader>ws', function()
+            pick.lsp_dynamic_workspace_symbols { auto_confirm = false }
+          end, '[W]orkspace [S]ymbols')
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -30,8 +41,6 @@ return {
         end,
       })
 
-      -- NOTE: both options work
-      --local capabilities = vim.lsp.protocol.make_client_capabilities()
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
       local servers = {
@@ -53,12 +62,10 @@ return {
       }
 
       require('mason').setup()
-
-      local ensure_installed = vim.tbl_keys(servers or {})
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = vim.tbl_keys(servers) }
 
       require('mason-lspconfig').setup {
-        ensure_installed = ensure_installed,
+        ensure_installed = vim.tbl_keys(servers),
         automatic_enable = true,
         handlers = {
           function(server_name)
