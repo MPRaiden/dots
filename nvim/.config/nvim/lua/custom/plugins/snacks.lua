@@ -6,10 +6,10 @@ return {
     picker = {
       enabled = true,
       layout = {
-        preset = 'sidebar',
-        layout = {
-          width = 50,
-        },
+        preset = 'select',
+        -- layout = {
+        --   width = 50,
+        -- },
       },
 
       actions = {
