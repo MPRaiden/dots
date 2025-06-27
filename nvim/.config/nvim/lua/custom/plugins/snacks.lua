@@ -6,7 +6,7 @@ return {
     picker = {
       enabled = true,
       layout = {
-        preset = 'select',
+        preset = 'default',
         -- layout = {
         --   width = 50,
         -- },
@@ -21,6 +21,12 @@ return {
           p:find()
         end,
       },
+    },
+    animate = {
+      enabled = true,
+    },
+    scroll = {
+      enabled = true,
     },
   },
   dependencies = {
