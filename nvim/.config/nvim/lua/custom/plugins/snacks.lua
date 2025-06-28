@@ -7,9 +7,20 @@ return {
       enabled = true,
       layout = {
         preset = 'default',
-        -- layout = {
-        --   width = 50,
-        -- },
+        layout = {
+          box = 'horizontal',
+          width = 0.7,
+          min_width = 120,
+          height = 0.8,
+          {
+            box = 'vertical',
+            border = 'rounded',
+            title = '{title} {live} {flags}',
+            { win = 'input', height = 1, border = 'bottom' },
+            { win = 'list', border = 'none' },
+          },
+          { win = 'preview', title = '{preview}', border = 'rounded', width = 0.7 },
+        },
       },
 
       actions = {
@@ -22,10 +33,16 @@ return {
         end,
       },
     },
-    animate = {
+    terminal = {
       enabled = true,
+      -- win = {
+      --   style = 'float',
+      --   width = math.floor(vim.o.columns * 0.75),
+      --   height = math.floor(vim.o.lines * 0.5),
+      --   border = 'rounded',
+      -- },
     },
-    scroll = {
+    notifier = {
       enabled = true,
     },
   },
@@ -62,12 +79,27 @@ return {
       end,
       desc = '[S]earch [N]eovim files',
     },
+    -- {
+    --   '<leader>sl',
+    --   function()
+    --     require('snacks').picker.notifications()
+    --   end,
+    --   desc = '[S]earch Notifications',
+    -- },
     {
-      '<leader>sl',
+      '<leader>tt',
       function()
-        require('snacks').picker.notifications()
+        Snacks.terminal()
       end,
-      desc = '[S]earch Notifications',
+      desc = 'Toggle Terminal',
+    },
+
+    {
+      '<leader>sd',
+      function()
+        Snacks.picker.diagnostics()
+      end,
+      desc = 'Diagnostics',
     },
   },
 }
