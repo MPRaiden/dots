@@ -9,7 +9,7 @@ return {
         preset = 'default',
         layout = {
           box = 'horizontal',
-          width = 0.7,
+          width = 0.8,
           min_width = 120,
           height = 0.8,
           {
@@ -93,13 +93,19 @@ return {
       end,
       desc = 'Toggle Terminal',
     },
-
     {
       '<leader>sd',
       function()
         Snacks.picker.diagnostics()
       end,
       desc = 'Diagnostics',
+    },
+    {
+      '<leader>gb',
+      function()
+        Snacks.picker.git_branches()
+      end,
+      desc = 'Git Branches',
     },
   },
 }
