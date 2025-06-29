@@ -37,10 +37,10 @@ config = {
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 	max_fps = 120,
 	window_padding = {
-		left = 20,
+		left = 15,
 		right = 15,
 		top = 15,
-		bottom = 20,
+		bottom = 15,
 	},
 	colors = {
 		background = "black",
