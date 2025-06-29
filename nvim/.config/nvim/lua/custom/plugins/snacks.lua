@@ -6,21 +6,26 @@ return {
     picker = {
       enabled = true,
       layout = {
-        preset = 'default',
-        layout = {
-          box = 'horizontal',
-          width = 0.8,
-          min_width = 120,
-          height = 0.8,
-          {
-            box = 'vertical',
-            border = 'rounded',
-            title = '{title} {live} {flags}',
-            { win = 'input', height = 1, border = 'bottom' },
-            { win = 'list', border = 'none' },
-          },
-          { win = 'preview', title = '{preview}', border = 'rounded', width = 0.7 },
-        },
+        preset = 'ivy',
+        -- layout = {
+        --   box = 'horizontal',
+        --   backdrop = false,
+        --   width = 0.9,
+        --   height = 0.8,
+        --   border = 'none',
+        --   {
+        --     box = 'vertical',
+        --     { win = 'list', title = ' Results ', title_pos = 'center', border = 'rounded' },
+        --     { win = 'input', height = 1, border = 'rounded', title = '{title} {live} {flags}', title_pos = 'center' },
+        --   },
+        --   {
+        --     win = 'preview',
+        --     title = '{preview:Preview}',
+        --     width = 0.7,
+        --     border = 'rounded',
+        --     title_pos = 'center',
+        --   },
+        -- },
       },
 
       actions = {
@@ -43,6 +48,9 @@ return {
       -- },
     },
     notifier = {
+      enabled = true,
+    },
+    animate = {
       enabled = true,
     },
   },
@@ -106,6 +114,13 @@ return {
         Snacks.picker.git_branches()
       end,
       desc = 'Git Branches',
+    },
+    {
+      '<leader>fp',
+      function()
+        Snacks.picker.projects()
+      end,
+      desc = 'Projects',
     },
   },
 }
