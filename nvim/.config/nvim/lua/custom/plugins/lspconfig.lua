@@ -22,18 +22,15 @@ return {
           map('gd', function()
             pick.lsp_definitions { auto_confirm = true }
           end, '[G]oto [D]efinition')
+
           map('gr', function()
             pick.lsp_references { auto_confirm = false }
           end, '[G]oto [R]eferences')
+
           map('<leader>D', function()
             pick.lsp_type_definitions { auto_confirm = false }
           end, 'Type [D]efinition')
-          map('<leader>ds', function()
-            pick.lsp_document_symbols { auto_confirm = false }
-          end, '[D]ocument [S]ymbols')
-          map('<leader>ws', function()
-            pick.lsp_dynamic_workspace_symbols { auto_confirm = false }
-          end, '[W]orkspace [S]ymbols')
+
           map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
           map('K', vim.lsp.buf.hover, 'Hover Documentation')
@@ -43,23 +40,7 @@ return {
 
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      local servers = {
-        gopls = {
-          settings = {
-            gopls = {
-              hints = {
-                assignVariableTypes = true,
-                compositeLiteralFields = true,
-                compositeLiteralTypes = true,
-                constantValues = true,
-                functionTypeParameters = true,
-                parameterNames = true,
-                rangeVariableTypes = true,
-              },
-            },
-          },
-        },
-      }
+      local servers = {}
 
       require('mason').setup()
       require('mason-tool-installer').setup { ensure_installed = vim.tbl_keys(servers) }

@@ -37,16 +37,13 @@ config = {
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 	max_fps = 120,
 	window_padding = {
-		left = 15,
+		left = 20,
 		right = 15,
 		top = 15,
-		bottom = 0,
+		bottom = 20,
 	},
 	colors = {
 		background = "black",
-		-- 	cursor_bg = "#FFFFFF",
-		-- 	cursor_fg = "#000000",
-		-- 	cursor_border = "#FFFFFF",
 	},
 	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 },
 	keys = {

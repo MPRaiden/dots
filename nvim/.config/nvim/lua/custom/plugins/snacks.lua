@@ -5,6 +5,12 @@ return {
   opts = {
     picker = {
       enabled = true,
+      sources = {
+        files = {
+          hidden = true,
+          ignored = true,
+        },
+      },
       layout = {
         preset = 'ivy',
       },
