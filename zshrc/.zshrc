@@ -59,7 +59,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls -a --color'
-alias v='neovide'
+alias v='neovide --fork'
 alias c='clear'
 
 # Shell integrations
@@ -84,3 +84,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# opencode
+export PATH=/home/mpr/.opencode/bin:$PATH
