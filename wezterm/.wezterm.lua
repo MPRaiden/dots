@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 
--- Adjust Lua module path to include home directory for sessionizer.lua
+-- Adjuot Lua module path to include home directory for sessionizer.lua
 package.path = package.path .. ";/home/mpr/?.lua"
 
 -- Load the sessionizer module
@@ -20,7 +20,8 @@ sessionizer.setup({
 
 config = {
 	enable_wayland = false,
-	color_scheme = "rose-pine-moon",
+	--color_scheme = "rose-pine-moon",
+	color_scheme = "Tokyo Night",
 	automatically_reload_config = true,
 	window_close_confirmation = "NeverPrompt", -- No prompts for closing windows/tabs
 	clean_exit_codes = { 0, 1, 130 }, -- Treat shell exits as closable
@@ -42,9 +43,9 @@ config = {
 		top = 15,
 		bottom = 15,
 	},
-	colors = {
-		background = "black",
-	},
+	-- colors = {
+	-- 	background = "black",
+	-- },
 	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 },
 	keys = {
 		{ key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
