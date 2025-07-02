@@ -3,7 +3,7 @@ local M = {}
 function M.use()
   local cb = require 'colorbuddy'
   if vim.g.neovide then
-    vim.g.neovide_padding_top = 30
+    vim.g.neovide_padding_top = 20
   end
   cb.colorscheme 'colorbuddy'
   require('custom.theme.colors').apply()
