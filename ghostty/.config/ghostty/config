@@ -1,11 +1,12 @@
 font-family = Agave Nerd Font 
 font-size = 14
 
-theme = rose-pine-moon
-background = black
+#theme = tokyonight_night
+#theme = catppuccin-mocha
 
 #background-opacity = 0.8
 #background = #031219
+background = black
 
 cursor-style = block
 cursor-style-blink = true
