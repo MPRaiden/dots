@@ -8,7 +8,6 @@ return {
       sources = {
         files = {
           hidden = true,
-          --ignored = true,
         },
       },
       layout = {
@@ -23,15 +22,6 @@ return {
           p:set_cwd(current == cwd and vim.fn.stdpath 'config' or cwd)
           p:find()
         end,
-      },
-    },
-    terminal = {
-      enabled = true,
-      win = {
-        style = 'float',
-        width = math.floor(vim.o.columns * 0.5),
-        height = math.floor(vim.o.lines * 0.5),
-        border = 'rounded',
       },
     },
     notifier = {
@@ -72,13 +62,6 @@ return {
         require('snacks').picker.files { cwd = vim.fn.stdpath 'config' }
       end,
       desc = '[S]earch [N]eovim files',
-    },
-    {
-      '<leader>tt',
-      function()
-        Snacks.terminal()
-      end,
-      desc = 'Toggle Terminal',
     },
     {
       '<leader>sd',
