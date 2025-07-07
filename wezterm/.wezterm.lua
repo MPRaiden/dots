@@ -43,6 +43,7 @@ config = {
 	},
 	colors = {
 		background = "black",
+		cursor_bg = "white",
 	},
 	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 },
 	keys = {

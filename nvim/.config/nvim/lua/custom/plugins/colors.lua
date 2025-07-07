@@ -18,11 +18,6 @@ return {
           migrations = true,
         },
 
-        -- palette = {
-        --   moon = {
-        --     base = '#000000',
-        --   },
-        -- }, -- required: at least an empty table
         groups = {}, -- required
         highlight_groups = {}, -- required
 

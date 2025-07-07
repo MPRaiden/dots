@@ -71,13 +71,6 @@ return {
       desc = 'Diagnostics',
     },
     {
-      '<leader>gb',
-      function()
-        Snacks.picker.git_branches()
-      end,
-      desc = 'Git Branches',
-    },
-    {
       '<leader>fp',
       function()
         Snacks.picker.projects()
