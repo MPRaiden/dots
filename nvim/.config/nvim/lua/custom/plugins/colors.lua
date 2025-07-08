@@ -2,7 +2,7 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = true,
+    enabled = false,
     priority = 10000,
     lazy = false,
     config = function()
@@ -33,7 +33,8 @@ return {
       vim.cmd.colorscheme 'rose-pine'
 
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 30
+        vim.g.neovide_padding_top = 10
+        vim.g.neovide_hide_mouse_when_typing = true
       end
     end,
   },
@@ -55,10 +56,34 @@ return {
     },
     config = function()
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 30
+        vim.g.neovide_padding_top = 10
       end
 
-      vim.cmd.colorscheme 'tokyonight' -- night, storm, day
+      vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day, moon
+    end,
+  },
+  {
+    'savq/melange-nvim',
+    enabled = true,
+    lazy = false,
+    priority = 10000,
+    opts = {
+      transparent = true,
+      terminal_colors = true,
+      styles = {
+        comments = { italic = false },
+        keywords = { italic = false },
+        functions = {},
+        variables = {},
+      },
+      sidebars = { 'qf', 'help' },
+    },
+    config = function()
+      if vim.g.neovide then
+        vim.g.neovide_padding_top = 10
+      end
+
+      vim.cmd.colorscheme 'melange'
     end,
   },
 }
