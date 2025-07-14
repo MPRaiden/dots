@@ -33,7 +33,7 @@ return {
       vim.cmd.colorscheme 'rose-pine'
 
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 10
+        vim.g.neovide_padding_top = 15
         vim.g.neovide_hide_mouse_when_typing = true
       end
     end,
@@ -56,7 +56,7 @@ return {
     },
     config = function()
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 10
+        vim.g.neovide_padding_top = 15
       end
 
       vim.cmd.colorscheme 'tokyonight-night' -- night, storm, day, moon
@@ -80,7 +80,7 @@ return {
     },
     config = function()
       if vim.g.neovide then
-        vim.g.neovide_padding_top = 10
+        vim.g.neovide_padding_top = 15
       end
 
       vim.cmd.colorscheme 'melange'

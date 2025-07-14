@@ -33,3 +33,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- copy current file
 vim.keymap.set('n', '<C-c>', 'ggVG"+y', { noremap = true, silent = true })
+
+-- exit insert mode
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap = true, nowait = true })
