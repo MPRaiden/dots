@@ -2,7 +2,7 @@ return {
   {
     'rose-pine/neovim',
     name = 'rose-pine',
-    enabled = false,
+    enabled = true,
     priority = 10000,
     lazy = false,
     config = function()
@@ -64,7 +64,7 @@ return {
   },
   {
     'savq/melange-nvim',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 10000,
     opts = {

@@ -3,10 +3,11 @@ font-size = 15
 
 #theme = tokyonight_night
 #theme = catppuccin-mocha
+theme = rose-pine-moon
 
 #background-opacity = 0.8
 #background = #031219
-background = black
+#background = black
 
 cursor-style = block
 cursor-style-blink = true
