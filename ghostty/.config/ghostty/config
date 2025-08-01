@@ -1,13 +1,8 @@
 font-family = Agave Nerd Font 
 font-size = 15
 
-#theme = tokyonight_night
-#theme = catppuccin-mocha
-theme = rose-pine-moon
-
-#background-opacity = 0.8
-#background = #031219
-#background = black
+theme = tokyonight_night
+#theme = rose-pine-moon
 
 cursor-style = block
 cursor-style-blink = true
@@ -16,15 +11,15 @@ gtk-titlebar = false
 
 mouse-hide-while-typing = true
 
-shell-integration-features = no-cursor,no-sudo,title
+shell-integration-features = no-cursor,no-sudo
 
 copy-on-select = true
 
-#window-padding-balance = true 
 window-padding-x = 10 
 window-padding-y = 10
 window-theme = ghostty
 
 confirm-close-surface = false
 
-# custom-shader = ~/dots/ghostty/.config/ghostty/shaders/mnoise.glsl
+title = ghostty 
+

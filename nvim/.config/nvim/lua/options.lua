@@ -1,8 +1,5 @@
 -- For more options, you can see `:help option-list`
 
--- Make cursor default from terminal setting (makes cursor always a block even in Insert mode)
---vim.opt.guicursor = ''
-
 -- Tab and shift width set to 4 characters
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
@@ -60,5 +57,15 @@ vim.opt.inccommand = 'split'
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- cursor options (blinking effect)
+vim.opt.guicursor = {
+  'n-v-c:block', -- Normal, visual, command-line: block cursor
+  'i-ci-ve:ver25', -- Insert, command-line insert, visual-exclude: vertical bar cursor with 25% width
+  'r-cr:hor20', -- Replace, command-line replace: horizontal bar cursor with 20% height
+  'o:hor50', -- Operator-pending: horizontal bar cursor with 50% height
+  'a:blinkwait700-blinkoff400-blinkon250', -- All modes: blinking settings
+  'sm:block-blinkwait175-blinkoff150-blinkon175', -- Showmatch: block cursor with specific blinking settings
+}
 
 -- vim: ts=2 sts=2 sw=2 et
