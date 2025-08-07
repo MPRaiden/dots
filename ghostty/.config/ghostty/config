@@ -2,7 +2,6 @@ font-family = Agave Nerd Font
 font-size = 15
 
 theme = tokyonight_night
-#theme = rose-pine-moon
 
 cursor-style = block
 cursor-style-blink = true
@@ -23,3 +22,7 @@ confirm-close-surface = false
 
 title = ghostty 
 
+# tabs
+keybind = "ctrl+t=new_tab"
+keybind = "ctrl+left_bracket=previous_tab"
+keybind = "ctrl+right_bracket=next_tab"
