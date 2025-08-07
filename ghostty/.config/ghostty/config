@@ -20,9 +20,16 @@ window-theme = ghostty
 
 confirm-close-surface = false
 
-title = ghostty 
+#title = ghostty 
 
 # tabs
 keybind = "ctrl+t=new_tab"
 keybind = "ctrl+left_bracket=previous_tab"
 keybind = "ctrl+right_bracket=next_tab"
+keybind = "ctrl+s=new_split:right"
+
+# Navigate between splits using Ctrl + h/j/k/l
+keybind = "ctrl+h=goto_split:left"
+keybind = "ctrl+j=goto_split:bottom"
+keybind = "ctrl+k=goto_split:top"
+keybind = "ctrl+l=goto_split:right"
