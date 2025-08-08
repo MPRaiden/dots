@@ -1,6 +1,6 @@
 return {
   'folke/tokyonight.nvim',
-  enabled = true,
+  enabled = false,
   lazy = false, -- load right away (so your theme applies immediately)
   priority = 1000, -- high priority ensures it loads before other plugins
   config = function()

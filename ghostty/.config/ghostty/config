@@ -1,12 +1,14 @@
 font-family = Agave Nerd Font 
 font-size = 15
 
-theme = tokyonight_night
+# theme = tokyonight_night
+# background = 232936
+background = black
+background-opacity = 0.9
+background-blur = true
 
 cursor-style = block
 cursor-style-blink = true
-
-gtk-titlebar = false
 
 mouse-hide-while-typing = true
 
@@ -20,7 +22,7 @@ window-theme = ghostty
 
 confirm-close-surface = false
 
-#title = ghostty 
+window-save-state = always
 
 # tabs
 keybind = "ctrl+t=new_tab"

@@ -40,6 +40,13 @@ return {
 
   keys = {
     {
+      '<leader><space>',
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = 'Smart Find Files',
+    },
+    {
       '<leader>sf',
       function()
         require('snacks').picker.files()
@@ -81,12 +88,12 @@ return {
       end,
       desc = 'Search Projects',
     },
-    {
-      '<leader>tt',
-      function()
-        Snacks.terminal()
-      end,
-      desc = 'Toggle Terminal',
-    },
+    -- {
+    --   '<leader>tt',
+    --   function()
+    --     Snacks.terminal()
+    --   end,
+    --   desc = 'Toggle Terminal',
+    -- },
   },
 }
