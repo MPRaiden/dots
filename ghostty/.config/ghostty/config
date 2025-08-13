@@ -4,10 +4,11 @@ font-size = 15
 # theme = rose-pine
 # theme = tokyonight_night
 # background = 232936
+# foreground = E0E2EA
+# background = 14161B
+theme = catppuccin-macchiato
 
-foreground = E0E2EA
-background = 14161B
-
+cursor-color = white
 cursor-style = block
 cursor-style-blink = true
 
