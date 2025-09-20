@@ -1,12 +1,13 @@
 font-family = Agave Nerd Font 
 font-size = 15
 
-# theme = rose-pine
-# theme = tokyonight_night
+theme = Rose Pine
+# theme = Tokyonight Night
 # background = 232936
 # foreground = E0E2EA
 # background = 14161B
-theme = catppuccin-macchiato
+# theme = Catppuccin Macchiato
+background-opacity = 0.8
 
 cursor-color = white
 cursor-style = block
