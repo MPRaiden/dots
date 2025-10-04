@@ -7,7 +7,7 @@ theme = Rose Pine
 # foreground = E0E2EA
 # background = 14161B
 # theme = Catppuccin Macchiato
-background-opacity = 0.8
+background-opacity = 0.85
 
 cursor-color = white
 cursor-style = block
