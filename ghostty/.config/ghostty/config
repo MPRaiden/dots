@@ -8,7 +8,7 @@ font-size = 15
 # background = 14161B
 # theme = Catppuccin Macchiato
 theme = Dracula
-background-opacity = 0.85
+background-opacity = 0.8
 
 cursor-color = white
 cursor-style = block
