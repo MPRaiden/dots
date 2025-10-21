@@ -1,12 +1,13 @@
 font-family = Agave Nerd Font 
 font-size = 15
 
-theme = Rose Pine
+# theme = Rose Pine
 # theme = Tokyonight Night
 # background = 232936
 # foreground = E0E2EA
 # background = 14161B
 # theme = Catppuccin Macchiato
+theme = Dracula
 background-opacity = 0.85
 
 cursor-color = white
