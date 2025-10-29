@@ -11,7 +11,7 @@ return {
         },
       },
       layout = {
-        preset = 'ivy',
+        preset = 'default',
       },
 
       actions = {

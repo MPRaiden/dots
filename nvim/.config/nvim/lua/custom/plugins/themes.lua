@@ -4,7 +4,7 @@ return {
     'Mofiqul/dracula.nvim',
     name = 'dracula',
     lazy = false,
-    enabled = true,
+    enabled = false,
     priority = 1000,
     config = function()
       require('dracula').setup {
@@ -125,11 +125,11 @@ return {
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
-      style = 'night', -- The theme comes in three styles, `storm`, `night`, and `day`
+      -- style = 'night', -- The theme comes in three styles, `storm`, `night`, and `day`
       transparent = true, -- Enable this to disable background color and use your terminal background
       styles = {
         -- Style to be applied to different syntax groups
