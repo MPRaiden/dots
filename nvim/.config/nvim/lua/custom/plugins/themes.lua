@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
@@ -54,7 +54,7 @@ return {
   {
     'gbprod/nord.nvim',
     name = 'nord',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {

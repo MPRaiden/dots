@@ -1,8 +1,8 @@
 font-family = Agave Nerd Font 
 font-size = 16
 
-# theme = TokyoNight
-theme = Nord
+theme = TokyoNight
+# theme = Nord
 # background-opacity = 0.8
 unfocused-split-opacity = 0.50
 
