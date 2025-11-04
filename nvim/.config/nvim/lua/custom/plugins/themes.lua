@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
@@ -28,7 +28,7 @@ return {
     priority = 1000,
     opts = {
       transparent = {
-        bg = true,
+        bg = false,
         float = false,
       },
       -- cursorline = {
@@ -98,6 +98,82 @@ return {
     config = function(_, opts)
       require('nord').setup(opts)
       vim.cmd.colorscheme 'nord'
+    end,
+  },
+
+  {
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    enabled = true, -- set to true to make it active
+    lazy = false,
+    priority = 1000,
+    opts = {
+      flavour = 'macchiato', -- options: "latte", "frappe", "macchiato", "mocha"
+      -- background = {
+      --   light = 'latte',
+      --   dark = 'mocha',
+      -- },
+      transparent_background = true,
+      term_colors = true,
+      dim_inactive = {
+        enabled = true,
+        shade = 'dark',
+        percentage = 0.15,
+      },
+      no_italic = false,
+      no_bold = true,
+      styles = {
+        comments = { 'italic' },
+        -- conditionals = { 'italic' },
+        loops = {},
+        functions = {},
+        keywords = {},
+        strings = {},
+        variables = {},
+        numbers = {},
+        booleans = {},
+        properties = {},
+        types = {},
+        operators = {},
+      },
+      color_overrides = {
+        -- you can override colors here per flavour or “all”
+        all = {
+          -- e.g. text = "#ffffff",
+        },
+        mocha = {
+          -- override mocha-specific colors
+        },
+      },
+      highlight_overrides = {
+        all = function(colors)
+          return {
+            -- e.g. CursorLine = { bg = colors.surface0 },
+          }
+        end,
+        mocha = function(mocha)
+          return {
+            -- e.g. LineNr = { fg = mocha.overlay1 },
+          }
+        end,
+      },
+      integrations = {
+        notify = true,
+        flash = true,
+        blink_cmp = {
+          style = 'bordered',
+        },
+        snacks = {
+          enabled = true,
+          indent_scope_color = '', -- catppuccin color (eg. `lavender`) Default: text
+        },
+        lsp_trouble = true,
+        -- many more per the docs :contentReference[oaicite:1]{index=1}
+      },
+    },
+    config = function(_, opts)
+      require('catppuccin').setup(opts)
+      vim.cmd.colorscheme 'catppuccin'
     end,
   },
 }
