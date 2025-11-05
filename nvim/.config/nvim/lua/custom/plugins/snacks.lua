@@ -27,10 +27,9 @@ return {
     notifier = {
       enabled = true,
     },
-    -- terminal = {
-    --   enabled = true,
-    --   win = { position = 'right', width = 0.5 },
-    -- },
+    scroll = {
+      enabled = true,
+    },
   },
 
   dependencies = {
@@ -39,13 +38,6 @@ return {
   },
 
   keys = {
-    {
-      '<leader><space>',
-      function()
-        Snacks.picker.smart()
-      end,
-      desc = 'Smart Find Files',
-    },
     {
       '<leader>sf',
       function()
@@ -82,18 +74,11 @@ return {
       desc = 'Diagnostics',
     },
     {
-      '<leader>fp',
+      '<leader>n',
       function()
-        Snacks.picker.projects()
+        Snacks.notifier.show_history()
       end,
-      desc = 'Search Projects',
+      desc = 'Notification History',
     },
-    -- {
-    --   '<leader>tt',
-    --   function()
-    --     Snacks.terminal()
-    --   end,
-    --   desc = 'Toggle Terminal',
-    -- },
   },
 }

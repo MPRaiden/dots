@@ -19,38 +19,6 @@ return {
       vim.cmd.colorscheme 'tokyonight'
     end,
   },
-
-  {
-    'AlexvZyl/nordic.nvim',
-    name = 'nordic',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = {
-        bg = false,
-        float = false,
-      },
-      -- cursorline = {
-      --   theme = 'dark', -- 'light' or 'dark' cursorline background
-      -- },
-      bold_keywords = false,
-      italic_comments = true,
-      bright_border = true,
-      reduced_blue = true, -- Softer blue tones
-      -- You can customize highlight groups here if desired
-      -- on_highlights = function(hl, c)
-      --   hl.CursorLineNr = { fg = c.orange.base, bold = true }
-      --   hl.LineNrAbove = { fg = c.gray3 }
-      --   hl.LineNrBelow = { fg = c.gray3 }
-      -- end,
-    },
-    config = function(_, opts)
-      require('nordic').setup(opts)
-      vim.cmd.colorscheme 'nordic'
-    end,
-  },
-
   {
     'gbprod/nord.nvim',
     name = 'nord',
@@ -60,10 +28,10 @@ return {
     opts = {
       transparent = true, -- disable background so the theme will set it
       terminal_colors = true, -- enable terminal (builtin) colors
-      -- diff = { mode = 'bg' }, -- diff mode: background vs foreground
-      -- borders = true, -- enable border between vertical splits
-      -- errors = { mode = 'bg' }, -- how errors/diagnostics use backgrounds
-      -- search = { theme = 'vim' }, -- search highlight theme: "vim" or "vscode"
+      diff = { mode = 'bg' }, -- diff mode: background vs foreground
+      borders = true, -- enable border between vertical splits
+      errors = { mode = 'bg' }, -- how errors/diagnostics use backgrounds
+      search = { theme = 'vim' }, -- search highlight theme: "vim" or "vscode"
       styles = {
         comments = { italic = true },
         keywords = {},
@@ -71,7 +39,7 @@ return {
         variables = {},
         bufferline = {
           current = {},
-          modified = { italic = true },
+          modified = { italic = false },
         },
         lualine_bold = false,
       },
@@ -100,11 +68,10 @@ return {
       vim.cmd.colorscheme 'nord'
     end,
   },
-
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    enabled = true, -- set to true to make it active
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
@@ -124,7 +91,7 @@ return {
       no_bold = true,
       styles = {
         comments = { 'italic' },
-        -- conditionals = { 'italic' },
+        conditionals = {},
         loops = {},
         functions = {},
         keywords = {},

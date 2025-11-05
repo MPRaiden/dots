@@ -1,7 +1,7 @@
 font-family = Agave Nerd Font 
 font-size = 16
 
-theme = TokyoNight
+# theme = TokyoNight
 theme = Catppuccin Macchiato
 # theme = Nord
 # background-opacity = 0.8
