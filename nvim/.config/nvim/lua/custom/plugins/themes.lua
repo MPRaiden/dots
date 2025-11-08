@@ -26,12 +26,12 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      transparent = true, -- disable background so the theme will set it
-      terminal_colors = true, -- enable terminal (builtin) colors
-      diff = { mode = 'bg' }, -- diff mode: background vs foreground
-      borders = true, -- enable border between vertical splits
-      errors = { mode = 'bg' }, -- how errors/diagnostics use backgrounds
-      search = { theme = 'vim' }, -- search highlight theme: "vim" or "vscode"
+      transparent = false,
+      terminal_colors = true,
+      diff = { mode = 'bg' },
+      borders = true,
+      errors = { mode = 'bg' },
+      search = { theme = 'vim' },
       styles = {
         comments = { italic = true },
         keywords = {},
@@ -43,43 +43,21 @@ return {
         },
         lualine_bold = false,
       },
-      colorblind = {
-        enable = false,
-        preserve_background = false,
-        severity = {
-          protan = 0.0,
-          deutan = 0.0,
-          tritan = 0.0,
-        },
-      },
-      on_colors = function(colors)
-        -- override palette if desired
-        -- colors.nord0_gui = "#1b2229"
-      end,
-      -- on_highlights = function(highlights, colors)
-      --   -- custom highlight overrides
-      --   highlights.CursorLineNr = { fg = colors.nord9_gui, bold = true }
-      --   highlights.LineNrAbove = { fg = colors.nord6_gui }
-      --   highlights.LineNrBelow = { fg = colors.nord6_gui }
-      -- end,
     },
     config = function(_, opts)
       require('nord').setup(opts)
       vim.cmd.colorscheme 'nord'
     end,
   },
+
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = 'macchiato', -- options: "latte", "frappe", "macchiato", "mocha"
-      -- background = {
-      --   light = 'latte',
-      --   dark = 'mocha',
-      -- },
+      flavour = 'macchiato',
       transparent_background = true,
       term_colors = true,
       dim_inactive = {
@@ -91,56 +69,47 @@ return {
       no_bold = true,
       styles = {
         comments = { 'italic' },
-        conditionals = {},
-        loops = {},
-        functions = {},
-        keywords = {},
-        strings = {},
-        variables = {},
-        numbers = {},
-        booleans = {},
-        properties = {},
-        types = {},
-        operators = {},
-      },
-      color_overrides = {
-        -- you can override colors here per flavour or “all”
-        all = {
-          -- e.g. text = "#ffffff",
-        },
-        mocha = {
-          -- override mocha-specific colors
-        },
-      },
-      highlight_overrides = {
-        all = function(colors)
-          return {
-            -- e.g. CursorLine = { bg = colors.surface0 },
-          }
-        end,
-        mocha = function(mocha)
-          return {
-            -- e.g. LineNr = { fg = mocha.overlay1 },
-          }
-        end,
       },
       integrations = {
         notify = true,
         flash = true,
-        blink_cmp = {
-          style = 'bordered',
-        },
-        snacks = {
-          enabled = true,
-          indent_scope_color = '', -- catppuccin color (eg. `lavender`) Default: text
-        },
+        blink_cmp = { style = 'bordered' },
+        snacks = { enabled = true, indent_scope_color = '' },
         lsp_trouble = true,
-        -- many more per the docs :contentReference[oaicite:1]{index=1}
       },
     },
     config = function(_, opts)
       require('catppuccin').setup(opts)
       vim.cmd.colorscheme 'catppuccin'
+    end,
+  },
+
+  {
+    'navarasu/onedark.nvim',
+    name = 'onedark',
+    enabled = true,
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = 'dark', -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+      transparent = false,
+      term_colors = true,
+      code_style = {
+        comments = 'italic',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none',
+      },
+      diagnostics = {
+        darker = true,
+        undercurl = true,
+        background = true,
+      },
+    },
+    config = function(_, opts)
+      require('onedark').setup(opts)
+      require('onedark').load()
     end,
   },
 }
