@@ -53,11 +53,11 @@ return {
   {
     'catppuccin/nvim',
     name = 'catppuccin',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = 'macchiato',
+      flavour = 'mocha',
       transparent_background = true,
       term_colors = true,
       dim_inactive = {
@@ -83,15 +83,14 @@ return {
       vim.cmd.colorscheme 'catppuccin'
     end,
   },
-
   {
     'navarasu/onedark.nvim',
     name = 'onedark',
-    enabled = true,
+    enabled = false,
     lazy = false,
     priority = 1000,
     opts = {
-      style = 'dark', -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
+      style = 'deep', -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
       transparent = false,
       term_colors = true,
       code_style = {
