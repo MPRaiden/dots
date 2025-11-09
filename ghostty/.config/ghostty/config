@@ -1,12 +1,14 @@
 font-family = Agave Nerd Font 
+font-style = Regular
+font-style-italic = Regular Italic
+font-style-bold = Bold
+font-style-bold-italic = Bold Italic
 font-size = 16
 
-# theme = TokyoNight
-theme = Catppuccin Mocha
-# theme = Nord
-# theme = onedark
-# background-opacity = 0.9
-unfocused-split-opacity = 0.50
+theme = Catppuccin Macchiato
+# theme = TokyoNight Storm
+
+unfocused-split-opacity = 0.8
 
 cursor-color = white
 cursor-style = block
@@ -37,3 +39,6 @@ keybind = "ctrl+h=goto_split:left"
 keybind = "ctrl+j=goto_split:bottom"
 keybind = "ctrl+k=goto_split:top"
 keybind = "ctrl+l=goto_split:right"
+
+# Decrease scroll sensitivity
+mouse-scroll-multiplier = 0.4

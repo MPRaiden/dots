@@ -16,40 +16,9 @@ return {
     },
     config = function(_, opts)
       require('tokyonight').setup(opts)
-      vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
-  {
-    'gbprod/nord.nvim',
-    name = 'nord',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      transparent = false,
-      terminal_colors = true,
-      diff = { mode = 'bg' },
-      borders = true,
-      errors = { mode = 'bg' },
-      search = { theme = 'vim' },
-      styles = {
-        comments = { italic = true },
-        keywords = {},
-        functions = {},
-        variables = {},
-        bufferline = {
-          current = {},
-          modified = { italic = false },
-        },
-        lualine_bold = false,
-      },
-    },
-    config = function(_, opts)
-      require('nord').setup(opts)
-      vim.cmd.colorscheme 'nord'
-    end,
-  },
-
   {
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -57,14 +26,14 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = 'mocha',
+      flavour = 'macchiato',
       transparent_background = true,
       term_colors = true,
-      dim_inactive = {
-        enabled = true,
-        shade = 'dark',
-        percentage = 0.15,
-      },
+      -- dim_inactive = {
+      --   enabled = true,
+      --   shade = 'dark',
+      --   percentage = 0.15,
+      -- },
       no_italic = false,
       no_bold = true,
       styles = {
@@ -81,34 +50,6 @@ return {
     config = function(_, opts)
       require('catppuccin').setup(opts)
       vim.cmd.colorscheme 'catppuccin'
-    end,
-  },
-  {
-    'navarasu/onedark.nvim',
-    name = 'onedark',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    opts = {
-      style = 'deep', -- 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
-      transparent = false,
-      term_colors = true,
-      code_style = {
-        comments = 'italic',
-        keywords = 'none',
-        functions = 'none',
-        strings = 'none',
-        variables = 'none',
-      },
-      diagnostics = {
-        darker = true,
-        undercurl = true,
-        background = true,
-      },
-    },
-    config = function(_, opts)
-      require('onedark').setup(opts)
-      require('onedark').load()
     end,
   },
 }
