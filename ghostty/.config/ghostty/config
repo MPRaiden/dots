@@ -3,7 +3,7 @@ font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
-font-size = 16
+font-size = 17
 
 theme = Catppuccin Macchiato
 # theme = TokyoNight Storm
