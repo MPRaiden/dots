@@ -16,7 +16,7 @@ return {
     },
     config = function(_, opts)
       require('tokyonight').setup(opts)
-      vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
   {
@@ -26,7 +26,7 @@ return {
     lazy = false,
     priority = 1000,
     opts = {
-      flavour = 'macchiato',
+      flavour = 'mocha',
       transparent_background = true,
       term_colors = true,
       no_italic = false,
@@ -50,12 +50,7 @@ return {
     config = function(_, opts)
       local catppuccin = require 'catppuccin'
       catppuccin.setup(opts)
-      vim.cmd.colorscheme 'catppuccin-macchiato'
-
-      -- make sure Neovim uses terminal colors (Ghostty Catppuccin)
-      vim.opt.termguicolors = true
-      vim.g.catppuccin_flavour = 'macchiato'
-      vim.g.catppuccin_terminal_colors = true
+      vim.cmd.colorscheme 'catppuccin-mocha'
 
       -- fully transparent backgrounds to match Ghostty terminal
       local transparent_groups = {

@@ -30,6 +30,9 @@ return {
     scroll = {
       enabled = true,
     },
+    exporer = {
+      enabled = true,
+    },
   },
 
   dependencies = {
@@ -74,11 +77,25 @@ return {
       desc = 'Diagnostics',
     },
     {
+      '<leader><space>',
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = 'Smart Find Files',
+    },
+    {
       '<leader>n',
       function()
         Snacks.notifier.show_history()
       end,
       desc = 'Notification History',
+    },
+    {
+      '<leader>e',
+      function()
+        Snacks.explorer()
+      end,
+      desc = 'File Explorer',
     },
   },
 }

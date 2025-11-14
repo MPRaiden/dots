@@ -5,8 +5,10 @@ font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 font-size = 17
 
-theme = Catppuccin Macchiato
+# theme = Catppuccin Macchiato
+theme = Catppuccin Mocha
 # theme = TokyoNight Storm
+# theme = TokyoNight Night
 
 unfocused-split-opacity = 0.8
 background-opacity = 1
