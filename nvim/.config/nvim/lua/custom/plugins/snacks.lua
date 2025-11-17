@@ -33,6 +33,9 @@ return {
     exporer = {
       enabled = true,
     },
+    terminal = {
+      enabled = true,
+    },
   },
 
   dependencies = {
@@ -96,6 +99,13 @@ return {
         Snacks.explorer()
       end,
       desc = 'File Explorer',
+    },
+    {
+      '<leader>to',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
     },
   },
 }

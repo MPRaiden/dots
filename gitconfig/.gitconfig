@@ -24,7 +24,7 @@
 ; co = checkout
 ; his = log --oneline --decorate --graph --parents
 [init]
-    defaultBranch = main
+	defaultBranch = main
 
 [core]
     editor = nvim
@@ -34,3 +34,5 @@
 	diff = false
 	branch = false
 	log = false
+[fetch]
+	prune = true

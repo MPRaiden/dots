@@ -3,10 +3,10 @@ return {
     'navarasu/onedark.nvim',
     priority = 1000,
     lazy = false,
-    enabled = true,
+    enabled = false,
     config = function()
       require('onedark').setup {
-        transparent = true,
+        transparent = false,
         term_colors = true,
         cmp_itemkind_reverse = true,
         style = 'cool',
@@ -17,7 +17,7 @@ return {
   {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
-    enabled = false,
+    enabled = true,
     lazy = false,
     priority = 1000,
     opts = {
