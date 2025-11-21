@@ -24,13 +24,20 @@ return {
         end,
       },
     },
+    input = {
+      enabled = true,
+      icon = ' ',
+      win = { style = 'input' },
+      expand = true,
+    },
     notifier = {
       enabled = true,
+      style = 'fancy',
     },
     scroll = {
       enabled = true,
     },
-    exporer = {
+    explorer = {
       enabled = true,
     },
     terminal = {
@@ -101,11 +108,18 @@ return {
       desc = 'File Explorer',
     },
     {
-      '<leader>to',
+      '<leader>tt',
       function()
         Snacks.terminal()
       end,
-      desc = 'Toggle Terminal',
+      desc = 'Terminal',
+    },
+    {
+      '<leader>sc',
+      function()
+        Snacks.picker.colorschemes()
+      end,
+      desc = 'Colorschemes',
     },
   },
 }
