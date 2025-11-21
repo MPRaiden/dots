@@ -8,8 +8,13 @@ font-size = 17
 # theme = Catppuccin Macchiato
 # theme = Catppuccin Mocha
 # theme = TokyoNight Storm
-theme = TokyoNight Night
+# theme = TokyoNight Night
 # theme = Atom One Dark
+# theme = Rose Pine
+# theme = Dracula+
+# theme = Solarized Dark Higher Contrast
+theme = Solarized Osaka Night
+
 
 unfocused-split-opacity = 0.8
 background-opacity = 1
@@ -37,6 +42,8 @@ keybind = "ctrl+t=new_tab"
 keybind = "ctrl+left_bracket=previous_tab"
 keybind = "ctrl+right_bracket=next_tab"
 keybind = "ctrl+s=new_split:right"
+keybind = "ctrl+b=new_split:down"
+
 
 # Navigate between splits using Ctrl + h/j/k/l
 keybind = "ctrl+h=goto_split:left"
