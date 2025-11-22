@@ -10,8 +10,31 @@ return {
       vim.g.sonokai_style = 'andromeda'
       vim.g.sonokai_better_performance = 0
       -- Transparency: 0 = none, 1 = normal, 2 = all (includes status line)
-      vim.g.sonokai_transparent_background = 1
+      vim.g.sonokai_transparent_background = 2
       vim.cmd.colorscheme 'sonokai'
+
+      local transparent_groups = {
+        'Normal',
+        'NormalNC',
+        'NormalFloat',
+        'FloatBorder',
+        'Pmenu',
+        'PmenuSel',
+        'PmenuSbar',
+        'PmenuThumb',
+        'StatusLine',
+        'StatusLineNC',
+        'SnacksNormal',
+        'SnacksBorder',
+        'TelescopeNormal',
+        'TelescopeBorder',
+        'WhichKeyFloat',
+        'CmpPmenu',
+      }
+
+      for _, group in ipairs(transparent_groups) do
+        vim.api.nvim_set_hl(0, group, { bg = 'none' })
+      end
     end,
   },
 
