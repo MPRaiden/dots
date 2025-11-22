@@ -11,16 +11,17 @@ font-size = 17
 # theme = TokyoNight Night
 # theme = Atom One Dark
 # theme = Sonokai
-# theme = Rose Pine
+ theme = Rose Pine
 # theme = Dracula+
 # theme = Dracula
 # theme = Solarized Dark Higher Contrast
 # theme = Solarized Osaka Night
-theme = Solarized Dark Patched
+# theme = Solarized Dark Patched
 
 
 unfocused-split-opacity = 0.8
 background-opacity = 1
+background-blur = true
 
 cursor-color = white
 cursor-style = block
