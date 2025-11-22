@@ -19,15 +19,15 @@ sessionizer.setup({
 })
 
 config = {
-	enable_wayland = false,
-	color_scheme = "Catppuccin Frappe",
+	enable_wayland = true,
+	color_scheme = "rose-pine",
 	automatically_reload_config = true,
 	window_close_confirmation = "NeverPrompt", -- No prompts for closing windows/tabs
 	clean_exit_codes = { 0, 1, 130 }, -- Treat shell exits as closable
 	default_cursor_style = "BlinkingBlock",
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
-	font_size = 15,
+	font_size = 17,
 	font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = false }),
 	enable_tab_bar = false,
 	use_fancy_tab_bar = false,
@@ -38,13 +38,10 @@ config = {
 	window_padding = {
 		left = 15,
 		right = 15,
-		top = 15,
+		top = 20,
 		bottom = 15,
 	},
-	colors = {
-		background = "black",
-		cursor_bg = "white",
-	},
+
 	leader = { key = "a", mods = "CTRL", timeout_milliseconds = 2000 },
 	keys = {
 		{ key = "a", mods = "LEADER|CTRL", action = act.SendKey({ key = "a", mods = "CTRL" }) },
