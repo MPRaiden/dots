@@ -5,6 +5,33 @@ local mux = wezterm.mux
 local config = {
 	enable_wayland = false,
 	color_scheme = "rose-pine",
+	colors = {
+		tab_bar = {
+			active_tab = {
+				bg_color = "#1f1d2e", -- Surface colour for the active tab
+				fg_color = "#e0def4", -- Light text
+				intensity = "Bold", -- optional
+			},
+			inactive_tab = {
+				bg_color = "#191724", -- Base background for inactive tabs
+				fg_color = "#908caa", -- Subtle muted text
+			},
+			inactive_tab_hover = {
+				bg_color = "#26233a", -- slightly brighter overlay for hover
+				fg_color = "#e0def4",
+			},
+			new_tab = {
+				bg_color = "#31748f", -- “Pine” accent for the + tab
+				fg_color = "#e0def4",
+			},
+			new_tab_hover = {
+				bg_color = "#9ccfd8", -- “Foam” lighter accent for hover
+				fg_color = "#191724",
+			},
+			-- Optionally set background of tab bar itself:
+			background = "#191724",
+		},
+	},
 	automatically_reload_config = true,
 	window_close_confirmation = "NeverPrompt",
 	clean_exit_codes = { 0, 1, 130 },
@@ -14,7 +41,7 @@ local config = {
 	font_size = 18,
 	font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = false }),
 	enable_tab_bar = true,
-	use_fancy_tab_bar = true,
+	use_fancy_tab_bar = false,
 	scrollback_lines = 10000,
 	default_workspace = "main",
 	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
