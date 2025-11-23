@@ -38,7 +38,7 @@ local config = {
 	default_cursor_style = "BlinkingBlock",
 	adjust_window_size_when_changing_font_size = false,
 	check_for_updates = false,
-	font_size = 18,
+	font_size = 19,
 	font = wezterm.font("Agave Nerd Font", { weight = "Regular", italic = false }),
 	enable_tab_bar = true,
 	use_fancy_tab_bar = false,
