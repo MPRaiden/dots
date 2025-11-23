@@ -37,9 +37,6 @@ return {
     scroll = {
       enabled = true,
     },
-    explorer = {
-      enabled = true,
-    },
     terminal = {
       enabled = true,
     },
@@ -101,25 +98,11 @@ return {
       desc = 'Notification History',
     },
     {
-      '<leader>e',
-      function()
-        Snacks.explorer()
-      end,
-      desc = 'File Explorer',
-    },
-    {
       '<leader>tt',
       function()
         Snacks.terminal()
       end,
       desc = 'Terminal',
-    },
-    {
-      '<leader>sc',
-      function()
-        Snacks.picker.colorschemes()
-      end,
-      desc = 'Colorschemes',
     },
   },
 }

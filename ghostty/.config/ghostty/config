@@ -1,24 +1,13 @@
-# font-family = Agave Nerd Font 
-font-family = Jetbrains Mono
+font-family = Agave Nerd Font 
+# font-family = Jetbrains Mono
 font-style = Regular
 font-style-italic = Regular Italic
 font-style-bold = Bold
 font-style-bold-italic = Bold Italic
-font-size = 15
+font-size = 18
 
-# theme = Catppuccin Macchiato
-# theme = Catppuccin Mocha
-# theme = TokyoNight Storm
-# theme = TokyoNight Night
-# theme = Atom One Dark
-# theme = Sonokai
-theme = Rose Pine
-# theme = Dracula+
-# theme = Dracula
-# theme = Solarized Dark Higher Contrast
-# theme = Solarized Osaka Night
-# theme = Solarized Dark Patched
-
+theme = TokyoNight Night
+# theme = Rose Pine
 
 unfocused-split-opacity = 0.8
 background-opacity = 1

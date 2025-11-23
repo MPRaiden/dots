@@ -2,6 +2,8 @@
 --  See `:help vim.keymap.set()`
 local set = vim.keymap.set
 
+vim.keymap.set({ 'n', 'v', 'x' }, '<leader>o', '<Cmd>source %<CR>', { desc = 'Source ' .. vim.fn.expand '$MYVIMRC' })
+
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
 set('n', '<Esc>', '<cmd>nohlsearch<CR>')
