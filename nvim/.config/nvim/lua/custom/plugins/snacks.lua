@@ -32,12 +32,9 @@ return {
     },
     notifier = {
       enabled = true,
-      style = 'fancy',
+      style = 'compact',
     },
     scroll = {
-      enabled = true,
-    },
-    terminal = {
       enabled = true,
     },
   },
@@ -96,13 +93,6 @@ return {
         Snacks.notifier.show_history()
       end,
       desc = 'Notification History',
-    },
-    {
-      '<leader>tt',
-      function()
-        Snacks.terminal()
-      end,
-      desc = 'Terminal',
     },
   },
 }
