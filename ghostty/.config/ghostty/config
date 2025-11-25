@@ -6,8 +6,8 @@ font-style-bold = Bold
 font-style-bold-italic = Bold Italic
 font-size = 18
 
-theme = TokyoNight Night
-# theme = Rose Pine
+# theme = TokyoNight Night
+theme = Rose Pine
 
 unfocused-split-opacity = 0.8
 background-opacity = 1

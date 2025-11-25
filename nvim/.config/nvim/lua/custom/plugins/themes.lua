@@ -1,18 +1,25 @@
 return {
   {
-    'vague-theme/vague.nvim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    'navarasu/onedark.nvim',
+    priority = 1000,
     enabled = true,
-    priority = 1000, -- make sure to load this before all the other plugins
     config = function()
-      -- NOTE: you do not need to call setup if you don't want to.
-      require('vague').setup {
+      require('onedark').setup {
+        style = 'deep',
+        term_colors = true,
         transparent = true,
-        bold = true,
-        italic = false,
-        -- optional configuration here
+        highlights = {
+          -- Function keyword (e.g. `fn`, `function`)
+          ['@keyword.function'] = { fg = '#e5c07b' }, -- yellowish/orange
+          -- Function name (identifiers)
+          ['@function'] = { fg = '#61afef' }, -- light blue
+          ['@function.call'] = { fg = '#61afef' },
+          -- Brackets / punctuation
+          ['@punctuation.bracket'] = { fg = '#e06c75' }, -- light red/pink tone
+          ['@punctuation.delimiter'] = { fg = '#e06c75' }, -- commas, semicolons, etc.
+        },
       }
-      vim.cmd 'colorscheme vague'
+      require('onedark').load()
     end,
   },
 }
