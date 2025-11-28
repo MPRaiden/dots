@@ -4,20 +4,39 @@ return {
   lazy = false,
   opts = {
     picker = {
-      enabled = true,
+      layout = 'custom',
+      layouts = {
+        custom = {
+          layout = {
+            box = 'vertical',
+            backdrop = false,
+            row = -1,
+            width = 0,
+            height = 0.4,
+            border = 'none',
+            title = ' {title} {live} {flags}',
+            title_pos = 'left',
+            {
+              box = 'horizontal',
+              { win = 'list', border = 'rounded' },
+              { win = 'preview', title = '{preview}', width = 0.6, border = 'rounded' },
+            },
+            { win = 'input', height = 1, border = 'top' },
+          },
+        },
+      },
+      -- Rest of your configuration remains the same
       sources = {
         files = {
           hidden = true,
         },
       },
-      layout = {
-        preset = 'default',
-      },
-
       actions = {
         ---@param p snacks.Picker
         toggle_cwd = function(p)
-          local cwd = vim.fs.normalize(vim.loop.cwd())
+          -- Note: vim.loop is deprecated in nvim 0.10+, prefer vim.uv if available
+          local loop = vim.uv or vim.loop
+          local cwd = vim.fs.normalize(loop.cwd())
           local current = p:cwd()
           p:set_cwd(current == cwd and vim.fn.stdpath 'config' or cwd)
           p:find()
@@ -93,6 +112,13 @@ return {
         Snacks.notifier.show_history()
       end,
       desc = 'Notification History',
+    },
+    {
+      '<leader>sh',
+      function()
+        Snacks.picker.help()
+      end,
+      desc = 'Help Pages',
     },
   },
 }
