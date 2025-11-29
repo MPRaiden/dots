@@ -18,7 +18,7 @@ return {
             title_pos = 'left',
             {
               box = 'horizontal',
-              { win = 'list', border = 'rounded' },
+              { win = 'list',    border = 'rounded' },
               { win = 'preview', title = '{preview}', width = 0.6, border = 'rounded' },
             },
             { win = 'input', height = 1, border = 'top' },
@@ -30,17 +30,6 @@ return {
         files = {
           hidden = true,
         },
-      },
-      actions = {
-        ---@param p snacks.Picker
-        toggle_cwd = function(p)
-          -- Note: vim.loop is deprecated in nvim 0.10+, prefer vim.uv if available
-          local loop = vim.uv or vim.loop
-          local cwd = vim.fs.normalize(loop.cwd())
-          local current = p:cwd()
-          p:set_cwd(current == cwd and vim.fn.stdpath 'config' or cwd)
-          p:find()
-        end,
       },
     },
     input = {
