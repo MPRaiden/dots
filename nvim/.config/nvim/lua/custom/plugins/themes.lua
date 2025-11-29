@@ -1,16 +1,35 @@
 return {
   {
-    'vague-theme/vague.nvim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    'gbprod/nord.nvim',
+    name = 'nord',
     enabled = true,
-    priority = 1000, -- make sure to load this before all the other plugins
+    lazy = false,
+    priority = 1000,
     config = function()
-      -- NOTE: you do not need to call setup if you don't want to.
-      require('vague').setup {
+      require('nord').setup {
         transparent = true,
-        -- optional configuration here
       }
-      vim.cmd 'colorscheme vague'
+
+      vim.api.nvim_create_autocmd("ColorScheme", {
+        pattern = "*",
+        callback = function()
+          local groups = {
+            "Normal", "NormalNC", "NormalFloat", "FloatBorder",
+            "SignColumn", "MsgArea", "NvimTreeNormal", "NvimTreeNormalNC",
+            "TelescopeNormal", "TelescopeBorder", "TelescopePromptNormal",
+            "TelescopePromptBorder", "TelescopeResultsNormal", "TelescopeResultsBorder",
+            "TelescopePreviewNormal", "TelescopePreviewBorder",
+            "TroubleNormal", "TroubleNormalNC", "TroubleText", "TroubleCount",
+            "CmpNormal", "CmpBorder", "Pmenu", "PmenuSel", "PmenuSbar", "PmenuThumb",
+            "SnacksNormal", "SnacksBorder", "NoicePopup", "NoicePopupmenu",
+          }
+
+          for _, group in ipairs(groups) do
+            vim.cmd(string.format("hi %s guibg=NONE ctermbg=NONE", group))
+          end
+        end,
+      })
+      vim.cmd.colorscheme 'nord'
     end,
   },
 }
