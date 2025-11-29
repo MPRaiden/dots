@@ -15,8 +15,8 @@ set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- window management
-set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' }) -- split window vertically
-set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' }) -- split window horizontally
+set('n', '<leader>sv', '<C-w>v', { desc = 'Split window vertically' })     -- split window vertically
+set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' })   -- split window horizontally
 set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' }) -- close current split window
 
 -- [[ Basic Autocommands ]]
