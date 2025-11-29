@@ -1,3 +1,0 @@
-1. go to brave://flags
-2. search forget 
-3. set "Enable First Party Storage Cleanup support" to DISABLED

@@ -5,8 +5,8 @@ return {
       { 'williamboman/mason.nvim', config = true },
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
-      { 'folke/snacks.nvim', opts = { picker = { enabled = true } } }, -- ensure snacks is loaded
+      { 'j-hui/fidget.nvim',       opts = {} },
+      { 'folke/snacks.nvim',       opts = { picker = { enabled = true } } }, -- ensure snacks is loaded
     },
 
     config = function()
