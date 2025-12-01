@@ -54,35 +54,35 @@ return {
 
   keys = {
     {
-      '<leader>sf',
+      '<leader>ff',
       function()
         require('snacks').picker.files()
       end,
       desc = '[S]earch [F]iles',
     },
     {
-      '<leader>sg',
+      '<leader>fg',
       function()
         require('snacks').picker.grep()
       end,
       desc = '[S]earch by [G]rep (live grep with previews)',
     },
     {
-      '<leader>so',
+      '<leader>fo',
       function()
         require('snacks').picker.recent()
       end,
       desc = '[S]earch Recent Files',
     },
     {
-      '<leader>sn',
+      '<leader>fn',
       function()
         require('snacks').picker.files { cwd = vim.fn.stdpath 'config' }
       end,
       desc = '[S]earch [N]eovim files',
     },
     {
-      '<leader>sd',
+      '<leader>fd',
       function()
         Snacks.picker.diagnostics()
       end,
@@ -103,7 +103,7 @@ return {
       desc = 'Notification History',
     },
     {
-      '<leader>sh',
+      '<leader>fh',
       function()
         Snacks.picker.help()
       end,
