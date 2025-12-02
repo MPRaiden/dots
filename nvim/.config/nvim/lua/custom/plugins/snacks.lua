@@ -57,28 +57,28 @@ return {
       function()
         require('snacks').picker.files()
       end,
-      desc = '[S]earch [F]iles',
+      desc = '[F]ind [F]iles',
     },
     {
       '<leader>fg',
       function()
         require('snacks').picker.grep()
       end,
-      desc = '[S]earch by [G]rep (live grep with previews)',
+      desc = '[F]ind by [G]rep (live grep with previews)',
     },
     {
       '<leader>fo',
       function()
         require('snacks').picker.recent()
       end,
-      desc = '[S]earch Recent Files',
+      desc = '[F]ind Recent Files',
     },
     {
       '<leader>fn',
       function()
         require('snacks').picker.files { cwd = vim.fn.stdpath 'config' }
       end,
-      desc = '[S]earch [N]eovim files',
+      desc = '[F]ind [N]eovim files',
     },
     {
       '<leader>fd',
@@ -99,14 +99,14 @@ return {
       function()
         Snacks.notifier.show_history()
       end,
-      desc = 'Notification History',
+      desc = '[N]otification History',
     },
     {
       '<leader>fh',
       function()
         Snacks.picker.help()
       end,
-      desc = 'Help Pages',
+      desc = '[F]ind [H]elp Pages',
     },
   },
 }
