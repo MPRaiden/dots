@@ -25,7 +25,6 @@ return {
           },
         },
       },
-      -- Rest of your configuration remains the same
       sources = {
         files = {
           hidden = true,
