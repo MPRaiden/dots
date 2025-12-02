@@ -1,4 +1,5 @@
 font-size = 15
+font-feature = -calt, -liga, -dlig # disables ligatures
 
 # theme = TokyoNight Night
 theme = Rose Pine
