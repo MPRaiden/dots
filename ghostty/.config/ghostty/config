@@ -1,18 +1,8 @@
-font-family = Agave Nerd Font 
-# font-family = Jetbrains Mono
-font-style = Regular
-font-style-italic = Regular Italic
-font-style-bold = Bold
-font-style-bold-italic = Bold Italic
-font-size = 18
+font-size = 15
 
 # theme = TokyoNight Night
 theme = Rose Pine
 
-unfocused-split-opacity = 0.8
-background-opacity = 1
-
-cursor-color = white
 cursor-style = block
 cursor-style-blink = true
 
@@ -24,11 +14,8 @@ copy-on-select = true
 
 window-padding-x = 10 
 window-padding-y = 10
-window-theme = ghostty
 
 confirm-close-surface = false
-
-window-save-state = always
 
 # Decrease scroll sensitivity
 mouse-scroll-multiplier = 0.4
