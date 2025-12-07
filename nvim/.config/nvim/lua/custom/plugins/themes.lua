@@ -22,6 +22,20 @@ function FixColors()
 
 
 return {
+  -- {
+  --   'sainnhe/sonokai',
+  --   name = 'sonokai',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.g.sonokai_enable_italic = false  -- or false
+  --     vim.g.sonokai_style = 'andromeda' -- Styles: 'default', 'atlantis', 'andromeda', 'shusia', 'maia', 'espresso'
+  --     vim.g.sonokai_better_performance = 0
+  --     vim.g.sonokai_transparent_background = 1
+  --     vim.cmd.colorscheme 'sonokai'
+  --     FixColors()
+  --   end,
+  -- },
   {
     "Shatur/neovim-ayu",
     name = "ayu",

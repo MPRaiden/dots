@@ -1,6 +1,6 @@
-# font-family = Agave Nerd Font Bold
-font-family = CaskaydiaCove Nerd Font
-font-size = 18
+font-family = Agave Nerd Font
+# font-family = CaskaydiaCove Nerd Font
+font-size = 21
 font-feature = -calt, -liga, -dlig # disables ligatures
 
 # theme = TokyoNight
