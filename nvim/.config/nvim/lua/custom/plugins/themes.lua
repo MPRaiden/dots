@@ -23,37 +23,51 @@ function FixColors()
 
 return {
   {
-    "rose-pine/neovim",
-    name = "rose-pine",
-    enabled = true,
+    "Shatur/neovim-ayu",
+    name = "ayu",
     lazy = false,
     priority = 1000,
     config = function()
-      require('rose-pine').setup {
+      require('ayu').setup {
+        mirage = true,
+        overrides = {},
         transparent = true,
-        variant = "moon",
-        styles = {
-          italic = false,
-          bold = true,
-          transparency = true,
-        },
       }
       FixColors()
-      vim.cmd("colorscheme rose-pine-moon")
+      vim.cmd("colorscheme ayu-mirage")
     end
-  }, 
-  {
-    'gbprod/nord.nvim',
-    name = 'nord',
-    enabled = false,
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require('nord').setup {
-        transparent = true,
-      }
-      FixColors()
-      vim.cmd.colorscheme 'nord'
-    end,
   },
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('rose-pine').setup {
+  --       transparent = true,
+  --       variant = "moon",
+  --       styles = {
+  --         italic = false,
+  --         bold = true,
+  --         transparency = true,
+  --       },
+  --     }
+  --     FixColors()
+  --     vim.cmd("colorscheme rose-pine-moon")
+  --   end
+  -- }, 
+  -- {
+  --   'gbprod/nord.nvim',
+  --   name = 'nord',
+  --   enabled = false,
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     require('nord').setup {
+  --       transparent = true,
+  --     }
+  --     FixColors()
+  --     vim.cmd.colorscheme 'nord'
+  --   end,
+  -- },
 }
