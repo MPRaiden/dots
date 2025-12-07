@@ -2,10 +2,7 @@ font-family = CaskaydiaCove Nerd Font Propo
 font-size = 18
 font-feature = -calt, -liga, -dlig # disables ligatures
 
-# theme = TokyoNight
- theme = Rose Pine Moon
-# theme = Catppuccin Macchiato
-# theme = Ayu Mirage
+theme = Rose Pine Moon
 
 cursor-style = block
 cursor-style-blink = true
@@ -20,6 +17,3 @@ window-padding-x = 10
 window-padding-y = 10
 
 confirm-close-surface = false
-
-# Decrease scroll sensitivity
-mouse-scroll-multiplier = 0.4
