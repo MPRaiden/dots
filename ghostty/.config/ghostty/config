@@ -5,8 +5,8 @@ font-feature = -calt, -liga, -dlig # disables ligatures
 
 # theme = TokyoNight
 # theme = Rose Pine
-theme = Catppuccin Mocha
-# theme = Ayu Mirage
+# theme = Catppuccin Mocha
+theme = Ayu Mirage
 # theme = Dracula
 
 cursor-style = block
