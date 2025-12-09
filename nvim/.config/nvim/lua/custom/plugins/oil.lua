@@ -11,7 +11,6 @@ return {
     keys = {
       { '-', '<CMD>Oil<CR>', desc = 'Open parent directory' },
     },
-    -- automatically open float when launching nvim in a directory
     config = function(_, opts)
       require('oil').setup(opts)
       vim.api.nvim_create_autocmd('VimEnter', {
