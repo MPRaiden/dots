@@ -1,4 +1,5 @@
 local set = vim.keymap.set
+local opts = { noremap = true, silent = true }
 
 vim.keymap.set({ 'n', 'v', 'x' }, '<leader>o', '<Cmd>source %<CR>', { desc = 'Source ' .. vim.fn.expand '$MYVIMRC' })
 
@@ -11,7 +12,10 @@ set('n', '<leader>sh', '<C-w>s', { desc = 'Split window horizontally' })
 set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' })
 
 -- copy current file
-vim.keymap.set('n', '<C-c>', 'ggVG"+y', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-c>', 'ggVG"+y', opts)
 
--- exit insert mode
-vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
+-- replaces tmux navigator plugin
+vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
+vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
+vim.keymap.set('n', '<C-k>', '<C-w>k', opts)
+vim.keymap.set('n', '<C-l>', '<C-w>l', opts)
