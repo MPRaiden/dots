@@ -12,3 +12,6 @@ set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' })
 
 -- copy current file
 vim.keymap.set('n', '<C-c>', 'ggVG"+y', { noremap = true, silent = true })
+
+-- exit insert mode
+vim.keymap.set('i', 'jj', '<Esc>', { noremap = true, silent = true })
