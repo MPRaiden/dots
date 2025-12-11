@@ -44,13 +44,9 @@ return {
     scroll = {
       enabled = true,
     },
-    terminal = {
-      enabled = true,
-    },
   },
 
   dependencies = {
-    'nvim-lua/plenary.nvim',
     { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
   },
 
@@ -110,13 +106,6 @@ return {
         Snacks.picker.help()
       end,
       desc = '[F]ind [H]elp Pages',
-    },
-    {
-      '<leader>tt',
-      function()
-        Snacks.terminal.toggle()
-      end,
-      desc = '[T]oggle [T]erminal',
     },
   },
 }
