@@ -1,8 +1,11 @@
-font-family = CaskaydiaCove Nerd Font Propo
-font-size = 17
+# font-family = JetBrains Mono Regular
+font-family = CaskaydiaCove Nerd Font
+
 font-feature = -calt, -liga, -dlig # disables ligatures
 
-theme = TokyoNight Moon
+font-size = 17
+# theme = TokyoNight Moon
+theme = Rose Pine Moon
 
 cursor-style = block
 cursor-style-blink = true
