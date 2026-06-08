@@ -17,13 +17,5 @@ vim.defer_fn(function()
 end, 0)
 
 vim.defer_fn(function()
-  require('mini.pairs').setup()
-end, 0)
-
-vim.defer_fn(function()
-  require('mini.ai').setup()
-end, 0)
-
-vim.defer_fn(function()
   require('mini.indentscope').setup()
 end, 0)
