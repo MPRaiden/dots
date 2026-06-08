@@ -23,21 +23,35 @@ vim.api.nvim_create_autocmd('LspAttach', {
       pick.lsp_references { jump1 = false }
     end, '[G]oto [R]eferences')
 
-    map('<leader>D', function()
-      pick.lsp_typedefs { jump1 = false }
-    end, 'Type [D]efinition')
-
     map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
     map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
     map('K', vim.lsp.buf.hover, 'Hover Documentation')
-    map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
   end,
 })
 
 local capabilities = require('blink.cmp').get_lsp_capabilities()
+
 local servers = {
   ts_ls = {},
-  pyright = {},
+  pyright = {
+    before_init = function(_, config)
+      config.settings = config.settings or {}
+      config.settings.python = config.settings.python or {}
+      config.settings.python.pythonPath = config.root_dir .. '/.venv/bin/python'
+    end,
+    settings = {
+      python = {
+        venvPath = '.',
+        venv = '.venv',
+        analysis = {
+          extraPaths = { 'dags' },
+          autoSearchPaths = true,
+          diagnosticMode = 'workspace',
+          useLibraryCodeForTypes = true,
+        },
+      },
+    },
+  },
   gopls = {},
   terraformls = {},
 }
@@ -49,13 +63,12 @@ vim.defer_fn(function()
 
   require('mason-lspconfig').setup {
     ensure_installed = vim.tbl_keys(servers),
-    automatic_enable = true,
-    handlers = {
-      function(server_name)
-        local server = servers[server_name] or {}
-        server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-        require('lspconfig')[server_name].setup(server)
-      end,
-    },
+    automatic_enable = false,
   }
+
+  for server_name, server in pairs(servers) do
+    server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+    vim.lsp.config(server_name, server)
+    vim.lsp.enable(server_name)
+  end
 end, 0)

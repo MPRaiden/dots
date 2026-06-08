@@ -5,12 +5,11 @@ vim.pack.add {
 local fzf = require 'fzf-lua'
 
 fzf.setup {
-  -- { 'telescope' },
-  fzf_colors = {
-    true,
-    ['bg+'] = '#2f3f5e',
-    ['fg+'] = '#c8d3f5',
+  -- 100 is full transparent
+  winopts = {
+    backdrop = 100,
   },
+  { 'telescope' },
   files = {
     hidden = true,
     no_ignore = false,

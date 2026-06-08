@@ -50,7 +50,11 @@ vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
-vim.keymap.set({ 'n', 't' }, '<C-.>', toggle_bottom_terminal, {
+vim.keymap.set('n', '<leader>ft', 'za', { desc = 'Toggle current fold' })
+
+vim.keymap.set({ 'n', 't' }, '<C-,>', toggle_bottom_terminal, {
   desc = 'Toggle bottom terminal',
   silent = true,
 })
+
+vim.keymap.set('n', '-', '<cmd>Explore<CR>', { desc = 'Open file explorer' })
