@@ -54,7 +54,7 @@ set fish_cursor_insert block blink
 set fish_cursor_normal block blink
 
 # Remove everything from right prompt
-set --universal tide_right_prompt_items
+# set --universal tide_right_prompt_items
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/mpr/Downloads/google-cloud-cli-linux-x86_64/google-cloud-sdk/path.fish.inc' ]; . '/home/mpr/Downloads/google-cloud-cli-linux-x86_64/google-cloud-sdk/path.fish.inc'; end
