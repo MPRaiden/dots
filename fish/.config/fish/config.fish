@@ -2,6 +2,10 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+function fish_right_prompt
+    date "+%Y-%m-%d %H:%M"
+end
+
 # FZF Integration
 # Initialize fzf and optimize with fd
 if type -q fzf
@@ -52,9 +56,6 @@ set -Ux TMUX_PLUGIN_MANAGER_PATH ~/.tmux/plugins
 fish_vi_key_bindings
 set fish_cursor_insert block blink
 set fish_cursor_normal block blink
-
-# Remove everything from right prompt
-# set --universal tide_right_prompt_items
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/mpr/Downloads/google-cloud-cli-linux-x86_64/google-cloud-sdk/path.fish.inc' ]; . '/home/mpr/Downloads/google-cloud-cli-linux-x86_64/google-cloud-sdk/path.fish.inc'; end
