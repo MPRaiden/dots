@@ -9,21 +9,6 @@ fzf.setup {
   winopts = {
     backdrop = 100,
   },
-  fzf_colors = {
-    ['fg'] = { 'fg', 'Normal' },
-    ['bg'] = { 'bg', 'Normal' },
-    ['hl'] = { 'fg', '#42c6ff' },
-    ['fg+'] = { 'fg', 'CursorLine' },
-    ['bg+'] = { 'bg', 'CursorLine' },
-    ['hl+'] = { 'fg', '#42c6ff' },
-    ['info'] = { 'fg', '#3ad900' },
-    ['prompt'] = { 'fg', '#f7c95c' },
-    ['pointer'] = { 'fg', '#ff3158' },
-    ['marker'] = { 'fg', '#ff3158' },
-    ['spinner'] = { 'fg', '#f7c95c' },
-    ['header'] = { 'fg', '#c8a2ff' },
-    ['border'] = { 'fg', '#2b3448' },
-  },
   { 'telescope' },
   files = {
     hidden = true,

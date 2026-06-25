@@ -1,6 +1,5 @@
-theme = custom-pure
+theme = Catppuccin Mocha
 window-theme = ghostty
-window-titlebar-background = #243047
 
 font-family = Ioskeley Mono 
 font-size = 11
