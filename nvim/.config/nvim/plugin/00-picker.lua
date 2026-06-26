@@ -30,18 +30,18 @@ fzf.setup {
   },
 }
 
-vim.keymap.set('n', '<leader>ff', function()
+vim.keymap.set('n', 'ff', function()
   fzf.files()
 end, { desc = '[F]ind [F]iles' })
 
-vim.keymap.set('n', '<leader>fg', function()
+vim.keymap.set('n', 'fg', function()
   fzf.live_grep()
 end, { desc = '[F]ind by [G]rep (live grep with previews)' })
 
-vim.keymap.set('n', '<leader>fo', function()
+vim.keymap.set('n', 'fo', function()
   fzf.oldfiles()
 end, { desc = '[F]ind Recent Files' })
 
-vim.keymap.set('n', '<leader>fh', function()
+vim.keymap.set('n', 'fh', function()
   fzf.git_hunks()
 end, { desc = 'Git diff (h)unks' })
