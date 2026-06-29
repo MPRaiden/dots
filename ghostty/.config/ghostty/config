@@ -28,3 +28,5 @@ confirm-close-surface = false
 # keybind = ctrl+s=start_search
 
 gtk-wide-tabs = false
+
+background-opacity = 0.9
