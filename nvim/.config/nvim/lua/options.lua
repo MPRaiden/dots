@@ -25,9 +25,9 @@ vim.opt.scrolloff = 8
 -- vim.opt.cursorline = true
 vim.opt.guicursor = {
   'n-v-c:block', -- Normal, visual, command-line: block cursor
-  'i-ci-ve:hor20', -- Insert, command-line insert, visual-exclude: horizontal bar cursor with 20% height
-  'r-cr:hor20', -- Replace, command-line replace: horizontal bar cursor with 20% height
-  'o:hor50', -- Operator-pending: horizontal bar cursor with 50% height
+  'i-ci-ve:ver20', -- Insert, command-line insert, visual-exclude: horizontal bar cursor with 20% height
+  'r-cr:ver20', -- Replace, command-line replace: horizontal bar cursor with 20% height
+  'o:ver50', -- Operator-pending: horizontal bar cursor with 50% height
   'a:blinkwait700-blinkoff400-blinkon250', -- All modes: blinking settings
   'sm:block-blinkwait175-blinkoff150-blinkon175', -- Showmatch: block cursor with specific blinking settings
 }
