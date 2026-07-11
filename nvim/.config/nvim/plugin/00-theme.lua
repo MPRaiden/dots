@@ -1,7 +1,7 @@
 vim.pack.add { 'https://github.com/folke/tokyonight.nvim' }
 
 require('tokyonight').setup {
-  style = 'moon',
+  -- style = 'auto',
   transparent = false,
   plugins = {
     auto = true,
@@ -11,4 +11,4 @@ require('tokyonight').setup {
   },
 }
 
-vim.cmd.colorscheme 'tokyonight-moon'
+vim.cmd.colorscheme 'tokyonight'

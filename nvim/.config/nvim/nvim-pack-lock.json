@@ -73,6 +73,10 @@
       "rev": "dad71387de386a946b123079d0e53f23028f3abd",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
+    "smudge.nvim": {
+      "rev": "749f8ddc022def0aade98dee01dd42739a24d765",
+      "src": "https://github.com/indium114/smudge.nvim"
+    },
     "tokyonight.nvim": {
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
