@@ -1,0 +1,27 @@
+# Custom paper theme matching Neovim
+background = #f7efe7
+foreground = #4e4945
+selection-background = #e4d5c4
+selection-foreground = #4e4945
+search-background = #ead9a7
+search-foreground = #4e4945
+cursor-color = #467fbe
+cursor-text = #f7efe7
+split-divider-color = #f3ebe2
+
+palette = 0=#4e4945
+palette = 1=#c07a70
+palette = 2=#7ea17a
+palette = 3=#c6a45d
+palette = 4=#467fbe
+palette = 5=#cb8d97
+palette = 6=#6c98c0
+palette = 7=#9a9086
+palette = 8=#6b655e
+palette = 9=#c07a70
+palette = 10=#7ea17a
+palette = 11=#c6a45d
+palette = 12=#467fbe
+palette = 13=#cb8d97
+palette = 14=#6c98c0
+palette = 15=#f7efe7

@@ -1,8 +1,8 @@
-theme = TokyoNight Day
+theme = light:paper-pine-dawn,dark:rose-pine-custom
 window-theme = ghostty
 
-font-family = FiraCode Nerd Font Mono
-font-size = 11
+font-family = Ioskeley Mono 
+font-size = 10
 
 cursor-style = block
 cursor-style-blink = true

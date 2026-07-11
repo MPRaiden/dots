@@ -37,6 +37,13 @@ set('n', '<leader>sx', '<cmd>close<CR>', { desc = 'Close current split' })
 -- copy current file
 vim.keymap.set('n', '<C-c>', 'ggVG"+y', opts)
 
+-- copy current file name
+vim.keymap.set('n', '<leader>fn', function()
+  local file = vim.fn.expand '%'
+  vim.fn.setreg('+', file)
+  print('Copied: ' .. file)
+end, { desc = 'Yank current file path' })
+
 -- navigate splits
 vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 vim.keymap.set('n', '<C-j>', '<C-w>j', opts)

@@ -1,5 +1,4 @@
 vim.pack.add { 'https://github.com/nvim-treesitter/nvim-treesitter' }
-vim.pack.add { 'https://github.com/nvim-treesitter/nvim-treesitter-textobjects' }
 
 vim.defer_fn(function()
   vim.cmd.packadd 'nvim-treesitter'

@@ -22,8 +22,10 @@ fzf.setup {
     rg_opts = [[--column --line-number --no-heading --color=always --smart-case --max-columns=4096 --hidden --follow --no-ignore -g "!.git" -g "!node_modules" -e]],
   },
   oldfiles = {
-    cwd_only = false,
+    cwd_only = true,
     stat_file = true,
+    include_current_session = true,
+    ignore_current_buffer = true,
   },
   lsp = {
     jump1 = true,
