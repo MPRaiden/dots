@@ -1,7 +1,8 @@
 theme = light:paper-pine-dawn,dark:rose-pine-custom
 window-theme = ghostty
 
-font-family = Ioskeley Mono 
+font-family = JetBrains Mono 
+font-style = Medium
 font-size = 10
 
 cursor-style = block
@@ -17,16 +18,6 @@ window-padding-x = 10
 window-padding-y = 20
 
 confirm-close-surface = false
-
-# keybind = ctrl+t=new_tab
-# keybind = ctrl+[=previous_tab
-# keybind = ctrl+]=next_tab
-# keybind = ctrl+q=close_tab
-# keybind = ctrl+a>v=new_split:right
-# keybind = ctrl+a>h=goto_split:left
-# keybind = ctrl+a>l=goto_split:right
-# keybind = ctrl+s=start_search
-
 gtk-wide-tabs = false
 
 background-opacity = 1
