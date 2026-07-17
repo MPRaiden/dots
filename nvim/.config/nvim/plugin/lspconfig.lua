@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
   callback = function(event)
     local buf = event.buf
-    local pick = require 'fzf-lua'
+    local pick = require('snacks').picker
     local map = function(keys, func, desc)
       vim.keymap.set('n', keys, func, { buffer = buf, desc = 'LSP: ' .. desc })
     end
@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, '[G]oto [D]efinition')
 
     map('gr', function()
-      pick.lsp_references { jump1 = false }
+      pick.lsp_references()
     end, '[G]oto [R]eferences')
 
     map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')

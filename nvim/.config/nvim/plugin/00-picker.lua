@@ -3,51 +3,64 @@ vim.pack.add {
 }
 
 vim.pack.add {
-  'https://github.com/ibhagwan/fzf-lua',
+  'https://github.com/folke/snacks.nvim',
 }
 
-local fzf = require 'fzf-lua'
+local snacks = require 'snacks'
 
-fzf.setup {
-  -- 100 is full transparent
-  winopts = {
-    backdrop = 100,
-  },
-  { 'telescope' },
-  files = {
-    hidden = true,
-    no_ignore = false,
-    fd_opts = [[--color=never --type f --type l --hidden --follow --exclude .git --exclude node_modules]],
-    rg_opts = [[--color=never --files --hidden --follow --no-ignore -g "!.git" -g "!node_modules"]],
-  },
-  grep = {
-    hidden = true,
-    no_ignore = true,
-    rg_opts = [[--column --line-number --no-heading --color=always --smart-case --max-columns=4096 --hidden --follow --no-ignore -g "!.git" -g "!node_modules" -e]],
-  },
-  oldfiles = {
-    cwd_only = true,
-    stat_file = true,
-    include_current_session = true,
-    ignore_current_buffer = true,
-  },
-  lsp = {
-    jump1 = true,
+snacks.setup {
+  picker = {
+    layout = {
+      hidden = { 'preview' },
+      layout = {
+        backdrop = false,
+        row = 1,
+        width = 0.4,
+        min_width = 80,
+        height = 0.4,
+        border = 'none',
+        box = 'vertical',
+        { win = 'input', height = 1, border = true, title = '{title} {live} {flags}', title_pos = 'center' },
+        { win = 'list', border = 'hpad' },
+        { win = 'preview', title = '{preview}', border = true },
+      },
+    },
+    sources = {
+      files = {
+        hidden = true,
+        ignored = false,
+        follow = true,
+        exclude = { '.git', 'node_modules' },
+      },
+      grep = {
+        hidden = true,
+        ignored = true,
+        follow = true,
+        exclude = { '.git', 'node_modules' },
+        layout = { hidden = {} },
+      },
+      recent = {
+        filter = { cwd = true },
+      },
+      git_diff = {
+        group = false,
+      },
+    },
   },
 }
 
 vim.keymap.set('n', 'ff', function()
-  fzf.files()
+  snacks.picker.files()
 end, { desc = '[F]ind [F]iles' })
 
 vim.keymap.set('n', 'fg', function()
-  fzf.live_grep()
+  snacks.picker.grep()
 end, { desc = '[F]ind by [G]rep (live grep with previews)' })
 
 vim.keymap.set('n', 'fo', function()
-  fzf.oldfiles()
+  snacks.picker.recent()
 end, { desc = '[F]ind Recent Files' })
 
 vim.keymap.set('n', 'fh', function()
-  fzf.git_hunks()
+  snacks.picker.git_diff()
 end, { desc = 'Git diff (h)unks' })
