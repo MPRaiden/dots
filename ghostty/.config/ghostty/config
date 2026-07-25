@@ -2,7 +2,7 @@ window-theme = ghostty
 
 font-size = 10
 
-theme = Catppuccin Macchiato
+theme = dark:Catppuccin Macchiato,light:Catppuccin Latte
 
 cursor-style = block
 cursor-style-blink = true
