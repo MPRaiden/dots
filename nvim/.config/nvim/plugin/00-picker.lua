@@ -66,6 +66,6 @@ vim.keymap.set('n', 'fh', function()
   snacks.picker.git_diff()
 end, { desc = 'Git diff (h)unks' })
 
-vim.keymap.set({ 'n', 't' }, '<leader>t', function()
+vim.keymap.set({ 'n', 't' }, '<C-`>', function()
   snacks.terminal.toggle()
 end, { desc = 'Toggle terminal' })
