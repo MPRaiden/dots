@@ -1,0 +1,37 @@
+[
+  {
+    "context": "Workspace && !menu",
+    "bindings": {
+      "ctrl-r": "projects::OpenRecent"
+    }
+  },
+  {
+    "context": "Editor && VimControl && vim_mode == normal && !menu",
+    "bindings": {
+      "g d": "editor::GoToDefinition",
+      "g r": "editor::FindAllReferences",
+      "f f": "file_finder::Toggle",
+      "f g": "pane::DeploySearch",
+      "f h": "git::Diff",
+      "f s": "pane::AlternateFile",
+      "shift-k": "editor::Hover",
+      "ctrl-r": "projects::OpenRecent",
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      "space r n": "editor::Rename",
+      "space c a": "editor::ToggleCodeActions",
+      "space c d": "workspace::CloseActiveDock",
+      "space e": "workspace::ToggleLeftDock",
+      "space s v": "pane::SplitRight",
+      "space s x": "pane::CloseActiveItem",
+      "s": "vim::HelixJumpToWord"
+    }
+  },
+  {
+    "context": "EmptyPane && !menu",
+    "bindings": {
+      "f f": "file_finder::Toggle",
+      "f g": "pane::DeploySearch"
+    }
+  }
+]

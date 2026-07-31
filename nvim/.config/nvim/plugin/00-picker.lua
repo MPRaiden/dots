@@ -9,7 +9,6 @@ vim.pack.add {
 local snacks = require 'snacks'
 
 snacks.setup {
-  terminal = {},
   picker = {
     layout = {
       hidden = { 'preview' },
@@ -65,7 +64,3 @@ end, { desc = '[F]ind Recent Files' })
 vim.keymap.set('n', 'fh', function()
   snacks.picker.git_diff()
 end, { desc = 'Git diff (h)unks' })
-
-vim.keymap.set({ 'n', 't' }, '<C-`>', function()
-  snacks.terminal.toggle()
-end, { desc = 'Toggle terminal' })
