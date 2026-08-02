@@ -15,34 +15,28 @@
   "buffer_font_size": 13,
   "theme": {
     "mode": "system",
-    "light": "Tokyo Night Light",
-    "dark": "Tokyo Night"
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
   },
   "theme_overrides": {
-    "Tokyo Night": {
-      "border": "#00000000",
-      "border.variant": "#00000000",
-      "title_bar.background": "#1A1B26",
-      "panel.background": "#1A1B26",
-      "elevated_surface.background": "#1A1B26",
-      "surface.background": "#1A1B26",
-      "status_bar.background": "#1A1B26",
-      "toolbar.background": "#1A1B26",
-      "tab_bar.background": "#1A1B26",
-      "terminal.background": "#1A1B26",
-      "editor.document_highlight.bracket_background": "#00000000"
+    "Catppuccin Mocha": {
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "border": "#1E1E2E",
+      "border.variant": "#1E1E2E",
+      "title_bar.background": "#1E1E2E",
+      "panel.background": "#1E1E2E",
+      "status_bar.background": "#1E1E2E",
+      "toolbar.background": "#1E1E2E"
     },
-    "Tokyo Night Light": {
-      "border": "#00000000",
-      "border.variant": "#00000000",
-      "title_bar.background": "#D5D6DB",
-      "panel.background": "#D5D6DB",
-      "elevated_surface.background": "#D5D6DB",
-      "surface.background": "#D5D6DB",
-      "status_bar.background": "#D5D6DB",
-      "toolbar.background": "#D5D6DB",
-      "tab_bar.background": "#D5D6DB",
-      "terminal.background": "#D5D6DB",
+    "Catppuccin Latte": {
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "border": "#EFF1F5",
+      "border.variant": "#EFF1F5",
+      "title_bar.background": "#EFF1F5",
+      "panel.background": "#EFF1F5",
+      "status_bar.background": "#EFF1F5",
       "editor.document_highlight.bracket_background": "#00000000"
     }
   },
@@ -50,7 +44,7 @@
   "project_panel": {
     "dock": "right",
     "default_width": 400,
-    "starts_open": false,
+    "starts_open": true,
     "auto_fold_dirs": false,
     "indent_guides": {
       "show": "never"
