@@ -21,7 +21,7 @@
       "space r n": "editor::Rename",
       "space c a": "editor::ToggleCodeActions",
       "space c d": "workspace::CloseActiveDock",
-      "space e": "workspace::ToggleLeftDock",
+      "space e": "workspace::ToggleRightDock",
       "space s v": "pane::SplitRight",
       "space s x": "pane::CloseActiveItem",
       "s": "vim::HelixJumpToWord"
