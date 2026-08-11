@@ -1,7 +1,7 @@
 {
   "icon_theme": "Warm Charmed Icons",
-  "ui_font_family": "JetBrains Mono",
-  "buffer_font_family": "JetBrains Mono",
+  "ui_font_family": "Ioskeley Mono",
+  "buffer_font_family": "Ioskeley Mono",
   "buffer_font_features": {
     "calt": false,
     "liga": false
@@ -40,14 +40,14 @@
       "toolbar.background": "#1E1E2E"
     },
     "Catppuccin Mocha - No Italics": {
-          "editor.document_highlight.read_background": "#00000000",
-          "editor.document_highlight.write_background": "#00000000",
-          "border": "#1E1E2E",
-          "border.variant": "#1E1E2E",
-          "title_bar.background": "#1E1E2E",
-          "panel.background": "#1E1E2E",
-          "status_bar.background": "#1E1E2E",
-          "toolbar.background": "#1E1E2E"
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "border": "#1E1E2E",
+      "border.variant": "#1E1E2E",
+      "title_bar.background": "#1E1E2E",
+      "panel.background": "#1E1E2E",
+      "status_bar.background": "#1E1E2E",
+      "toolbar.background": "#1E1E2E"
     },
     "Catppuccin Latte": {
       "editor.document_highlight.read_background": "#00000000",
@@ -60,15 +60,15 @@
       "editor.document_highlight.bracket_background": "#00000000"
     },
     "Catppuccin Latte - No Italics": {
-          "editor.document_highlight.read_background": "#00000000",
-          "editor.document_highlight.write_background": "#00000000",
-          "border": "#EFF1F5",
-          "border.variant": "#EFF1F5",
-          "title_bar.background": "#EFF1F5",
-          "panel.background": "#EFF1F5",
-          "status_bar.background": "#EFF1F5",
-          "editor.document_highlight.bracket_background": "#00000000"
-        }
+      "editor.document_highlight.read_background": "#00000000",
+      "editor.document_highlight.write_background": "#00000000",
+      "border": "#EFF1F5",
+      "border.variant": "#EFF1F5",
+      "title_bar.background": "#EFF1F5",
+      "panel.background": "#EFF1F5",
+      "status_bar.background": "#EFF1F5",
+      "editor.document_highlight.bracket_background": "#00000000"
+    }
   },
   "relative_line_numbers": "enabled",
   "project_panel": {
