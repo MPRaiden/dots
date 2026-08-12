@@ -1,4 +1,5 @@
 window-theme = ghostty
+font-feature = -calt, -liga, -dlig
 
 font-size = 10
 theme = dark:Catppuccin Mocha,light:Catppuccin Latte
