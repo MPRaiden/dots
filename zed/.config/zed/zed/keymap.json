@@ -24,6 +24,7 @@
       "space e": "workspace::ToggleRightDock",
       "space s v": "pane::SplitRight",
       "space s x": "pane::CloseActiveItem",
+      "space f n": "editor::CopyFileName",
       "s": "vim::HelixJumpToWord"
     }
   },
