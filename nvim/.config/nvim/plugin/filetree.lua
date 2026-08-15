@@ -10,6 +10,9 @@ require('nvim-tree').setup {
   update_focused_file = {
     enable = true,
   },
+  filters = {
+    dotfiles = false,
+  },
 }
 
 local normal = vim.api.nvim_get_hl(0, { name = 'Normal', link = false })
