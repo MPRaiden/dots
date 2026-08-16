@@ -3,7 +3,7 @@ font-feature = -calt, -liga, -dlig
 
 font-size = 12
 font-family = CaskaydiaCove Nerd Font Mono
-theme = dark:TokyoNight,light:TokyoNight Day
+theme = dark:Catppuccin Mocha,light:Catppuccin Latte
 
 cursor-style = block
 cursor-style-blink = true
