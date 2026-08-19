@@ -71,4 +71,18 @@ require('catppuccin').setup {
 }
 
 -- setup must be called before loading
-vim.cmd.colorscheme 'catppuccin-nvim'
+-- vim.cmd.colorscheme 'catppuccin-nvim'
+
+vim.pack.add { 'https://github.com/folke/tokyonight.nvim' }
+
+require('tokyonight').setup {
+  style = 'night',
+  transparent = false, -- Enable this to disable setting the background color
+  styles = {
+    keywords = { italic = false },
+    sidebars = 'transparent',
+    floats = 'transparent',
+  },
+}
+
+vim.cmd.colorscheme 'tokyonight'
