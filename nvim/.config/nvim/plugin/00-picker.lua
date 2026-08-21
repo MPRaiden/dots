@@ -64,3 +64,12 @@ end, { desc = '[F]ind Recent Files' })
 vim.keymap.set('n', 'fh', function()
   snacks.picker.git_diff()
 end, { desc = 'Git diff (h)unks' })
+
+vim.keymap.set('n', '<leader>tt', function()
+  snacks.terminal.toggle(nil, {
+    win = {
+      position = 'float',
+      border = 'rounded',
+    },
+  })
+end, { desc = '[T]oggle [T]erminal' })

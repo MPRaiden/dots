@@ -1,88 +1,55 @@
-vim.pack.add { { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' } }
+vim.pack.add {
+  { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
+  { src = 'https://github.com/folke/tokyonight.nvim', name = 'tokyonight' },
+}
 
 require('catppuccin').setup {
-  flavour = 'auto', -- latte, frappe, macchiato, mocha
-  background = { -- :h background
-    light = 'latte',
-    dark = 'mocha',
-  },
+  flavour = 'latte',
   transparent_background = true, -- disables setting the background color.
   float = {
     transparent = true, -- enable transparent floating windows
     solid = true, -- use solid styling for floating windows, see |winborder|
   },
-  term_colors = false, -- sets terminal colors (e.g. `g:terminal_color_0`)
-  dim_inactive = {
-    enabled = false, -- dims the background color of inactive window
-    shade = 'dark',
-    percentage = 0.15, -- percentage of the shade to apply to the inactive window
-  },
   no_italic = true, -- Force no italic
-  no_bold = false, -- Force no bold
-  no_underline = false, -- Force no underline
-  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { 'italic' }, -- Change the style of comments
-    conditionals = { 'italic' },
-    loops = {},
-    functions = {},
-    keywords = {},
-    strings = {},
-    variables = {},
-    numbers = {},
-    booleans = {},
-    properties = {},
-    types = {},
-    operators = {},
-    -- miscs = {}, -- Uncomment to turn off hard-coded styles
-  },
-  lsp_styles = { -- Handles the style of specific lsp hl groups (see `:h lsp-highlight`).
-    virtual_text = {
-      errors = { 'italic' },
-      hints = { 'italic' },
-      warnings = { 'italic' },
-      information = { 'italic' },
-      ok = { 'italic' },
-    },
-    underlines = {
-      errors = { 'underline' },
-      hints = { 'underline' },
-      warnings = { 'underline' },
-      information = { 'underline' },
-      ok = { 'underline' },
-    },
-    inlay_hints = {
-      background = true,
-    },
-  },
-  color_overrides = {},
-  custom_highlights = {},
   auto_integrations = true,
   integrations = {
-    cmp = true,
-    gitsigns = true,
     nvimtree = false,
-    notify = false,
     mini = {
       enabled = true,
       indentscope_color = '',
     },
-    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
   },
 }
-
--- setup must be called before loading
--- vim.cmd.colorscheme 'catppuccin-nvim'
-
-vim.pack.add { 'https://github.com/folke/tokyonight.nvim' }
 
 require('tokyonight').setup {
   style = 'night',
-  transparent = false, -- Enable this to disable setting the background color
+  transparent = true,
   styles = {
+    comments = { italic = false },
     keywords = { italic = false },
-    sidebars = 'transparent',
-    floats = 'transparent',
+    sidebars = 'dark', -- style for sidebars, see below
+    floats = 'normal', -- style for floating windows
   },
 }
 
-vim.cmd.colorscheme 'tokyonight'
+local active_mode
+
+local function update_colorscheme()
+  local appearance = vim.system({ 'gsettings', 'get', 'org.gnome.desktop.interface', 'color-scheme' }, { text = true }):wait()
+  local mode = appearance.code == 0 and appearance.stdout:match 'dark' and 'dark' or 'light'
+
+  if mode == active_mode then
+    return
+  end
+
+  active_mode = mode
+  vim.o.background = mode
+  vim.cmd.colorscheme(mode == 'dark' and 'tokyonight-night' or 'catppuccin-latte')
+end
+
+update_colorscheme()
+
+vim.api.nvim_create_autocmd({ 'FocusGained', 'VimResume' }, {
+  group = vim.api.nvim_create_augroup('system-colorscheme', { clear = true }),
+  callback = update_colorscheme,
+})
